@@ -1,0 +1,14 @@
+/* FOOTER SECTION */
+
+footer {
+    height: fit-content;
+    padding: 6px;
+    color: #242424;
+    text-align: center;
+    background: #F0DEAB;
+    text-transform: uppercase;
+}
+
+footer span {
+    margin: 0 4px;
+}
