@@ -10,31 +10,33 @@ class WeddingGiftController extends BaseController
 {
     public function present()
     {
-        $transactionSelected = $this->getTransactionSelected();
+        if ($this->checkUserLogin()) {
 
-        $banksModel = new BanksModel();
-        $data['dataList'] = $banksModel->get()->getResultArray();
-        $data['bankList'] = $banksModel->where('is_bank', '1')->get()->getResultArray();
-        $data['ewalletList'] = $banksModel->where('is_bank', '0')->get()->getResultArray();
+            $transactionSelected = $this->getTransactionSelected();
 
-        $giftModel = new GiftModel();
-        $data['giftList'] = $giftModel->where('transaction_id', $transactionSelected['id'])->get()->getResultArray();
-        
-        $data['title'] = getenv('TITLE_INVITATION_CONTENT_SETTING');
-        $data['sub_title'] = getenv('SUBTITLE_GIFT');
-        $data['url_path'] = getenv('URL_GIFT');
-        $data['modalNameCreate'] = "modal-gift-create";
-        $data['modalNameUpdate'] = "modal-gift-update";
+            $banksModel = new BanksModel();
+            $data['dataList'] = $banksModel->get()->getResultArray();
+            $data['bankList'] = $banksModel->where('is_bank', '1')->get()->getResultArray();
+            $data['ewalletList'] = $banksModel->where('is_bank', '0')->get()->getResultArray();
 
-        if ($this->checkUserLogin() == true) {
+            $giftModel = new GiftModel();
+            $data['giftList'] = $giftModel->where('transaction_id', $transactionSelected['id'])->get()->getResultArray();
+            $data['transactionSelected'] = $transactionSelected;
+
+            $data['title'] = getenv('TITLE_INVITATION_CONTENT_SETTING');
+            $data['sub_title'] = getenv('SUBTITLE_GIFT');
+            $data['url_path'] = getenv('URL_GIFT');
+            $data['modalNameCreate'] = "modal-gift-create";
+            $data['modalNameUpdate'] = "modal-gift-update";
+
             if ($this->hasThemeSelected() == true) {
                 return view(getenv('PATH_GIFT'), $data);
             } else {
                 session()->setFlashdata('warning', 'Untuk melakukan kelola konten undangan, mohon terlebih dahulu memilih tema undangan anda!');
-                return redirect()->to(base_url('/'.getenv(('URL_THEME'))));
+                return redirect()->to(base_url('/' . getenv(('URL_THEME'))));
             }
         } else {
-            return redirect()->to(base_url('/'.getenv(('PATH_LOGIN'))));
+            return redirect()->to(base_url('/' . getenv(('PATH_LOGIN'))));
         }
     }
 
@@ -43,16 +45,18 @@ class WeddingGiftController extends BaseController
         $getPost = $this->request->getPost();
         $giftModel = new GiftModel();
         // PROSES FORMULIR 
+        $transactionSelected = $this->getTransactionSelected();
+
         $formField = array(
             'user_id'           => session()->get('user_id'),
+            'transaction_id'    => $transactionSelected['id'],
             'type'              => $getPost['gift_type'],
             'bank_id'           => $getPost['gift_type'] == "Bank" ? $getPost['bank_id'] : $getPost['e_wallet_id'],
             'bank_name'         => $getPost['gift_type'] != "Address" ? $this->getBankName($getPost) : "",
             'account_number'    => $getPost['gift_type'] != "Address" ? $this->getAccountNumber($getPost) : "",
-            'receiver_name'     => $getPost['receiver_name'],
+            'receiver_name'     => $this->getReceiverName($getPost),
             'receiver_address'  => $getPost['gift_type'] == "Address" ? $getPost['receiver_address'] : ""
         );
-        
 
         $created = $giftModel->insert($formField);
 
@@ -62,59 +66,73 @@ class WeddingGiftController extends BaseController
             session()->setFlashdata('success', 'Tambah Hadiah berhasil!');
         }
 
-        return redirect()->to(base_url(getenv('PATH_GIFT')));
+        return redirect()->to(base_url(getenv('URL_GIFT')));
     }
 
-    function getBankName($getPost) {
+    function getBankName($getPost)
+    {
         $id = $getPost['gift_type'] == "Bank" ? $getPost['bank_id'] : $getPost['e_wallet_id'];
 
         $banksModel = new BanksModel();
         $bankData = $banksModel->where('id', $id)->get()->getRowArray();
 
-        return $bankData['name'];
+        return $bankData['id'] != 99 ? $bankData['name'] : $getPost['bank_name'];
     }
 
-    function getAccountNumber($getPost) {
-        return 
-        $getPost['gift_type'] == "Bank"
-        ?
-        $getPost['bank_account_no'] 
-        :
-        $getPost['e_wallet_account_no'];
+    function getReceiverName($getPost)
+    {
+        if ($getPost['gift_type'] == "Bank") {
+            return ($getPost['receiver_name_bank']);
+        } else if ($getPost['gift_type'] == "E-Wallet") {
+            return ($getPost['receiver_name_e_wallet']);
+        } else {
+            return ($getPost['receiver_name_address']);
+        }
     }
 
-    function getBankId($getPost) {
-        return 
-        $getPost['gift_type'] == "Bank"
-        ?
-        $getPost['bank_id'] 
-        :
-        $getPost['e_wallet_id'];
+    function getAccountNumber($getPost)
+    {
+        return
+            $getPost['gift_type'] == "Bank"
+            ?
+            $getPost['bank_account_no']
+            :
+            $getPost['e_wallet_account_no'];
+    }
+
+    function getBankId($getPost)
+    {
+        return
+            $getPost['gift_type'] == "Bank"
+            ?
+            $getPost['bank_id']
+            :
+            $getPost['e_wallet_id'];
     }
 
     public function requestUpdate()
     {
         $getPost = $this->request->getPost();
         $giftModel = new GiftModel();
-        
+
         $formField = array(
             'user_id'           => session()->get('user_id'),
-            'type'              => $getPost['updateGiftType'],
-            'bank_id'           => $getPost['updateGiftType'] != "Address" ? $this->getBankId($getPost) : "",
-            'bank_name'         => $getPost['updateGiftType'] != "Address" ? $this->getBankName($getPost) : "",
-            'account_number'    => $getPost['updateGiftType'] != "Address" ? $this->getAccountNumber($getPost) : "",
+            'type'              => $getPost['gift_type'],
+            'bank_id'           => $getPost['gift_type'] != "Address" ? $this->getBankId($getPost) : "",
+            'bank_name'         => $getPost['gift_type'] != "Address" ? $this->getBankName($getPost) : "",
+            'account_number'    => $getPost['gift_type'] != "Address" ? $this->getAccountNumber($getPost) : "",
             'receiver_name'     => $getPost['receiverName'],
-            'receiver_address'  => $getPost['updateGiftType'] == "Address" ? $getPost['receiverAddress'] : ""
+            'receiver_address'  => $getPost['gift_type'] == "Address" ? $getPost['receiverAddress'] : ""
         );
-        
+
         $process = $giftModel->update($getPost['id'], $formField);
         if ($process) {
             session()->setFlashdata('success', 'Perubahan hadiah berhasil!');
-            return redirect()->to(base_url(getenv('PATH_GIFT')));
         } else {
             session()->setFlashdata('error', 'Terjadi kesalahan saat memperbarui hadiah!');
-            return redirect()->to(base_url(getenv('PATH_GIFT')));
         }
+
+        return redirect()->to(base_url(getenv('URL_GIFT')));
     }
 
     public function requestDelete($id)
@@ -127,6 +145,6 @@ class WeddingGiftController extends BaseController
             session()->setFlashdata('error', 'Terjadi kesalahan saat hapus hadiah!');
         }
 
-        return redirect()->to(base_url(getenv('PATH_GIFT')));
+        return redirect()->to(base_url(getenv('URL_GIFT')));
     }
 }

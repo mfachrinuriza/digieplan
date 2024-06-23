@@ -31,7 +31,7 @@
       <div class="card card-md">
         <div class="card-body">
           <h1 class="h1 text-center mb-2">
-            <img class="rounded-4" src="<?= base_url('public/dist/img') ?>/logo.png" width="300">
+            <img class="rounded-4" src="<?= base_url('public/assets/images/logo.png') ?>" width="300">
           </h1>
           <br />
           <h2 class="h2 text-center mb-4">Login</h2>
@@ -55,10 +55,10 @@
                     </svg>
                   </a>
                 </span>
-              </div> 
+              </div>
               <span class="form-label-description">
-                <a href="./forgot-password.html">Lupa Password</a>
-              </span>  
+                <!-- <a href="./forgot-password.html">Lupa Password</a> -->
+              </span>
             </div>
             <div class="form-footer">
               <button type="submit" class="btn btn-primary w-100">LOGIN</button>
@@ -66,7 +66,7 @@
           </form>
         </div>
         <div class="text-center text-muted mt-3 mb-5">
-          Belum memiliki akun? <a href="<?= base_url() ?>/auth/register" tabindex="-1">Daftar Sekarang</a>
+          <!-- Belum memiliki akun? <a href="<?= base_url() ?>/auth/register" tabindex="-1">Daftar Sekarang</a> -->
         </div>
       </div>
     </div>

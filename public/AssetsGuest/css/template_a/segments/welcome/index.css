@@ -1,0 +1,14 @@
+/* WELCOME SECTION */
+@import url('welcome.css');
+@import url('welcome_2.css');
+@import url('welcome_3.css');
+@import url('welcome_4.css');
+@import url('welcome_5.css');
+
+
+.welcomePage {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+

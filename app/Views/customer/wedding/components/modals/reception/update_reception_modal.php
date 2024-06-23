@@ -2,7 +2,10 @@
 <div class="modal modal-blur fade" id="modal-reception-update<?= $row['id'] ?>" tabindex="-1" role="dialog" aria-hidden="true" onload="disableYesterday()">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
-            <form action="<?= base_url('/customer/kelola-konten-undangan/akad-resepsi/update')?>" method="POST" >   
+            <form action="<?= base_url('/customer/kelola-konten-undangan/akad-resepsi/update') ?>" method="POST">
+
+                <input type="text" name="transaction_id" value="<?= $transactionSelected['id'] ?>" hidden>
+                <input type="text" name="user_id" value="<?= $transactionSelected['user_id'] ?>" hidden>
                 <div class="modal-header">
                     <h5 class="modal-title">Ubah Acara</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -26,19 +29,19 @@
                             <input type="time" class="form-control" id="startTime" name="startTime" value="<?= $row['start_time'] ?>" required>
                         </div>
                         <div class="col-lg-6">
-                            <label class="form-label required" for="endTime" >Jam Selesai</label>
-                            <?= 
-                                $row['isUntilEnd'] ? 
+                            <label class="form-label required" for="endTime">Jam Selesai</label>
+                            <?=
+                            $row['isUntilEnd'] ?
                                 '<input type="time" class="form-control" id="endTime" name="endTime" value="">'
                                 :
-                                '<input type="time" class="form-control" id="endTime" name="endTime" value="'.$row['end_time'].'">';
+                                '<input type="time" class="form-control" id="endTime" name="endTime" value="' . $row['end_time'] . '">';
                             ?>
                             <label class="form-check">
-                                <?= 
-                                    $row['isUntilEnd'] ? 
-                                    '<input class="form-check-input" id="checkBoxUntilEnd'.$row['id'].'" type="checkbox" name="isUntilEnd" checked>'
+                                <?=
+                                $row['isUntilEnd'] ?
+                                    '<input class="form-check-input" id="checkBoxUntilEnd' . $row['id'] . '" type="checkbox" name="isUntilEnd" checked>'
                                     :
-                                    '<input class="form-check-input" id="checkBoxUntilEnd'.$row['id'].'" type="checkbox" name="isUntilEnd">';
+                                    '<input class="form-check-input" id="checkBoxUntilEnd' . $row['id'] . '" type="checkbox" name="isUntilEnd">';
                                 ?>
                                 <span class="form-check-label">Sampai Selesai</span>
                             </label>
@@ -48,32 +51,32 @@
                         <label class="form-label required">Zona Waktu</label>
                         <div class="form-selectgroup">
                             <label class="form-selectgroup-item">
-                                <?php  
-                                    if ($row['time_zone'] == "WIB") {
-                                        echo '<input type="radio" name="timeZone" value="WIB" class="form-selectgroup-input" checked>';
-                                    } else {
-                                        echo '<input class="form-check-input" type="checkbox" name="isUntilEnd">';
-                                    }
+                                <?php
+                                if ($row['time_zone'] == "WIB") {
+                                    echo '<input type="radio" name="timeZone" value="WIB" class="form-selectgroup-input" checked>';
+                                } else {
+                                    echo '<input class="form-check-input" type="checkbox" name="isUntilEnd">';
+                                }
                                 ?>
                                 <span class="form-selectgroup-label">WIB</span>
                             </label>
                             <label class="form-selectgroup-item">
-                                <?php  
-                                    if ($row['time_zone'] == "WITA") {
-                                        echo '<input type="radio" name="timeZone" value="WITA" class="form-selectgroup-input" checked>';
-                                    } else {
-                                        echo '<input type="radio" name="timeZone" value="WITA" class="form-selectgroup-input">';
-                                    }
+                                <?php
+                                if ($row['time_zone'] == "WITA") {
+                                    echo '<input type="radio" name="timeZone" value="WITA" class="form-selectgroup-input" checked>';
+                                } else {
+                                    echo '<input type="radio" name="timeZone" value="WITA" class="form-selectgroup-input">';
+                                }
                                 ?>
                                 <span class="form-selectgroup-label">WITA</span>
                             </label>
                             <label class="form-selectgroup-item">
-                                <?php  
-                                    if ($row['time_zone'] == "WIT") {
-                                        echo '<input type="radio" name="timeZone" value="WIT" class="form-selectgroup-input" checked>';
-                                    } else {
-                                        echo '<input type="radio" name="timeZone" value="WIT" class="form-selectgroup-input">';
-                                    }
+                                <?php
+                                if ($row['time_zone'] == "WIT") {
+                                    echo '<input type="radio" name="timeZone" value="WIT" class="form-selectgroup-input" checked>';
+                                } else {
+                                    echo '<input type="radio" name="timeZone" value="WIT" class="form-selectgroup-input">';
+                                }
                                 ?>
                                 <span class="form-selectgroup-label">WIT</span>
                             </label>
@@ -98,12 +101,12 @@
                             <span class="col">Countdown akan mengacu pada acara utama</span>
                             <span class="col-auto">
                                 <label class="form-check form-check-single form-switch">
-                                    <?php  
-                                        if ($row['isPrimary']) {
-                                            echo '<input class="form-check-input" type="checkbox" name="isPrimary" checked>';
-                                        } else {
-                                            echo '<input class="form-check-input" type="checkbox" name="isPrimary">';
-                                        }
+                                    <?php
+                                    if ($row['isPrimary']) {
+                                        echo '<input class="form-check-input" type="checkbox" name="isPrimary" checked>';
+                                    } else {
+                                        echo '<input class="form-check-input" type="checkbox" name="isPrimary">';
+                                    }
                                     ?>
                                 </label>
                             </span>

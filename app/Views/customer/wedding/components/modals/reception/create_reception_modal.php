@@ -2,7 +2,9 @@
 <div class="modal modal-blur fade" id="modal-reception-create" tabindex="-1" role="dialog" aria-hidden="true" onload="disableYesterday()">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
-            <form action="<?= base_url('/customer/kelola-konten-undangan/akad-resepsi/create')?>" method="POST" >   
+            <form action="<?= base_url('/customer/kelola-konten-undangan/akad-resepsi/create') ?>" method="POST">
+                <input type="text" name="transaction_id" value="<?= $transactionSelected['id'] ?>" hidden>
+                <input type="text" name="user_id" value="<?= $transactionSelected['user_id'] ?>" hidden>
                 <div class="modal-header">
                     <h5 class="modal-title">Tambah Acara</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -25,7 +27,7 @@
                             <input type="time" class="form-control" id="startTime" name="startTime" required>
                         </div>
                         <div class="col-lg-6">
-                            <label class="form-label required" for="endTime" >Jam Selesai</label>
+                            <label class="form-label required" for="endTime">Jam Selesai</label>
                             <input type="time" class="form-control" id="endTime" name="endTime" disabled>
                             <label class="form-check">
                                 <input class="form-check-input" type="checkbox" name="isUntilEnd">
@@ -68,15 +70,15 @@
                         <label class="row">
                             <span class="col">Countdown akan mengacu pada acara utama</span>
                             <span class="col-auto">
-                            <label class="form-check form-check-single form-switch">
-                                <?php 
-                                    if (count($receptionsData) > 0 ) {
+                                <label class="form-check form-check-single form-switch">
+                                    <?php
+                                    if (count($receptionsData) > 0) {
                                         echo '<input class="form-check-input" type="checkbox" name="isPrimary">';
                                     } else {
                                         echo '<input class="form-check-input" type="checkbox" name="isPrimary" checked>';
                                     }
-                                ?>
-                            </label>
+                                    ?>
+                                </label>
                             </span>
                         </label>
                     </div>
@@ -88,7 +90,7 @@
                     <button type="submit" class="btn btn-primary ms-auto">
                         <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-plus" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M12.5 21h-6.5a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v5" />
                             <path d="M16 3v4" />
                             <path d="M8 3v4" />

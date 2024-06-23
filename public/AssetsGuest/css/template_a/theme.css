@@ -1,0 +1,26 @@
+body {
+    --background-color-1: #242424;
+    --background-color-2: #3D3D3D;
+    --error: #FF0000;
+    --primary: #F0DEAB;
+    --secondary:  #342909;
+    --gray-1: rgba(255, 255, 255, 0.50);
+    --gray-2: rgba(240, 222, 171, 0.40);
+    --gray-3: rgba(240, 222, 171, 0.10);
+    --welcome-background: linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), var(--background-base), lightgray 50% / cover no-repeat;
+    --body-linear-gradient: linear-gradient(to right, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.75) 8%, rgba(0, 0, 0, 0.85) 15%,  rgba(0, 0, 0, 0.95) 25%, rgba(0, 0, 0, 0.95) 75%, rgba(0, 0, 0, 0.85) 83%, rgba(0, 0, 0, 0.75) 90%, rgba(0, 0, 0, 0.65) 100%), var(--background-two-base)  center center / cover fixed no-repeat;
+}
+
+[data-theme="red"] {
+    --background-color-1: #5E162A;
+    --background-color-2: #88203D;
+    --welcome-background: linear-gradient(0deg, rgba(94, 22, 42, 0.70) 0%, rgba(94, 22, 42, 0.70) 100%), var(--background-base), lightgray 50% / cover no-repeat;
+    --body-linear-gradient: linear-gradient(to right, rgba(71, 16, 32, 0.65) 0%, rgba(71, 16, 32, 0.75) 8%, rgba(71, 16, 32, 0.85) 15%,  rgba(71, 16, 32, 0.95) 25%, rgba(71, 16, 32, 0.95) 75%, rgba(71, 16, 32, 0.85) 83%, rgba(71, 16, 32, 0.75) 90%, rgba(71, 16, 32, 0.65) 100%), var(--background-two-base)  center center / cover fixed no-repeat;
+}
+
+[data-theme="blue"]{
+    --background-color-1: #16445E;
+    --background-color-2: #206388;
+    --welcome-background: linear-gradient(0deg, rgba(22, 68, 94, 0.70) 0%, rgba(22, 68, 94, 0.70) 100%), var(--background-base), lightgray 50% / cover no-repeat;
+    --body-linear-gradient: linear-gradient(to right, rgba(20, 77, 108, 0.65) 0%, rgba(20, 77, 108, 0.75) 8%, rgba(20, 77, 108, 0.85) 15%,  rgba(20, 77, 108, 0.95) 25%, rgba(20, 77, 108, 0.95) 75%, rgba(20, 77, 108, 0.85) 83%, rgba(20, 77, 108, 0.75) 90%, rgba(20, 77, 108, 0.65) 100%), var(--background-two-base)  center center / cover fixed no-repeat;
+}

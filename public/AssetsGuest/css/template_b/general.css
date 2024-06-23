@@ -1,0 +1,164 @@
+/* GENERAL */
+
+* {
+    box-sizing: border-box;
+  }
+
+
+html {
+	scroll-behavior: smooth;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+    position: relative;
+    max-width: 480px;
+    margin: auto;
+    background: #ffceb9;
+}
+
+main {
+    background-color: var(--background-color-1);
+    color: var(--primary);
+    font-family: Crimson Text;
+    box-sizing: content-box;
+    overflow: hidden;
+    position: relative;
+}
+
+.scroller {
+  height: 100vh;
+  overflow-y: hidden;
+  scroll-snap-type: y mandatory;
+}
+
+.scroller section {
+  scroll-snap-align: start;
+}
+
+#flowerContainer {
+  position: fixed;
+  height: 100vh;
+  max-width: 480px;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: visible;
+  overflow-y: scroll;
+  z-index: 4;
+  pointer-events: none;
+}
+
+#flowerTopLeft {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+}
+
+#flowerTopRight {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#flowerBottomLeft {
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#flowerBottomRight {
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#layout_padding_container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  max-width: 480px;
+  pointer-events: none;
+  z-index: 3;
+  overflow: hidden;
+}
+
+#layout_padding_container_relative {
+  position: relative;
+  position: relative;
+  width: calc(100% - 48px);
+  height: calc(100% - 96px);
+  margin: 48px 24px;
+  outline: 48px var(--background-color-1) solid;
+}
+
+#white_rectangle_container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  max-width: 480px;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+#white_rectangle_container_relative {
+  position: relative;
+  position: relative;
+  width: calc(100% - 48px);
+  height: calc(100% - 96px);
+  margin: 48px 24px;
+  outline: 48px var(--background-color-1) solid;
+}
+
+#white_rectangle {
+  border: 2px solid #ffffff;
+  z-index: 1;
+  pointer-events: none;
+  position: relative;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.17);
+  visibility: hidden;
+}
+
+
+/* main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 480px;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.25) 70%, rgba(0, 0, 0, 0) 100%);
+}
+
+
+main::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 480px;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.25) 70%, rgba(0, 0, 0, 0) 100%);
+} */
+
+::placeholder {
+    color: var(--primary);
+    opacity: 1; /* Firefox */
+  }
+  
+  ::-ms-input-placeholder { /* Edge 12 -18 */
+    color: var(--primary);
+  }

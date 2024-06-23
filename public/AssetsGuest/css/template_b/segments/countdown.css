@@ -1,0 +1,146 @@
+/* COUNTDOWN SECTION */
+
+#countDown {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#countDown_content {
+    visibility: hidden;
+    width: 100%;
+    padding: 48px 0;
+    z-index: 2;
+    text-align: center;
+}
+
+#countDown #countDown_content_first_h5 {
+    margin: 0 auto;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+#countDown #countDown_content_second_h1 {
+    margin: 10px auto 0;
+    font-family: Great Vibes, cursive;
+    color: var(--primary);
+}
+
+
+#countDown #countDown_date {
+    margin: 28px auto 0;
+    font-size: 18px;
+    letter-spacing: 0.81px;
+    color: #000000;
+}
+
+#countDown button {
+    margin-top: 24px;
+}
+
+#countDown_timer {
+    visibility: hidden;
+    display: flex;
+    gap: 24px;
+    margin-top: 24px;
+    padding: 4px 48px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#countDown_timer div {
+    color: #ffffff;
+    width: 56px;
+    height: 56px;
+    background-color: var(--primary);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#countDown_timer p {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+#countDown_timer h3 {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.first_frame {
+    width: 22vh;
+    height: 29vh;
+    position: relative;
+    margin: 0 auto 51px;
+}
+
+.first_frame_frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.first_frame_flower {
+    position: absolute;
+    bottom: -26px;
+    left: 50%; 
+    width: 27vh;
+    transform: translateX(-50%); 
+}
+
+.first_frame_image_clipped {
+    width: 97%;
+    height: 97%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.first_frame_image_clipped img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    max-width: 100%;
+}
+
+.one {
+    -webkit-mask-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAAEICAYAAAAEDostAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAUpSURBVHgB7d3rWVRXGIbhb9JAsAKHCqIVBCqIqUCsIKYCYwexAkkF0Qqkg5AKMqlAUgFZy9kDDPMiZ2Rm3/d1LQYEfz58ax9mMzluCh7W0bBmw+vfbR32ryeTyWE9AhNh8Mj0UHocH9v60EKZ1TcgDB67WVvv6oEjEQbr5KCtdy2QD3XPhME6mrX1tgWyX/dEGKyzWVuvWiAHdce+K1hf07Y+td/t79ua1h0SBptgr+aB7NUdsZVi0/xe8+OPo7oFYbCJZm3t3ub0rq0Um2ha863Vs7ohYbCppjWP42XdgK0UY7DXtlV/XOc/mBiMwf51J4eJwVj0s1S7V717VxiMSY/j+VXOVtlKMSZbNT8g37rsB4XB2EzbenPZD9lKMVY/f+32dWEwVv14Y/uiW0dspRirfpzx/qJvmhiM3W56P4eJwdjFA3FhMHY7bdO0c/4fhQFhaggDwtQQBswtTQ1npeDUk8V1DRMDTr1efGJiwKn+UOnt/omJAaemi+dTCQOWvegfhAHLfuofHGPAsqN2nPFEGLBq21YKVu0IA1ZNhQGrngoDVjnGgMDEgGDL6VoITAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgKCHcVTAkh7GfwUs6WH8U8CSHsa/BSzpYcwKWCIMCHoYBwUsmfQPx8fHn9vLVgFfLC7wHRZwYhHGxwJOLLZS03I9A05MFp+0OGbt5WkBSzcR7hfwxdmJ0c9KfS7gdGJMJpN+l+1BASvvx3hbwHIYbWoclKkB8R18pgajtxKGqQEXv+fb1GDUYhjD1PhQMFKTi74xXNfot4m465bRufDxOcN1jVcFI/TV50q1OPp26l3ByEwu+4FhS/VXW9OCkbg0jG64Lb3H4XiDUbjSIzrblmrWXnbLUwsZiSs/u7bF0d/++mvBCFxpK3VW21bttZf3BRvs2k87b5Njv+ancW2r2FjXnhgLbXI8ay9/lrNVbKAbh9ENZ6s+lTjYMLf6wzHD2arn5SIgG+ZWE+Os4aD8TZkebIA7C6Mbtla/tfWyYI3daRgLLZCdmp/SnRasoXv545T9/Rxtbdf8tO6sYM3cy8Q4r02QF+3ldVs/FqyBBwljYTgG6ZH8UrZZPGIPGsZZZyLp64dy5y6PyDcL47zhSvq0rWfD2hq+/r5EwwP7H8hu/HftDUGNAAAAAElFTkSuQmCC');
+    mask-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAAEICAYAAAAEDostAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAUpSURBVHgB7d3rWVRXGIbhb9JAsAKHCqIVBCqIqUCsIKYCYwexAkkF0Qqkg5AKMqlAUgFZy9kDDPMiZ2Rm3/d1LQYEfz58ax9mMzluCh7W0bBmw+vfbR32ryeTyWE9AhNh8Mj0UHocH9v60EKZ1TcgDB67WVvv6oEjEQbr5KCtdy2QD3XPhME6mrX1tgWyX/dEGKyzWVuvWiAHdce+K1hf07Y+td/t79ua1h0SBptgr+aB7NUdsZVi0/xe8+OPo7oFYbCJZm3t3ub0rq0Um2ha863Vs7ohYbCppjWP42XdgK0UY7DXtlV/XOc/mBiMwf51J4eJwVj0s1S7V717VxiMSY/j+VXOVtlKMSZbNT8g37rsB4XB2EzbenPZD9lKMVY/f+32dWEwVv14Y/uiW0dspRirfpzx/qJvmhiM3W56P4eJwdjFA3FhMHY7bdO0c/4fhQFhaggDwtQQBswtTQ1npeDUk8V1DRMDTr1efGJiwKn+UOnt/omJAaemi+dTCQOWvegfhAHLfuofHGPAsqN2nPFEGLBq21YKVu0IA1ZNhQGrngoDVjnGgMDEgGDL6VoITAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgEAYEAgDAmFAIAwIhAGBMCAQBgTCgKCHcVTAkh7GfwUs6WH8U8CSHsa/BSzpYcwKWCIMCHoYBwUsmfQPx8fHn9vLVgFfLC7wHRZwYhHGxwJOLLZS03I9A05MFp+0OGbt5WkBSzcR7hfwxdmJ0c9KfS7gdGJMJpN+l+1BASvvx3hbwHIYbWoclKkB8R18pgajtxKGqQEXv+fb1GDUYhjD1PhQMFKTi74xXNfot4m465bRufDxOcN1jVcFI/TV50q1OPp26l3ByEwu+4FhS/VXW9OCkbg0jG64Lb3H4XiDUbjSIzrblmrWXnbLUwsZiSs/u7bF0d/++mvBCFxpK3VW21bttZf3BRvs2k87b5Njv+ancW2r2FjXnhgLbXI8ay9/lrNVbKAbh9ENZ6s+lTjYMLf6wzHD2arn5SIgG+ZWE+Os4aD8TZkebIA7C6Mbtla/tfWyYI3daRgLLZCdmp/SnRasoXv545T9/Rxtbdf8tO6sYM3cy8Q4r02QF+3ldVs/FqyBBwljYTgG6ZH8UrZZPGIPGsZZZyLp64dy5y6PyDcL47zhSvq0rWfD2hq+/r5EwwP7H8hu/HftDUGNAAAAAElFTkSuQmCC');  
+    mask-size: 100%;
+    mask-repeat: no-repeat;
+}
+
+
+@media only screen and (max-width: 480px) {
+    #countDown_timer {
+      gap: 12px !important;
+      padding: 4px 24px !important;
+    }
+  }
+
+@media only screen and (max-width: 360px) {
+#countDown_timer {
+    padding: 4px 12px !important;
+    }
+#countDown_timer h3 {
+    font-size: 16px;
+    }
+#countDown_timer div {
+width: 45px;
+height: 45px;
+}
+}

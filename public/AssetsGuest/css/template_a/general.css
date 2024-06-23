@@ -1,0 +1,58 @@
+/* GENERAL */
+
+* {
+    box-sizing: border-box;
+  }
+
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    overflow: hidden;
+    max-width: 480px;
+    margin: auto;
+    background: var(--body-linear-gradient);
+}
+
+main {
+    height: fit-content;
+    background-color: var(--background-color-1);
+    color: var(--primary);
+    font-family: Crimson Text;
+    box-sizing: content-box;
+    overflow: hidden;
+    position: relative;
+}
+
+/* main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 480px;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.25) 70%, rgba(0, 0, 0, 0) 100%);
+}
+
+
+main::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 480px;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.25) 70%, rgba(0, 0, 0, 0) 100%);
+} */
+
+::placeholder {
+    color: var(--primary);
+    opacity: 1; /* Firefox */
+  }
+  
+  ::-ms-input-placeholder { /* Edge 12 -18 */
+    color: var(--primary);
+  }

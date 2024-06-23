@@ -2,12 +2,12 @@
     var grid = document.querySelector('.grid');
     var msnry;
 
-    imagesLoaded( grid, function() {
-    // init Isotope after all images have loaded
-    msnry = new Masonry( grid, {
-        itemSelector: '.grid-item',
-        gutter: 4
-    });
+    imagesLoaded(grid, function() {
+        // init Isotope after all images have loaded
+        msnry = new Masonry(grid, {
+            itemSelector: '.grid-item',
+            gutter: 4
+        });
     });
 
     // Pray Dynamic Data
@@ -20,9 +20,8 @@
 
     var selectedId = selectGalleryType.value;
     var isChanged = false;
-    
+
     if (!isChanged) {
-        console.log(selectedId);
         updateUIGallery(selectedId);
     }
 
@@ -31,7 +30,6 @@
         selectedId = selectGalleryType.value;
         isChanged = true;
         updateUIGallery(selectedId);
-        console.log(selectedId);
     });
 
     function updateUIGallery(selectedId) {
@@ -41,24 +39,32 @@
             fourImages.hidden = true;
             sevenImages.hidden = true;
             tenImages.hidden = true;
+
+            console.log(selectedId, 'id');
         } else if (selectedId == 2) {
             // 4 images
             threeImages.hidden = true;
             fourImages.hidden = false;
             sevenImages.hidden = true;
             tenImages.hidden = true;
+
+            console.log(selectedId, 'id');
         } else if (selectedId == 3) {
             // 7 images
             threeImages.hidden = true;
             fourImages.hidden = true;
             sevenImages.hidden = false;
             tenImages.hidden = true;
+
+            console.log(selectedId, 'id');
         } else if (selectedId == 4) {
             // 10 images
             threeImages.hidden = true;
             fourImages.hidden = true;
             sevenImages.hidden = true;
             tenImages.hidden = false;
+
+            console.log(selectedId, 'id');
         }
         galleryOptionId.value = selectedId
     }
@@ -75,7 +81,7 @@
 
     function submitCoverImage() {
         document.getElementById('button-submit').click();
-    }    
+    }
 
     function requestChangeGalleryOption() {
         document.getElementById('button-change-type').click();

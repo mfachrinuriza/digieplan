@@ -1,0 +1,186 @@
+/* RSVP SECTION */
+
+#rsvp {
+    height: fit-content;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 24px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 4px !important;
+    position: relative;
+    visibility: hidden;
+}
+
+#rsvp * {
+    margin: 0;
+}
+
+#rsvp_divider {
+    margin-top: 12px !important;
+}
+#rsvp_information {
+    margin: 16px 0 !important;
+}
+#rsvp_ornament {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -64px;
+    bottom: 0;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+#rsvp_form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    visibility: hidden;
+}
+
+.rsvp_input_group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.rsvp_input_group .pristine-error {
+    text-align: start;
+    font-size: 8px;
+    color: var(--error);
+}
+
+.rsvp_label {
+    text-align: start;
+}
+
+.rsvp_label span {
+    color: var(--error);
+}
+
+.rsvp_input {
+    border-radius: 2px;
+    border: 0.5px solid var(--gray-2);
+    background: none;
+    padding: 16px 8px;
+    font-family: Crimson Text;
+    color: var(--primary);
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.rsvp_select_input {
+    border-radius: 2px;
+    border: 0.5px solid var(--gray-2);
+    /* background: none; */
+    color: var(--primary);
+    padding: 16px 8px;
+    font-family: Crimson Text;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+    appearance: none;
+    background: url('../../../image/template_a/arrow_select.svg') no-repeat;
+    background-position: calc(100% - 0.75rem) center !important;
+    -moz-appearance: none; 
+    -webkit-appearance: none; 
+}
+
+.rsvp_select_input option {
+    color: black;
+}
+
+.rsvp_text_area_input {
+    resize: none;
+    border-radius: 2px;
+    border: 0.5px solid var(--gray-2);
+    border-radius: 2px;;
+    background: none;
+    padding: 16px 8px;
+    font-family: Crimson Text;
+    color: var(--primary);
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+#rsvp_the_count {
+    text-align: end;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.2px;
+    text-transform: capitalize;
+}
+
+#rsvp_submit {
+    background: var(--secondary);
+    color: var(--primary);
+    display: flex;
+    padding: 18px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    align-self: stretch;
+    border: 0;
+    font-family: Crimson Text;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.84px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+#rsvp_wishes_container {
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+   margin-top: 40px;
+   width: 100%;
+   visibility: hidden;
+}
+
+.rsvp_wish_container {
+    border-radius: 4px;
+    border: 1px solid var(--gray-3);
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 12px;
+}
+
+.rsvp_wish_container_date {
+    font-size: 10px;
+    letter-spacing: 1.2px;
+    color: var(--gray-1);
+}
+#rsvp_show_more {
+    background: var(--primary);
+    color: #000;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.84px;
+    padding: 18px 32px;
+}

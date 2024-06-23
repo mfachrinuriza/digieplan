@@ -10,26 +10,26 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js" defer></script>
   <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js" defer></script>
   <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js" defer></script>
-  
+
   <script>
-    <?php if ($title == getenv('TITLE_GUEST_BOOK')) {?>
+    <?php if ($title == getenv('TITLE_GUEST_BOOK')) { ?>
       $(document).ready(function() {
-        $('#myTable').DataTable( {
-            dom: 'Bfrtip',
-            buttons: [
-                ''
-            ]
-        } );
-      } );
+        $('#myTable').DataTable({
+          dom: 'Bfrtip',
+          buttons: [
+            ''
+          ]
+        });
+      });
     <?php } else { ?>
       $(document).ready(function() {
-        $('#myTable').DataTable( {
-            dom: 'Bfrtip',
-            buttons: [
-                ''
-            ]
-        } );
-      } );
+        $('#myTable').DataTable({
+          dom: 'Bfrtip',
+          buttons: [
+            ''
+          ]
+        });
+      });
     <?php } ?>
   </script>
 
@@ -37,50 +37,46 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script>
     $(document).ready(function() {
-        // Initialize the DataTable
-        var table = $('#myTable').DataTable();
+      // Initialize the DataTable
+      var table = $('#myTable').DataTable();
 
-        // Handle the button click event within the DataTable
-        $('#myTable tbody').on('click', 'button.getURLData', function() {
-          var url = $(this).data('url');
-          url = url.split(" ").join("%20");
+      // Handle the button click event within the DataTable
+      $('#myTable tbody').on('click', 'button.getURLData', function() {
+        var url = $(this).data('url');
+        url = url.split(" ").join("%20");
 
-          var isValid = $(this).data('validation');;
+        var isValid = $(this).data('validation');;
 
-          console.log(isValid);
-          if (isValid) {
-            navigator.clipboard.writeText(url).then(() => {
-              console.log('Content copied to clipboard');
-              alert("Salin link, berhasil!")
-              /* Resolved - text copied to clipboard successfully */
-            },() => {
-              console.error('Salin link, Gagal!!!');
-              alert("Salin link, gagal!")
-              /* Rejected - text failed to copy to the clipboard */
-            });
-          } else {
-            alert("Mohon Lengkapi Data Profile Anda!");
-            location.replace("<?= base_url('/customer/kelola-konten-undangan/profil') ?>")
-          }
-          
-        });
+        if (isValid) {
+          navigator.clipboard.writeText(url).then(() => {
+            alert("Salin link, berhasil!")
+            /* Resolved - text copied to clipboard successfully */
+          }, () => {
+            alert("Salin link, gagal!")
+            /* Rejected - text failed to copy to the clipboard */
+          });
+        } else {
+          alert("Mohon Lengkapi Data Profile Anda!");
+          location.replace("<?= base_url('/customer/kelola-konten-undangan/profil') ?>")
+        }
+
+      });
     });
-
   </script>
 
-<script>
-  function copyElement($link) {
-    console.log("coppy tapped");
-    // Get the original element
-    var originalElement = $link;
+  <script>
+    function copyElement($link) {
+      console.log("coppy tapped");
+      // Get the original element
+      var originalElement = $link;
 
-    // Create a new element
-    var copiedElement = originalElement.cloneNode(true);
+      // Create a new element
+      var copiedElement = originalElement.cloneNode(true);
 
-    // Modify the copied element (e.g., change its content)
-    copiedElement.innerHTML = 'Link undangan berhasil disalin.';
+      // Modify the copied element (e.g., change its content)
+      copiedElement.innerHTML = 'Link undangan berhasil disalin.';
 
-    // Add the copied element to the document
-    document.body.appendChild(copiedElement);
-  }
-</script>
+      // Add the copied element to the document
+      document.body.appendChild(copiedElement);
+    }
+  </script>

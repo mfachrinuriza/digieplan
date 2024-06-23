@@ -8,45 +8,47 @@ use App\Models\TransactionModel;
 
 class CustomerController extends BaseController
 {
-    
+
     public function present()
     {
-        $guestModel = new GuestModel();
-        $transactionSelected = $this->getTransactionSelected();
-        
-        $data['title'] = getenv('TITLE_DASHBOARD');
-        $data['sub_title'] = null;
-        $data['hasThemeSelected'] = $this->hasThemeSelected();
-        $data['transactionsData'] = $this->getTransactionList();
-        $data['url_path'] = getenv('URL_DASHBOARD');
+        if ($this->checkUserLogin()) {
+            $guestModel = new GuestModel();
+            $transactionSelected = $this->getTransactionSelected();
 
-        $data['total'] = $guestModel->where('transaction_id', $transactionSelected['id'])
-                                    ->countAllResults();
-        $data['totalPresent'] = $guestModel->where('status', "Hadir")
-                                            ->where('transaction_id', $transactionSelected['id'])
-                                            ->countAllResults();
-        $data['totalNotpresent'] = $guestModel->where('status', "Tidak Hadir")
-                                            ->where('transaction_id', $transactionSelected['id'])
-                                            ->countAllResults();
-        $data['totalWishes'] = $guestModel->where('wishes !=', '')
-                                            ->where('transaction_id', $transactionSelected['id'])
-                                            ->countAllResults();
+            $data['title'] = getenv('TITLE_DASHBOARD');
+            $data['sub_title'] = null;
+            $data['hasThemeSelected'] = $this->hasThemeSelected();
+            $data['transactionsData'] = $this->getTransactionList();
+            $data['transactionSelected'] = $transactionSelected;
+            $data['url_path'] = getenv('URL_DASHBOARD');
 
-        if ($this->checkUserLogin() == true) {
+            $data['total'] = $guestModel->where('transaction_id', $transactionSelected['id'])
+                ->countAllResults();
+            $data['totalPresent'] = $guestModel->where('status', "Hadir")
+                ->where('transaction_id', $transactionSelected['id'])
+                ->countAllResults();
+            $data['totalNotpresent'] = $guestModel->where('status', "Tidak Hadir")
+                ->where('transaction_id', $transactionSelected['id'])
+                ->countAllResults();
+            $data['totalWishes'] = $guestModel->where('wishes !=', '')
+                ->where('transaction_id', $transactionSelected['id'])
+                ->countAllResults();
+
             return view(getenv('PATH_DASHBOARD'), $data);
         } else {
             return redirect()->to(base_url(getenv('PATH_LOGIN')));
         }
     }
 
-    public function requestEventSelected($id, $mainURL, $subUrl) {
+    public function requestEventSelected($id, $mainURL, $subUrl)
+    {
         $isSuccessUnselected = $this->requestEventUnselected();
 
         if ($isSuccessUnselected) {
             $transactionModel = new TransactionModel();
             $transactionData = $transactionModel->where('id', $id)->get()->getRowArray();
             $transactionData['isPrimary'] = true;
-            
+
             $process = $transactionModel->update($id, $transactionData);
             if ($process) {
                 session()->setFlashdata('success', 'Pilih Event berhasil!');
@@ -56,19 +58,20 @@ class CustomerController extends BaseController
         } else {
             session()->setFlashdata('error', 'Terjadi kesalahan saat pilih Event!');
         }
-        
-        
-        return redirect()->to(base_url($mainURL.'/'.$subUrl));
+
+
+        return redirect()->to(base_url($mainURL . '/' . $subUrl));
     }
 
-    public function requestHomeEventSelected($id, $subUrl) {
+    public function requestHomeEventSelected($id, $subUrl)
+    {
         $isSuccessUnselected = $this->requestEventUnselected();
 
         if ($isSuccessUnselected) {
             $transactionModel = new TransactionModel();
             $transactionData = $transactionModel->where('id', $id)->get()->getRowArray();
             $transactionData['isPrimary'] = true;
-            
+
             $process = $transactionModel->update($id, $transactionData);
             if ($process) {
                 session()->setFlashdata('success', 'Pilih Event berhasil!');
@@ -78,17 +81,18 @@ class CustomerController extends BaseController
         } else {
             session()->setFlashdata('error', 'Terjadi kesalahan saat pilih Event!');
         }
-        
-        
-        return redirect()->to(base_url('/'.$subUrl));
+
+
+        return redirect()->to(base_url('/' . $subUrl));
     }
 
-    public function requestEventUnselected() {
+    public function requestEventUnselected()
+    {
         $transactionModel = new TransactionModel();
         $transactionData = $transactionModel->where('user_id', $this->getUserId())
-                                            ->where('isPrimary', '1')
-                                            ->get()->getRowArray();
-        
+            ->where('isPrimary', '1')
+            ->get()->getRowArray();
+
         if ($transactionData['isPrimary']) {
             $transactionData['isPrimary'] = false;
 
@@ -101,7 +105,5 @@ class CustomerController extends BaseController
         } else {
             return true;
         }
-
-        
     }
 }

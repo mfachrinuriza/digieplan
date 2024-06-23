@@ -16,55 +16,62 @@
     <!-- DataTables  & Plugins -->
     <script>
     </script>
-    <?php 
-      if ($title == getenv('TITLE_GUEST_BOOK') || $title == getenv('TITLE_GUEST')) {
-        echo include_once "./app/Views/customer/commons/layer/footer/footer_datatable.php";
-        echo include_once "./app/Views/customer/commons/layer/footer/footer_guest_filter.php";
-      } else if ($sub_title == getenv('SUBTITLE_GENERAL')) {
-        echo include_once "./app/Views/customer/commons/layer/footer/footer_music.php";
-        echo include_once "./app/Views/customer/commons/layer/footer/footer_prays.php";
-      } else if ($sub_title == getenv('SUBTITLE_GIFT')) {
-        echo include_once "./app/Views/customer/commons/layer/footer/footer_gift.php";
-      } else if ($sub_title == getenv('SUBTITLE_STORY')) {
-        echo include_once "./app/Views/customer/commons/layer/footer/footer_story.php";
-      } else if ($sub_title == getenv('SUBTITLE_MAIN_PAGE')) {
-        echo include_once "./app/Views/customer/commons/layer/footer/footer_dropzone.php";
-      } else if ($sub_title == getenv('SUBTITLE_GALLERY') || $title == getenv('TITLE_THEME') || $sub_title == getenv('SUBTITLE_LOVE_STORY')) {
-        echo include_once "./app/Views/customer/commons/layer/footer/footer_dropzone.php";
-        echo include_once "./app/Views/customer/commons/layer/footer/footer_gallery.php";
-      } else if ($sub_title == getenv('SUBTITLE_PROFILE')) {
-        echo include_once "./app/Views/customer/commons/layer/footer/footer_dropzone.php";
-      }
+    <?php
+    if ($title == getenv('TITLE_GUEST_BOOK') || $title == getenv('TITLE_GUEST')) {
+      echo include_once "./app/Views/customer/commons/layer/footer/footer_datatable.php";
+      echo include_once "./app/Views/customer/commons/layer/footer/footer_guest_filter.php";
+    } else if ($sub_title == getenv('SUBTITLE_GENERAL')) {
+      echo include_once "./app/Views/customer/commons/layer/footer/footer_music.php";
+      echo include_once "./app/Views/customer/commons/layer/footer/footer_prays.php";
+    } else if ($sub_title == getenv('SUBTITLE_GIFT')) {
+      echo include_once "./app/Views/customer/commons/layer/footer/footer_gift.php";
+    } else if ($sub_title == getenv('SUBTITLE_STORY')) {
+      echo include_once "./app/Views/customer/commons/layer/footer/footer_story.php";
+    } else if (($sub_title == getenv('SUBTITLE_MAIN_PAGE')) || $sub_title == getenv('SUBTITLE_LOVE_STORY')) {
+      echo include_once "./app/Views/customer/commons/layer/footer/footer_dropzone.php";
+    } else if ($sub_title == getenv('SUBTITLE_GALLERY') || $title == getenv('TITLE_THEME')) {
+      echo include_once "./app/Views/customer/commons/layer/footer/footer_dropzone.php";
+      echo include_once "./app/Views/customer/commons/layer/footer/footer_gallery.php";
+    } else if ($sub_title == getenv('SUBTITLE_PROFILE')) {
+      echo include_once "./app/Views/customer/commons/layer/footer/footer_dropzone.php";
+    }
     ?>
-  </body>
-</html>
+    </body>
 
-<?php if (isset(session()->success)) : ?>
-  <script>
-    Swal.fire({
-      title: 'Berhasil',
-      text: "<?= session()->success ?>",
-      icon: 'success'
-    });
-  </script>
-<?php endif; ?>
+    </html>
 
-<?php if (isset(session()->warning)) : ?>
-  <script>
-    Swal.fire({
-      title: 'Perhatian!',
-      text: "<?= session()->warning ?>",
-      icon: 'warning'
-    });
-  </script>
-<?php endif; ?>
+    <?php if (isset(session()->success)) : ?>
+      <script>
+        Swal.fire({
+          title: 'Berhasil',
+          text: "<?= session()->success ?>",
+          icon: 'success'
+        });
+      </script>
+    <?php endif; ?>
 
-<?php if (isset(session()->error)) : ?>
-  <script>
-    Swal.fire({
-      title: 'Gagal!',
-      text: "<?= session()->error ?>",
-      icon: 'error'
-    });
-  </script>
-<?php endif; ?>
+    <?php if (isset(session()->warning)) : ?>
+      <script>
+        Swal.fire({
+          title: 'Perhatian!',
+          text: "<?= session()->warning ?>",
+          icon: 'warning'
+        });
+      </script>
+    <?php endif; ?>
+
+    <?php if (isset(session()->error)) : ?>
+      <script>
+        Swal.fire({
+          title: 'Gagal!',
+          text: "<?= session()->error ?>",
+          icon: 'error'
+        });
+      </script>
+    <?php endif; ?>
+    <script>
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('.tooltiptext'))
+      var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+      })
+    </script>

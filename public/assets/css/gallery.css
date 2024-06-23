@@ -1,0 +1,173 @@
+/* GALLERY SECTION */
+
+#gallery {
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 70%;
+}
+
+#gallery * {
+  margin: 0;
+}
+
+
+#gallery_title {
+  margin-top: 34px;
+}
+
+#gallery_top {
+  height: 67px;
+}
+
+#gallery_buttom {
+  height: 67px;
+}
+
+#gallery #gallery_top_left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#gallery #gallery_top_right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#gallery_top_line {
+  border-top: 1px solid var(--primary);
+  position: absolute;
+  top: 67px;
+  width: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  visibility: hidden;
+}
+
+#gallery #gallery_buttom_left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+#gallery #gallery_buttom_right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#gallery_buttom_line {
+  border-top: 1px solid var(--primary);
+  position: absolute;
+  bottom: 67px;
+  width: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+
+.gallery_images_container {
+  margin: 34px 24px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+}
+
+.gallery_images_container img {
+  object-fit: cover;
+  display: block;
+}
+
+.gallery_images_container_two_collumn {
+  display: flex;
+  width: 100%;
+  gap: 4px;
+}
+
+.mt-1 {
+  margin-top: 4px !important;
+}
+
+.gallery_images_container_one_collumn {
+  width: 100%;
+}
+
+.gallery_images_container_four_collumn {
+  width: 100%;
+  column-count: 2;
+  gap: 4px;
+}
+
+.gallery_images_container_four_collumn img {
+  width: 100%;
+  break-inside: avoid;
+}
+
+.gallery_images_container_two_collumn img {
+  width: calc(50% - 2px);
+}
+
+.gallery_images_container_one_collumn img {
+  width: 100%;
+}
+
+/* Gallery Image Variant */
+.gallery_images_var_1 {
+  aspect-ratio: 169 / 271;
+}
+
+.gallery_images_var_2 {
+  aspect-ratio: 342 / 216;
+}
+
+.gallery_images_var_3 {
+  aspect-ratio: 169 / 216;
+}
+
+.gallery_images_var_4 {
+  aspect-ratio: 169 / 253;
+}
+
+.gallery_images_var_5 {
+  aspect-ratio: 169 / 176;
+}
+
+/* ---- .grid-item ---- */
+
+.grid {
+  margin: 34px 24px !important;
+}
+
+.grid-item {
+  width: calc(50% - 4px);
+  margin-bottom: 4px !important;
+}
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
+}
+
+.ratio-16x9 {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  /* 16:9 Aspect Ratio (height: width * 9/16) */
+}
+
+.ratio-16x9 img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

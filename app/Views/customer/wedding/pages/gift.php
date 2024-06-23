@@ -1,8 +1,11 @@
 <div class="page-wrapper">
     <!-- Page header -->
-    <?php include_once './app/Views/customer/wedding/components/header_page.php' ;?>
+    <?php
+    include_once './app/Views/customer/wedding/components/header_page.php';
+    $n = 0;
+    ?>
 
-    
+
     <!-- Page body -->
     <div class="page-body">
         <div class="container-xl">
@@ -11,12 +14,13 @@
                 <div class="container-xl">
                     <div class="row g-2 align-items-center">
                         <!-- Page title actions -->
-                        <?php 
-                            if (count($giftList) > 0 && count($giftList) < 3) {
-                                echo '
+                        <?php
+                        if (count($giftList) > 0 && count($giftList) < 3) {
+                            $n++;
+                            echo '
                                 <div class="col-auto ms-auto d-print-none">
                                     <div class="d-flex">
-                                        <a href="#" class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#'.$modalNameCreate.'">
+                                        <a href="#" class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#' . $modalNameCreate . '-' . $n . '">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-plus" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                                 <path d="M12.5 21h-6.5a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v5" />
@@ -30,28 +34,55 @@
                                         </a>
                                     </div>
                                 </div>';
-                            }
+                        }
                         ?>
                     </div>
                 </div>
             </div>
-            <br/>
+            <br />
             <div class="row">
                 <?php
-                    if (count($giftList) > 0) {
-                        foreach($giftList as $updateData) {
-                            require "./app/Views/customer/wedding/components/card/gift_cart.php";
-                            include "./app/Views/customer/wedding/components/modals/gift/update_gift_modal.php";
-                        }
-                    } else {
-                        require "./app/Views/customer/wedding/components/card/empty_state_card.php";
+                if (count($giftList) > 0) {
+                    foreach ($giftList as $updateData) {
+                        $n++;
+                        require "./app/Views/customer/wedding/components/card/gift_cart.php";
+                        include "./app/Views/customer/wedding/components/modals/gift/update_gift_modal.php";
                     }
+                } else {
+                    $n++;
+                    $empty_state_title = "Hadiah";
+                    $empty_state_subtitle = "Tambah nomor bank/e-wallet atau alamat untuk menerima hadiahmu.";
+                ?>
+                    <div class="page-body">
+                        <div class="container-xl d-flex flex-column justify-content-center">
+                            <div class="empty">
+                                <div class="empty-img"><img style="background-image: url(<?= base_url('public'); ?>/dist/svg/user.svg)" height="48" width="48" alt=""></div>
+                                <p class="empty-title">Belum Ada <?= $empty_state_title ?></p>
+                                <p class="empty-subtitle text-muted"><?= $empty_state_subtitle ?></p>
+                                <div class="empty-action">
+                                    <a href="./." class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#<?= $modalNameCreate . '-' . $n ?>">
+                                        <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M12 5l0 14" />
+                                            <path d="M5 12l14 0" />
+                                        </svg>
+                                        Tambah <?= $empty_state_title ?>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                }
                 ?>
             </div>
         </div>
     </div>
-    <?php 
-    include_once "./app/Views/customer/wedding/components/modals/gift/create_gift_modal.php";
-    include_once "./app/Views/customer/commons/layer/footer_page.php" 
+    <?php
+    for ($no = 1; $no <= $n; $no++) {
+        include "./app/Views/customer/wedding/components/modals/gift/create_gift_modal.php";
+    }
+    include_once "./app/Views/customer/commons/layer/footer_page.php"
     ?>
 </div>

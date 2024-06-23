@@ -34,7 +34,7 @@ $routes->setAutoRoute(true);
 
 $routes->get('/party', 'PartyController::present');
 
-$routes->get('/', 'CustomerController::presentDashboard');
+$routes->get('/', 'CustomerController::present');
 
 // ROUTES GROUP : AUTHENTICATION
 $routes->add('/auth/login', 'AuthController::login');
@@ -109,8 +109,10 @@ $routes->add('/customer/kelola-konten-undangan/love-story/create', 'WeddingLoveS
 $routes->add('/customer/kelola-konten-undangan/love-story/create_photo', 'WeddingLoveStoryController::requestSubmitPhoto');
 
 // GUEST 
-$routes->get('/(:segment)/invitation', 'GuestHomeController::present/$1');
+$routes->get('/(:segment)', 'GuestHomeController::present/$1');
+$routes->get('/preview/(:segment)', 'GuestHomeController::presentPreview/$1');
 $routes->add('/(:segment)/submit-rsvp', 'GuestHomeController::requestSubmitRSVP');
+$routes->get('/(:segment)/get-wishses-list', 'GuestHomeController::requestUpdateWishesList/$1');
 
 $routes->add('/test', 'GuestHomeController::presentTest');
 

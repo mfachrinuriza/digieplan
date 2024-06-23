@@ -1,0 +1,153 @@
+/* DATE SECTION */
+
+#date {
+    min-height: 100vh;
+    height: fit-content;
+    position: relative;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#date * {
+    margin: 0;
+}
+
+#date #date_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    visibility: hidden;
+    margin: 104px 0;
+}
+
+#date .date_title {
+    margin-top: 40px;
+    text-align: center;
+}
+
+#date .date_date_day {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#date .date_date_day_date {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-align: center;
+}
+
+#date .date_date_day_date p {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#date h3 {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#date .date_time {
+    text-transform: uppercase;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#date .date_divider {
+    margin-top: 12px;
+}
+
+#date #date_pointer {
+    margin-top: 40px;
+}
+
+#date #date_location {
+    margin-top: 8px;
+    text-align: center;
+}
+
+#date #date_adress {
+    margin-top: 4px;
+    text-align: center;
+}
+
+#date #date_map {
+    margin-top: 24px;
+}
+
+#date #date_top_left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+#date #date_top_right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    visibility: hidden;
+}
+
+#date #date_buttom_left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+#date #date_buttom_right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    visibility: hidden;
+}
+
+#date_top_line {
+    border-top: 1px solid #F0DEAB;
+    position: absolute;
+    top: 67px;
+    width: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+#date_buttom_line {
+    border-top: 1px solid #F0DEAB;
+    position: absolute;
+    bottom: 67px;
+    width: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+#date_left_line {
+    border-left: 1px solid #F0DEAB;
+    position: absolute;
+    left: 24px;
+    height: 65%;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+#date_right_line {
+    border-left: 1px solid #F0DEAB;
+    position: absolute;
+    right: 24px;
+    height: 65%;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}

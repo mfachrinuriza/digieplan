@@ -8,19 +8,20 @@ use App\Models\ThemeModel;
 use App\Models\TransactionModel;
 
 class CustomerThemeController extends BaseController
-{   
+{
     public function present()
     {
-        $data['title'] = getenv('TITLE_THEME'); 
-        $data['sub_title'] = null;
-        $data['url_path'] = getenv('URL_THEME');
-        $data['transactionsData'] = $this->getTransactionList();
-        $data['transactionSelected'] = $this->getTransactionSelected();
-        
-        $themeModel = new ThemeModel();
-        $data['themeList'] = $themeModel->get()->getResultArray();
-        
-        if ($this->checkUserLogin() == true) {
+        if ($this->checkUserLogin()) {
+
+            $data['title'] = getenv('TITLE_THEME');
+            $data['sub_title'] = null;
+            $data['url_path'] = getenv('URL_THEME');
+            $data['transactionsData'] = $this->getTransactionList();
+            $data['transactionSelected'] = $this->getTransactionSelected();
+
+            $themeModel = new ThemeModel();
+            $data['themeList'] = $themeModel->get()->getResultArray();
+
             return view(getenv('PATH_THEME'), $data);
         } else {
             return redirect()->to(base_url(getenv('PATH_LOGIN')));
@@ -37,7 +38,7 @@ class CustomerThemeController extends BaseController
             'invite_with'   => "Keluarga",
             'status'        => "Diundang"
         );
-        
+
         $created = $guestModel->insert($formField);
 
         if (!$created) {

@@ -1,12 +1,12 @@
 <div class="page-wrapper">
     <!-- Page header -->
-    <?php include_once './app/Views/customer/wedding/components/header_page.php';?>
+    <?php include_once './app/Views/customer/wedding/components/header_page.php'; ?>
 
     <!-- Page body -->
     <div class="page-body">
         <div class="container-xl">
             <div class="row row-cards">
-                <form action="<?= base_url('/customer/kelola-konten-undangan/general/update')?>" method="POST">
+                <form action="<?= base_url('/customer/kelola-konten-undangan/general/update') ?>" method="POST">
                     <div class="col-12">
                         <div class="card mb-4">
                             <div class="card-body">
@@ -24,20 +24,20 @@
                                             <div class="col-md-2 align-self-center">
                                                 <span class="col-auto d-flex">
                                                     <label class="form-check form-check-single form-switch ms-auto center">
-                                                        <input class="form-check-input" id="music-checkbox" name="music_checkbox" type="checkbox" <?= $hasMusicSelected ? "checked" : ""?>>
+                                                        <input class="form-check-input" id="music-checkbox" name="music_checkbox" type="checkbox" <?= $hasMusicSelected ? "checked" : "" ?>>
                                                     </label>
                                                 </span>
                                             </div>
                                         </div>
                                         <div id="music-content">
                                             <?php
-                                                if (count($musicList) > 0) {
-                                                    foreach($musicList as $music) {
-                                                        include "./app/Views/customer/wedding/components/card/music_card.php";
-                                                    }
-                                                } else {
-                                                    require_once './app/Views/customer/wedding/components/card/music_card_empty.php';
+                                            if (count($musicList) > 0) {
+                                                foreach ($musicList as $music) {
+                                                    include "./app/Views/customer/wedding/components/card/music_card.php";
                                                 }
+                                            } else {
+                                                require_once './app/Views/customer/wedding/components/card/music_card_empty.php';
+                                            }
                                             ?>
                                         </div>
                                     </div>
@@ -54,22 +54,22 @@
                                     <div class="col-md-2 align-self-center">
                                         <span class="col-auto d-flex">
                                             <label class="form-check form-check-single form-switch ms-auto center">
-                                                <input class="form-check-input" id="pray-checkbox" name="pray_checkbox" type="checkbox" <?= $hasPraySelected ? "checked" : ""?>>
+                                                <input class="form-check-input" id="pray-checkbox" name="pray_checkbox" type="checkbox" <?= $hasPraySelected ? "checked" : "" ?>>
                                             </label>
                                         </span>
                                     </div>
                                 </div>
-                                <br/>
+                                <br />
                                 <div class="row" id="pray-content">
                                     <div class="col-md-10">
                                         <h4>Pesan Pembuka / Harapan Dan Doa</h4>
-                                        <?php 
-                                            include_once "./app/Views/customer/wedding/components/dropdowns/pray_dropdown.php";
-                                            include_once "./app/Views/customer/wedding/components/card/pray_card.php";
+                                        <?php
+                                        include_once "./app/Views/customer/wedding/components/dropdowns/pray_dropdown.php";
+                                        include_once "./app/Views/customer/wedding/components/card/pray_card.php";
                                         ?>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
 
@@ -77,8 +77,8 @@
                             <div class="card-body">
                                 <div class="mb-3" id="update-bank-name-field">
                                     <label class="form-label" for="update-bank-name" id="update-title-bank-name">Link Filter Instagram</label>
-                                    <input type="text" name="filter_id" value="<?= $filterInstagram['id'] ?>" hidden>
-                                    <input type="text" class="form-control" name="link_url" placeholder="instagram.com/" value="<?= $filterInstagram['link_url'] ?? "" ?>" required>
+                                    <input type="text" name="filter_id" value="<?= $filterInstagram['id'] ?? "" ?>" hidden>
+                                    <input type="text" class="form-control" name="link_url" placeholder="instagram.com/" value="<?= $filterInstagram['link_url'] ?? "" ?>">
                                 </div>
                             </div>
                         </div>
@@ -87,7 +87,7 @@
                         </div>
                     </div>
                 </form>
-                
+
             </div>
         </div>
     </div>

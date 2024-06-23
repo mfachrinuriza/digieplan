@@ -20,30 +20,30 @@
     <link href="<?= base_url('public'); ?>/dist/css/tabler-payments.min.css" rel="stylesheet" />
     <link href="<?= base_url('public'); ?>/dist/css/tabler-vendors.min.css" rel="stylesheet" />
     <link href="<?= base_url('public'); ?>/dist/css/demo.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="<?= base_url('public/AssetsGuest/css/segments/gallery.css'); ?>" />
-    <link href="<?= base_url('public'); ?>/dist/libs/dropzone/dist/dropzone.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="<?= base_url('public/assets/css/gallery.css'); ?>" />
+    <link href="<?= base_url('public'); ?>/dist/libs/dropzone/dist/dropzone.css" rel="stylesheet" />
     <!-- <link href="<?= base_url('public'); ?>/dist/css/style.css" rel="stylesheet"/> -->
 
     <script src="<?= base_url('public'); ?>/dist/js/imagesloaded.pkgd.min.js"></script>
     <script src="<?= base_url('public'); ?>/dist/js/masonry.pkgd.min.js"></script>
 
     <!-- DataTables -->
-    <?php 
-        if ($title == getenv('TITLE_GUEST_BOOK') || $title == getenv('TITLE_GUEST') ) {
-            echo '
-            <link href="'. base_url('public/dist/fontawesome-free/css/all.min.css').'">
-            <link href="'. base_url('public/dist/css/adminlte.min.css').'">
-            <link href="'. base_url('public/dist/datatables/datatables-bs4/css/dataTables.bootstrap4.min.css').'">
-            <link href="'. base_url('public/dist/datatables/datatables-responsive/css/responsive.bootstrap4.min.css').'">
-            <link href="'. base_url('public/dist/datatables-buttons/css/buttons.bootstrap4.min.css').'">
+    <?php
+    if ($title == getenv('TITLE_GUEST_BOOK') || $title == getenv('TITLE_GUEST')) {
+        echo '
+            <link href="' . base_url('public/dist/fontawesome-free/css/all.min.css') . '">
+            <link href="' . base_url('public/dist/css/adminlte.min.css') . '">
+            <link href="' . base_url('public/dist/datatables/datatables-bs4/css/dataTables.bootstrap4.min.css') . '">
+            <link href="' . base_url('public/dist/datatables/datatables-responsive/css/responsive.bootstrap4.min.css') . '">
+            <link href="' . base_url('public/dist/datatables-buttons/css/buttons.bootstrap4.min.css') . '">
             ';
-        }
+    }
     ?>
 
     <!-- CSS files -->
     <link href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css" rel="stylesheet" />
-    
+
 </head>
 
 <body>

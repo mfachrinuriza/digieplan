@@ -6,14 +6,14 @@
                 <div class="col-10">
                     <!-- Page pre-title -->
                     <div class="page-pretitle">
-                        <?= TITLE_COMPANY?>
+                        <?= TITLE_COMPANY ?>
                     </div>
                     <h2 class="page-title">
                         <?= $title ?>
                     </h2>
                 </div>
                 <div class="col-auto ms-auto d-print-none" style="padding-bottom: 20px">
-                    <?php include'./app/Views/customer/commons/components/dropdown/event_list_dropdown.php'; ?>
+                    <?php include './app/Views/customer/commons/components/dropdown/event_list_dropdown.php'; ?>
                 </div>
             </div>
         </div>
@@ -22,12 +22,12 @@
     <!-- Page body -->
     <div class="page-body">
         <!-- include event/transaction  dropdown list -->
-        <br/>
+        <br />
         <div class="container-xl">
             <div class="row row-deck row-cards align-items-center">
                 <div class="col-md-6 col-xl-3">
                     <div class="card card-sm">
-                        <a href="<?= base_url('customer/tamu'); ?>">
+                        <a href="<?= base_url(getenv('URL_GUEST') . '?status=all'); ?>">
                             <div class="card-body">
                                 <div class="row align-items-center">
                                     <div class="col-auto">
@@ -56,7 +56,7 @@
                 </div>
                 <div class="col-md-6 col-xl-3">
                     <div class="card card-sm">
-                        <a href="<?= base_url('customer/tamu'); ?>">
+                        <a href="<?= base_url(getenv('URL_GUEST') . '?status=hadir'); ?>">
                             <div class="card-body">
                                 <div class="row align-items-center">
                                     <div class="col-auto">
@@ -84,7 +84,7 @@
                 </div>
                 <div class="col-md-6 col-xl-3">
                     <div class="card card-sm">
-                        <a href="<?= base_url('customer/tamu'); ?>">
+                        <a href="<?= base_url(getenv('URL_GUEST') . '?status=tidak hadir'); ?>">
                             <div class="card-body">
                                 <div class="row align-items-center">
                                     <div class="col-auto">
@@ -144,5 +144,5 @@
         </div>
     </div>
 
-    <?php include_once "./app/Views/customer/commons/layer/footer_page.php" ; ?>
+    <?php include_once "./app/Views/customer/commons/layer/footer_page.php"; ?>
 </div>

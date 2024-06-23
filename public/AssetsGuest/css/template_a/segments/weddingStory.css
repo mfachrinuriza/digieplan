@@ -1,0 +1,37 @@
+/* WEDDING STORY SECTION */
+
+#weddingStory {
+    height: fit-content;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+#weddingStory *{
+    margin: 16px 0 0;
+}
+
+#weddingStory #weddingStory_couple {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+#weddingStory h3 {
+    text-transform: uppercase;
+
+}
+
+#weddingStory h5  {
+    text-transform: uppercase;
+    /* visibility: hidden; */
+}
+
+#weddingStory p  {
+    margin-top: 12px;
+    text-transform: uppercase;
+    /* visibility: hidden; */
+}

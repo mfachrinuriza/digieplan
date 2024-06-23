@@ -1,0 +1,82 @@
+/* BRIDE SECTION */
+
+#bride {
+    padding: 40px;
+    text-align: center;
+}
+
+
+#bride * {
+    margin: 0;
+}
+
+#bride > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    visibility: hidden;
+}
+
+.bride_image {
+    margin-top: 40px !important;
+    position: relative;
+    aspect-ratio: 1 / 1;
+    width: 52%;
+}
+ 
+.bride_image .bride_image_bride {
+    border-radius: 50%;
+    object-fit: cover;
+    left: 0;
+    right: 0;
+    top: 10%;
+    bottom: 0;
+    margin: auto !important;
+    position: absolute;
+    aspect-ratio: 1 / 1;
+    width: 79%;
+}
+
+.bride_image .bride_image_frame {
+    position: relative;
+    z-index: 2;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+}
+
+#bride hr {
+    width: 48px;
+    margin: 16px;
+}
+
+#bride h4 {
+    margin: 32px 0 0 !important;
+    font-family: Allura;
+    font-size: 24px;
+    letter-spacing: 0.48px;
+}
+
+#bride h2 {
+    margin: 16px 0 0 !important;
+    text-transform: uppercase;
+}
+
+#bride .bride_parent {
+    margin: 0 !important;
+    text-transform: uppercase;  
+    text-align: center;
+}
+
+#bride .bride_instagram {
+    margin: 12px 0 0 !important;
+    text-align: center;
+    font-size: 11.803px;
+    letter-spacing: 1.416px;
+    text-transform: uppercase; 
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+}
+

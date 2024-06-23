@@ -6,14 +6,14 @@
                 <div class="col-10">
                     <!-- Page pre-title -->
                     <div class="page-pretitle">
-                        <?= TITLE_COMPANY?>
+                        <?= TITLE_COMPANY ?>
                     </div>
                     <h2 class="page-title">
                         <?= $title ?>
                     </h2>
                 </div>
                 <div class="col-auto ms-auto d-print-none" style="padding-bottom: 20px">
-                    <?php include'./app/Views/customer/commons/components/dropdown/event_list_dropdown.php'; ?>
+                    <?php include './app/Views/customer/commons/components/dropdown/event_list_dropdown.php'; ?>
                 </div>
             </div>
         </div>
@@ -23,10 +23,10 @@
     <div class="page-body">
         <div class="container-xl">
             <div class="row row-cards">
-                <?php 
-                    foreach ($themeList as $theme) {
-                        include './app/Views/customer/commons/components/card/theme_card.php';
-                    }
+                <?php
+                foreach ($themeList as $theme) {
+                    include './app/Views/customer/commons/components/card/theme_card.php';
+                }
                 ?>
             </div>
         </div>

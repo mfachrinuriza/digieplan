@@ -1,0 +1,14 @@
+/* FOOTER SECTION */
+
+footer {
+    height: fit-content;
+    padding: 6px;
+    color: var(--background-color-1);
+    text-align: center;
+    background: var(--primary);
+    text-transform: uppercase;
+}
+
+footer span {
+    margin: 0 4px;
+}

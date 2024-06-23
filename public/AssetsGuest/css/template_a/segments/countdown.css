@@ -1,0 +1,93 @@
+/* COUNTDOWN SECTION */
+  
+#countDown {
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 0 32px;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#countDown_content {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-basis: auto;
+}
+
+#countDown_top_image {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+}
+
+#countDown #countDown_title {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+#countDown hr {
+    width: 10px;
+    border-color: var(--primary);
+    margin: 16px 0 16px;
+}
+
+#countDown #countDown_date {
+    margin: 1vh 0 0;
+    font-size: 18px;
+    letter-spacing: 0.81px;
+}
+
+#countDown button {
+    margin-top: 24px;
+    /* visibility: hidden; */
+}
+
+#countDown #countDown_timer {
+    /* visibility: hidden; */
+    display: flex;
+    gap: 24px;
+    margin-top: 24px;
+    border-left: 1px solid var(--primary);
+    border-right: 1px solid var(--primary);
+    padding: 4px 48px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#countDown_timer p {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+#countDown_timer h3 {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+
+#countDown #countDown_text {
+    margin: 64px 25px 0;
+    text-transform: uppercase;
+}
+
+@media only screen and (max-width: 480px) {
+    #countDown_timer {
+      gap: 12px !important;
+      padding: 4px 24px !important;
+    }
+  }
+
+  @media only screen and (max-width: 320px) {
+    #countDown_timer {
+      padding: 4px 12px !important;
+    }
+  }

@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+@import url('theme.css');
+@import url('general.css');
+@import url('variable.css');
+@import url('component.css');
+@import url('segments/welcome/index.css');
+@import url('segments/countdown.css');
+@import url('segments/bride.css');
+@import url('segments/weddingStory.css');
+@import url('segments/date.css');
+@import url('segments/gift.css');
+@import url('segments/rsvp.css');
+@import url('segments/gallery.css');
+@import url('segments/closingMessage.css');
+@import url('segments/footer.css');
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

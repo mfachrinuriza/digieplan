@@ -4,7 +4,25 @@
     const rows = dataTable.getElementsByTagName('tr');
     const lastRow = rows[rows.length - 1];
 
-    var guestList = <?php echo json_encode($guestList); ?>; 
+    const urlParams = new URLSearchParams(window.location.search);
+    const status = urlParams.get('status');
+
+    var guestList = <?php echo json_encode($guestList); ?>;
+
+    // Memperbarui nilai input berdasarkan status dari query parameter
+    if (status) {
+        document.querySelectorAll('input[name="guest_status"]').forEach(input => {
+            if (input.value.toLowerCase() === status) {
+                input.checked = true;
+            } else {
+                input.checked = false;
+            }
+
+            const url = window.location.href.split('?')[0];
+            // Replace the current URL with the URL without the query parameters
+            window.history.replaceState({}, document.title, url);
+        });
+    }
 
     // Function to show/hide content based on the selected radio button
     function toggleContent() {
@@ -15,7 +33,8 @@
                 const cells = row.getElementsByTagName('td');
 
                 // Show or hide the row based on the selected category
-                row.style.display = '';
+                row.hidden = false;
+                cells[0].textContent = i;
             }
         } else if (radioButtons[1].checked) {
             var number = 0;
@@ -38,7 +57,7 @@
                 rows[number].hidden = false;
                 cells[0].colSpan = 5
                 cells[0].textContent = "hadir"
-            } 
+            }
         } else if (radioButtons[2].checked) {
             var number = 0;
             // Loop through rows to show/hide based on the selected category
@@ -60,7 +79,7 @@
                 rows[number].hidden = false;
                 cells[0].colSpan = 5
                 cells[0].textContent = "hadir"
-            } 
+            }
         } else if (radioButtons[3].checked) {
             var number = 0;
             // Loop through rows to show/hide based on the selected category
@@ -77,7 +96,7 @@
                 }
 
                 cells[0].textContent = number;
-                
+
             }
 
             if (number === 0) {
@@ -100,10 +119,8 @@
                 newRow.colSpan = 4;
                 retrievedCell.innerHTML = 'Data is Empty';
 
-                console.log(retrievedCell);
                 cells[0].textContent = "hadir";
-                console.log(rows);
-            } 
+            }
         }
     }
 
