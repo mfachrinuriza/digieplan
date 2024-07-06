@@ -15,7 +15,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title><?= $title ?></title>
     <!-- CSS files -->
-    <link href="<?= base_url('public'); ?>/dist/css/tabler.min.css" rel="stylesheet" />
+    <link href="<?= $_SERVER['DOCUMENT_ROOT'] ?>/" rel="stylesheet" />
+    <?php
+    echo base_url('public') . "/dist/css/tabler.min.css";
+    ?>
     <link href="<?= base_url('public'); ?>/dist/css/tabler-flags.min.css" rel="stylesheet" />
     <link href="<?= base_url('public'); ?>/dist/css/tabler-payments.min.css" rel="stylesheet" />
     <link href="<?= base_url('public'); ?>/dist/css/tabler-vendors.min.css" rel="stylesheet" />
