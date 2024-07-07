@@ -6,7 +6,7 @@
         </button>
         <h1 class="navbar-brand navbar-brand-autodark">
             <a href=".">
-                <img src="<?= base_url('public/assets/images/logo_2.png'); ?>" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+                <img src="<?= base_url('/assets/images/logo_2.png'); ?>" width="110" height="32" alt="Tabler" class="navbar-brand-image">
             </a>
         </h1>
         <?php include "sidebar_content.php"; ?>

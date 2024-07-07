@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is part of CodeIgniter 4 framework.
  *
@@ -16,6 +18,8 @@ use CodeIgniter\Images\Exceptions\ImageException;
 
 /**
  * Encapsulation of an Image file
+ *
+ * @see \CodeIgniter\Images\ImageTest
  */
 class Image extends File
 {
@@ -69,7 +73,7 @@ class Image extends File
     {
         $targetPath = rtrim($targetPath, '/ ') . '/';
 
-        $targetName = $targetName ?? $this->getFilename();
+        $targetName ??= $this->getFilename();
 
         if (empty($targetName)) {
             throw ImageException::forInvalidFile($targetName);

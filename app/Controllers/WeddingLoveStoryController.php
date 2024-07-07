@@ -125,7 +125,7 @@ class WeddingLoveStoryController extends BaseController
             $type = $_FILES['image']['type'];
 
             // Specify the server path to the folder where you want to save the images
-            $folder = FCPATH . 'public/assets/images/album/';
+            $folder = FCPATH . '/assets/images/album/';
 
             $sizeInBytes = $_FILES['image']['size'];
             $sizeInMB = $sizeInBytes / (1024 * 1024); // Convert bytes to megabytes

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is part of CodeIgniter 4 framework.
  *
@@ -11,10 +13,12 @@
 
 namespace CodeIgniter\Database;
 
+use Stringable;
+
 /**
  * Query builder
  */
-class Query implements QueryInterface
+class Query implements QueryInterface, Stringable
 {
     /**
      * The query string, as provided by the user.
@@ -24,9 +28,16 @@ class Query implements QueryInterface
     protected $originalQueryString;
 
     /**
+     * The query string if table prefix has been swapped.
+     *
+     * @var string|null
+     */
+    protected $swappedQueryString;
+
+    /**
      * The final query string after binding, etc.
      *
-     * @var string
+     * @var string|null
      */
     protected $finalQueryString;
 
@@ -84,7 +95,7 @@ class Query implements QueryInterface
      */
     public $db;
 
-    public function __construct(ConnectionInterface &$db)
+    public function __construct(ConnectionInterface $db)
     {
         $this->db = $db;
     }
@@ -99,6 +110,7 @@ class Query implements QueryInterface
     public function setQuery(string $sql, $binds = null, bool $setEscape = true)
     {
         $this->originalQueryString = $sql;
+        unset($this->swappedQueryString);
 
         if ($binds !== null) {
             if (! is_array($binds)) {
@@ -115,6 +127,8 @@ class Query implements QueryInterface
             }
             $this->binds = $binds;
         }
+
+        unset($this->finalQueryString);
 
         return $this;
     }
@@ -134,6 +148,8 @@ class Query implements QueryInterface
 
         $this->binds = $binds;
 
+        unset($this->finalQueryString);
+
         return $this;
     }
 
@@ -144,10 +160,8 @@ class Query implements QueryInterface
     public function getQuery(): string
     {
         if (empty($this->finalQueryString)) {
-            $this->finalQueryString = $this->originalQueryString;
+            $this->compileBinds();
         }
-
-        $this->compileBinds();
 
         return $this->finalQueryString;
     }
@@ -156,8 +170,6 @@ class Query implements QueryInterface
      * Records the execution time of the statement using microtime(true)
      * for it's start and end values. If no end value is present, will
      * use the current time to determine total duration.
-     *
-     * @param float $end
      *
      * @return $this
      */
@@ -251,9 +263,14 @@ class Query implements QueryInterface
      */
     public function swapPrefix(string $orig, string $swap)
     {
-        $sql = empty($this->finalQueryString) ? $this->originalQueryString : $this->finalQueryString;
+        $sql = $this->swappedQueryString ?? $this->originalQueryString;
 
-        $this->finalQueryString = preg_replace('/(\W)' . $orig . '(\S+?)/', '\\1' . $swap . '\\2', $sql);
+        $from = '/(\W)' . $orig . '(\S)/';
+        $to   = '\\1' . $swap . '\\2';
+
+        $this->swappedQueryString = preg_replace($from, $to, $sql);
+
+        unset($this->finalQueryString);
 
         return $this;
     }
@@ -267,16 +284,18 @@ class Query implements QueryInterface
     }
 
     /**
-     * Escapes and inserts any binds into the finalQueryString object.
+     * Escapes and inserts any binds into the finalQueryString property.
      *
      * @see https://regex101.com/r/EUEhay/5
      */
     protected function compileBinds()
     {
-        $sql   = $this->finalQueryString;
+        $sql   = $this->swappedQueryString ?? $this->originalQueryString;
         $binds = $this->binds;
 
         if (empty($binds)) {
+            $this->finalQueryString = $sql;
+
             return;
         }
 
@@ -342,7 +361,7 @@ class Query implements QueryInterface
                 $escapedValue = '(' . implode(',', $escapedValue) . ')';
             }
 
-            $sql = substr_replace($sql, $escapedValue, $matches[0][$c][1], $ml);
+            $sql = substr_replace($sql, (string) $escapedValue, $matches[0][$c][1], $ml);
         } while ($c !== 0);
 
         return $sql;
@@ -391,11 +410,7 @@ class Query implements QueryInterface
             'WHERE',
         ];
 
-        if (empty($this->finalQueryString)) {
-            $this->compileBinds(); // @codeCoverageIgnore
-        }
-
-        $sql = esc($this->finalQueryString);
+        $sql = esc($this->getQuery());
 
         /**
          * @see https://stackoverflow.com/a/20767160
@@ -403,9 +418,7 @@ class Query implements QueryInterface
          */
         $search = '/\b(?:' . implode('|', $highlight) . ')\b(?![^(&#039;)]*&#039;(?:(?:[^(&#039;)]*&#039;){2})*[^(&#039;)]*$)/';
 
-        return preg_replace_callback($search, static function ($matches) {
-            return '<strong>' . str_replace(' ', '&nbsp;', $matches[0]) . '</strong>';
-        }, $sql);
+        return preg_replace_callback($search, static fn ($matches) => '<strong>' . str_replace(' ', '&nbsp;', $matches[0]) . '</strong>', $sql);
     }
 
     /**

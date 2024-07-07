@@ -1,6 +1,6 @@
 <div class="page-wrapper">
     <!-- Page header -->
-    <?php include_once './app/Views/customer/wedding/components/header_page.php'; ?>
+    <?php echo view('customer/wedding/components/header_page'); ?>
 
     <!-- Page body -->
     <div class="page-body">
@@ -33,10 +33,10 @@
                                             <?php
                                             if (count($musicList) > 0) {
                                                 foreach ($musicList as $music) {
-                                                    include "./app/Views/customer/wedding/components/card/music_card.php";
+                                                    echo view('customer/wedding/components/card/music_card', ['music' => $music]);
                                                 }
                                             } else {
-                                                require_once './app/Views/customer/wedding/components/card/music_card_empty.php';
+                                                echo view('customer/wedding/components/card/music_card_empty');
                                             }
                                             ?>
                                         </div>
@@ -64,8 +64,8 @@
                                     <div class="col-md-10">
                                         <h4>Pesan Pembuka / Harapan Dan Doa</h4>
                                         <?php
-                                        include_once "./app/Views/customer/wedding/components/dropdowns/pray_dropdown.php";
-                                        include_once "./app/Views/customer/wedding/components/card/pray_card.php";
+                                        echo view('customer/wedding/components/dropdowns/pray_dropdown');
+                                        echo view('customer/wedding/components/card/pray_card');
                                         ?>
                                     </div>
                                 </div>
@@ -91,5 +91,5 @@
             </div>
         </div>
     </div>
-    <?php include_once "./app/Views/customer/commons/layer/footer_page.php" ?>
+    <?= view('customer/commons/layer/footer_page') ?>
 </div>

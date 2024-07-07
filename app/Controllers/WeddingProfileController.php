@@ -49,7 +49,7 @@ class WeddingProfileController extends BaseController
         $image_name = rand(0, 9999) . $_FILES['image_file']['name'];
 
         // Specify the server path to the folder where you want to save the images
-        $folder = FCPATH . 'public/assets/images/album/';
+        $folder = FCPATH . '/assets/images/album/';
 
         $sizeInBytes = $_FILES['image_file']['size'];
         $sizeInMB = $sizeInBytes / (1024 * 1024); // Convert bytes to megabytes
@@ -97,7 +97,7 @@ class WeddingProfileController extends BaseController
             $image_name = rand(0, 9999) . $_FILES['image_file']['name'];
 
             // Specify the server path to the folder where you want to save the images
-            $folder = FCPATH . 'public/assets/images/album/';
+            $folder = FCPATH . '/assets/images/album/';
 
             $sizeInBytes = $_FILES['image_file']['size'];
             $sizeInMB = $sizeInBytes / (1024 * 1024); // Convert bytes to megabytes

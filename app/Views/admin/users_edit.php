@@ -4,7 +4,7 @@
 <?php include 'template/header.php' ?>
 
 <body>
-    <script src="<?= base_url('public') ?>/dist/js/demo-theme.min.js"></script>
+    <script src="<?= base_url('') ?>/dist/js/demo-theme.min.js"></script>
     <div class="page">
         <?php include 'template/sidebar.php' ?>
         <div class="page-wrapper">

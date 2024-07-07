@@ -10,7 +10,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="mb-3 text-center" onclick="requestChangeImageProfile(<?= $profiles['id'] ?>)">
-                        <span class="avatar avatar-xl mb-3 rounded-3" id="image-profile-<?= $profiles['id'] ?>" style="background-image: url(<?= base_url('public/assets/images/album/' . $profiles['photo'] ?? "default_profile.png"); ?>)"></span>
+                        <span class="avatar avatar-xl mb-3 rounded-3" id="image-profile-<?= $profiles['id'] ?>" style="background-image: url(<?= base_url('/assets/images/album/' . $profiles['photo'] ?? "default_profile.png"); ?>)"></span>
                         <input type="file" name="image_file" id="input-image-<?= $profiles['id'] ?>" onchange="updatePreviewImage(this, <?= $profiles['id'] ?>)" accept="image/*" hidden>
                     </div>
                     <div class="mb-3">

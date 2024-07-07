@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title><?= $title; ?></title>
     <!-- CSS files -->
-    <link href="<?= base_url('public') ?>/dist/css/tabler.min.css?1674944402" rel="stylesheet" />
-    <link href="<?= base_url('public') ?>/dist/css/tabler-flags.min.css?1674944402" rel="stylesheet" />
-    <link href="<?= base_url('public') ?>/dist/css/tabler-payments.min.css?1674944402" rel="stylesheet" />
-    <link href="<?= base_url('public') ?>/dist/css/tabler-vendors.min.css?1674944402" rel="stylesheet" />
-    <link href="<?= base_url('public') ?>/dist/css/demo.min.css?1674944402" rel="stylesheet" />
+    <link href="<?= base_url('') ?>/dist/css/tabler.min.css?1674944402" rel="stylesheet" />
+    <link href="<?= base_url('') ?>/dist/css/tabler-flags.min.css?1674944402" rel="stylesheet" />
+    <link href="<?= base_url('') ?>/dist/css/tabler-payments.min.css?1674944402" rel="stylesheet" />
+    <link href="<?= base_url('') ?>/dist/css/tabler-vendors.min.css?1674944402" rel="stylesheet" />
+    <link href="<?= base_url('') ?>/dist/css/demo.min.css?1674944402" rel="stylesheet" />
     <style>
         @import url('https://rsms.me/inter/inter.css');
 
@@ -26,11 +26,11 @@
 </head>
 
 <body class=" d-flex flex-column">
-    <script src="<?= base_url('public') ?>/dist/js/demo-theme.min.js?1674944402"></script>
+    <script src="<?= base_url('') ?>/dist/js/demo-theme.min.js?1674944402"></script>
     <div class="page page-center">
         <div class="container container-tight py-4">
             <div class="text-center mb-4">
-                <a href="." class="navbar-brand navbar-brand-autodark"><img src="<?= base_url('public') ?>/static/logo.svg" height="36" alt=""></a>
+                <a href="." class="navbar-brand navbar-brand-autodark"><img src="<?= base_url('') ?>/static/logo.svg" height="36" alt=""></a>
             </div>
             <div class="card card-md">
                 <div class="card-body">
@@ -57,8 +57,8 @@
     </div>
     <!-- Libs JS -->
     <!-- Tabler Core -->
-    <script src="<?= base_url('public') ?>/dist/js/tabler.min.js?1674944402" defer></script>
-    <script src="<?= base_url('public') ?>/dist/js/demo.min.js?1674944402" defer></script>
+    <script src="<?= base_url('') ?>/dist/js/tabler.min.js?1674944402" defer></script>
+    <script src="<?= base_url('') ?>/dist/js/demo.min.js?1674944402" defer></script>
 </body>
 
 </html>

@@ -9,7 +9,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="mb-3 text-center" onclick="requestChangeImageProfile(<?= $gender == 'Laki-Laki' ? 1 : 0 ?>)">
-                        <span class="avatar avatar-xl mb-3 rounded-3" id="image-profile-<?= $gender == 'Laki-Laki' ? 1 : 0 ?>" style="background-image: url(<?= base_url('public/AssetsGuest/image/' . "placeholder.png"); ?>)"></span>
+                        <span class="avatar avatar-xl mb-3 rounded-3" id="image-profile-<?= $gender == 'Laki-Laki' ? 1 : 0 ?>" style="background-image: url(<?= base_url('/AssetsGuest/image/' . "placeholder.png"); ?>)"></span>
                         <input type="file" name="image_file" id="input-image-<?= $gender == 'Laki-Laki' ? 1 : 0 ?>" onchange="updatePreviewImage(this, <?= $gender == 'Laki-Laki' ? 1 : 0 ?>)" accept="image/*" hidden>
                     </div>
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is part of CodeIgniter 4 framework.
  *
@@ -11,32 +13,36 @@
 
 namespace CodeIgniter\Validation;
 
+use CodeIgniter\HTTP\CLIRequest;
+use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use Config\Mimes;
-use Config\Services;
+use InvalidArgumentException;
 
 /**
  * File validation rules
+ *
+ * @see \CodeIgniter\Validation\FileRulesTest
  */
 class FileRules
 {
     /**
      * Request instance. So we can get access to the files.
      *
-     * @var RequestInterface
+     * @var IncomingRequest
      */
     protected $request;
 
     /**
      * Constructor.
-     *
-     * @param RequestInterface $request
      */
     public function __construct(?RequestInterface $request = null)
     {
         if ($request === null) {
-            $request = Services::request();
+            $request = service('request');
         }
+
+        assert($request instanceof IncomingRequest || $request instanceof CLIRequest);
 
         $this->request = $request;
     }
@@ -79,8 +85,11 @@ class FileRules
     {
         // Grab the file name off the top of the $params
         // after we split it.
-        $params = explode(',', $params);
-        $name   = array_shift($params);
+        $paramArray = explode(',', $params);
+        if (count($paramArray) !== 2) {
+            throw new InvalidArgumentException('Invalid max_size parameter: "' . $params . '"');
+        }
+        $name = array_shift($paramArray);
 
         if (! ($files = $this->request->getFileMultiple($name))) {
             $files = [$this->request->getFile($name)];
@@ -99,7 +108,7 @@ class FileRules
                 return false;
             }
 
-            if ($file->getSize() / 1024 > $params[0]) {
+            if ($file->getSize() / 1024 > $paramArray[0]) {
                 return false;
             }
         }
@@ -133,7 +142,7 @@ class FileRules
 
             // We know that our mimes list always has the first mime
             // start with `image` even when then are multiple accepted types.
-            $type = Mimes::guessTypeFromExtension($file->getExtension());
+            $type = Mimes::guessTypeFromExtension($file->getExtension()) ?? '';
 
             if (mb_strpos($type, 'image') !== 0) {
                 return false;
@@ -234,7 +243,13 @@ class FileRules
             $allowedHeight = $params[1] ?? 0;
 
             // Get uploaded image size
-            $info       = getimagesize($file->getTempName());
+            $info = getimagesize($file->getTempName());
+
+            if ($info === false) {
+                // Cannot get the image size.
+                return false;
+            }
+
             $fileWidth  = $info[0];
             $fileHeight = $info[1];
 

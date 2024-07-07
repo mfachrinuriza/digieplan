@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is part of CodeIgniter 4 framework.
  *
@@ -29,9 +31,9 @@ trait ReflectionHelper
      * @param object|string $obj    object or class name
      * @param string        $method method name
      *
-     * @throws ReflectionException
-     *
      * @return Closure
+     *
+     * @throws ReflectionException
      */
     public static function getPrivateMethodInvoker($obj, $method)
     {
@@ -39,9 +41,7 @@ trait ReflectionHelper
         $refMethod->setAccessible(true);
         $obj = (gettype($obj) === 'object') ? $obj : null;
 
-        return static function (...$args) use ($obj, $refMethod) {
-            return $refMethod->invokeArgs($obj, $args);
-        };
+        return static fn (...$args) => $refMethod->invokeArgs($obj, $args);
     }
 
     /**
@@ -50,9 +50,9 @@ trait ReflectionHelper
      * @param object|string $obj
      * @param string        $property
      *
-     * @throws ReflectionException
-     *
      * @return ReflectionProperty
+     *
+     * @throws ReflectionException
      */
     private static function getAccessibleRefProperty($obj, $property)
     {
@@ -76,7 +76,12 @@ trait ReflectionHelper
     public static function setPrivateProperty($obj, $property, $value)
     {
         $refProperty = self::getAccessibleRefProperty($obj, $property);
-        $refProperty->setValue($obj, $value);
+
+        if (is_object($obj)) {
+            $refProperty->setValue($obj, $value);
+        } else {
+            $refProperty->setValue(null, $value);
+        }
     }
 
     /**
@@ -85,9 +90,9 @@ trait ReflectionHelper
      * @param object|string $obj      object or class name
      * @param string        $property property name
      *
-     * @throws ReflectionException
-     *
      * @return mixed value
+     *
+     * @throws ReflectionException
      */
     public static function getPrivateProperty($obj, $property)
     {

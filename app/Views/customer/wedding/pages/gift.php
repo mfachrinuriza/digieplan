@@ -1,7 +1,7 @@
 <div class="page-wrapper">
     <!-- Page header -->
     <?php
-    include_once './app/Views/customer/wedding/components/header_page.php';
+    echo view('customer/wedding/components/header_page');
     $n = 0;
     ?>
 
@@ -41,22 +41,22 @@
             </div>
             <br />
             <div class="row">
-                <?php
-                if (count($giftList) > 0) {
-                    foreach ($giftList as $updateData) {
-                        $n++;
-                        require "./app/Views/customer/wedding/components/card/gift_cart.php";
-                        include "./app/Views/customer/wedding/components/modals/gift/update_gift_modal.php";
-                    }
-                } else {
+                <?php if (count($giftList) > 0) : ?>
+                    <?php foreach ($giftList as $updateData) : ?>
+                        <?php $n++; ?>
+                        <?= view('customer/wedding/components/card/gift_cart', ['updateData' => $updateData]) ?>
+                        <?= view('customer/wedding/components/modals/gift/update_gift_modal', ['updateData' => $updateData]) ?>
+                    <?php endforeach; ?>
+                <?php else : ?>
+                    <?php
                     $n++;
                     $empty_state_title = "Hadiah";
                     $empty_state_subtitle = "Tambah nomor bank/e-wallet atau alamat untuk menerima hadiahmu.";
-                ?>
+                    ?>
                     <div class="page-body">
                         <div class="container-xl d-flex flex-column justify-content-center">
                             <div class="empty">
-                                <div class="empty-img"><img style="background-image: url(<?= base_url('public'); ?>/dist/svg/user.svg)" height="48" width="48" alt=""></div>
+                                <div class="empty-img"><img style="background-image: url(<?= base_url(''); ?>/dist/svg/user.svg)" height="48" width="48" alt=""></div>
                                 <p class="empty-title">Belum Ada <?= $empty_state_title ?></p>
                                 <p class="empty-subtitle text-muted"><?= $empty_state_subtitle ?></p>
                                 <div class="empty-action">
@@ -73,16 +73,13 @@
                             </div>
                         </div>
                     </div>
-                <?php
-                }
-                ?>
+                <?php endif; ?>
             </div>
         </div>
     </div>
-    <?php
-    for ($no = 1; $no <= $n; $no++) {
-        include "./app/Views/customer/wedding/components/modals/gift/create_gift_modal.php";
-    }
-    include_once "./app/Views/customer/commons/layer/footer_page.php"
-    ?>
+    <?php for ($no = 1; $no <= $n; $no++) : ?>
+        <?= view('customer/wedding/components/modals/gift/create_gift_modal', ['no' => $no]) ?>
+    <?php endfor; ?>
+
+    <?= view('customer/commons/layer/footer_page') ?>
 </div>

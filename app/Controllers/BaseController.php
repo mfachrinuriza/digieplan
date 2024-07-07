@@ -7,10 +7,8 @@ use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
-use PhpParser\Node\Expr\Cast\Bool_;
 use Psr\Log\LoggerInterface;
 use App\Models\TransactionModel;
-use App\Models\UsersModel;
 
 /**
  * Class BaseController
@@ -22,7 +20,7 @@ use App\Models\UsersModel;
  *
  * For security be sure to declare any new methods as protected or private.
  */
-class BaseController extends Controller
+abstract class BaseController extends Controller
 {
     /**
      * Instance of the main Request object.
@@ -36,12 +34,18 @@ class BaseController extends Controller
      * class instantiation. These helpers will be available
      * to all other controllers that extend BaseController.
      *
-     * @var array
+     * @var list<string>
      */
     protected $helpers = [];
 
     /**
-     * Constructor.
+     * Be sure to declare properties for any property fetch you initialized.
+     * The creation of dynamic property is deprecated in PHP 8.2.
+     */
+    // protected $session;
+
+    /**
+     * @return void
      */
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
@@ -53,31 +57,35 @@ class BaseController extends Controller
         // E.g.: $this->session = \Config\Services::session();
     }
 
-    public function getUserId() {
-        return session()->get('user_id'); 
+    public function getUserId()
+    {
+        return session()->get('user_id');
     }
 
-    public function getTransactionId() {
-        return session()->get('transaction_id'); 
+    public function getTransactionId()
+    {
+        return session()->get('transaction_id');
     }
-    
-    public function checkUserLogin() {
-        $isLogin = session()->get('is_login'); 
-        if (isset($isLogin) && !$isLogin){
+
+    public function checkUserLogin()
+    {
+        $isLogin = session()->get('is_login');
+        if (isset($isLogin) && !$isLogin) {
             return false;
-        } else if (!isset($isLogin)){
+        } else if (!isset($isLogin)) {
             return false;
         } else {
             return true;
         }
     }
 
-    public function hasThemeSelected() {
-        $user_id = session()->get('user_id'); 
+    public function hasThemeSelected()
+    {
+        $user_id = session()->get('user_id');
         $transactionModel = new TransactionModel();
         $userData = $transactionModel->where('user_id', $user_id)->get()->getRowArray();
 
-        if (isset($userData)){
+        if (isset($userData)) {
             if (isset($userData['theme_id']) && $userData['theme_id'] > 0) {
                 return true;
             } else {
@@ -88,21 +96,23 @@ class BaseController extends Controller
         }
     }
 
-    public function getTransactionList() {
-        $user_id = session()->get('user_id'); 
+    public function getTransactionList()
+    {
+        $user_id = session()->get('user_id');
         $transactionModel = new TransactionModel();
         $transactionsData = $transactionModel->where('user_id', $user_id)->get()->getResultArray();
-        
+
         return $transactionsData;
     }
 
-    public function getTransactionSelected() {
-        $user_id = session()->get('user_id'); 
+    public function getTransactionSelected()
+    {
+        $user_id = session()->get('user_id');
         $transactionModel = new TransactionModel();
         $transactionSelected = $transactionModel->where('user_id', $user_id)
-                                                ->where('isPrimary', true)
-                                                ->get()->getRowArray();
-        
+            ->where('isPrimary', true)
+            ->get()->getRowArray();
+
         return $transactionSelected;
     }
 }

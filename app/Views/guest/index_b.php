@@ -31,18 +31,18 @@ $dayTranslations = array(
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="<?= base_url('public/AssetsGuest/css/template_b/style.css') ?>">
-    <script src="<?= base_url('public/AssetsGuest/js/template_b/pristine.min.js') ?>" type="text/javascript"></script>
+    <link rel="stylesheet" href="<?= base_url('/AssetsGuest/css/template_b/style.css') ?>">
+    <script src="<?= base_url('/AssetsGuest/js/template_b/pristine.min.js') ?>" type="text/javascript"></script>
     <title class="text-capitalize"><?= $weddingData['title'] ?> - Digital Invitation by <?= env('TITLE_COMPANY') ?></title>
 </head>
 
 <body>
     <main class="scroller" style="--background-base:  url('<?= $imageCoverPath ?>');">
         <div id="flowerContainer">
-            <img id="flowerTopLeft" src="<?= base_url('public/AssetsGuest/image/template_b/top_left_flower.png') ?>" height="110">
-            <img id="flowerTopRight" src="<?= base_url('public/AssetsGuest/image/template_b/top_right_flower.png') ?>" height="110">
-            <img id="flowerBottomLeft" src="<?= base_url('public/AssetsGuest/image/template_b/bottom_left_flower.png') ?>" height="110">
-            <img id="flowerBottomRight" src="<?= base_url('public/AssetsGuest/image/template_b/bottom_right_flower.png') ?>" height="110">
+            <img id="flowerTopLeft" src="<?= base_url('/AssetsGuest/image/template_b/top_left_flower.png') ?>" height="110">
+            <img id="flowerTopRight" src="<?= base_url('/AssetsGuest/image/template_b/top_right_flower.png') ?>" height="110">
+            <img id="flowerBottomLeft" src="<?= base_url('/AssetsGuest/image/template_b/bottom_left_flower.png') ?>" height="110">
+            <img id="flowerBottomRight" src="<?= base_url('/AssetsGuest/image/template_b/bottom_right_flower.png') ?>" height="110">
         </div>
         <div id="layout_padding_container">
             <div id="layout_padding_container_relative">
@@ -68,8 +68,8 @@ $dayTranslations = array(
                     <div class="first_frame_image_clipped one">
                         <img src="<?= $imageCoverPath ?>" alt="Couples">
                     </div>
-                    <img class="first_frame_frame" src="<?= base_url('public/AssetsGuest/image/template_b/first_frame_rectangle.png') ?>" alt="Frame">
-                    <img class="first_frame_flower" src="<?= base_url('public/AssetsGuest/image/template_b/flower_frame.png') ?>" alt="Flower">
+                    <img class="first_frame_frame" src="<?= base_url('/AssetsGuest/image/template_b/first_frame_rectangle.png') ?>" alt="Frame">
+                    <img class="first_frame_flower" src="<?= base_url('/AssetsGuest/image/template_b/flower_frame.png') ?>" alt="Flower">
                 </div>
                 <h5 id="countDown_content_first_h5">The Wedding of</h5>
                 <h1 id="countDown_content_second_h1"><?= $groomData['nickname'] . ' & ' . $brideData['nickname'] ?></h1>
@@ -103,10 +103,10 @@ $dayTranslations = array(
                 <div id="first_bride">
                     <div class="second_frame">
                         <div class="second_frame_image_clipped two">
-                            <img src="<?= base_url('public/assets/images/album/' . $groomData['photo']); ?>" alt="Couples">
+                            <img src="<?= base_url('/assets/images/album/' . $groomData['photo']); ?>" alt="Couples">
                         </div>
-                        <img class="second_frame_frame" src="<?= base_url('public/AssetsGuest/image/template_b/second_frame_rectangle.png') ?>" alt="Frame">
-                        <img class="second_frame_flower" src="<?= base_url('public/AssetsGuest/image/template_b/flower_frame.png') ?>" alt="Flowr">
+                        <img class="second_frame_frame" src="<?= base_url('/AssetsGuest/image/template_b/second_frame_rectangle.png') ?>" alt="Frame">
+                        <img class="second_frame_flower" src="<?= base_url('/AssetsGuest/image/template_b/flower_frame.png') ?>" alt="Flowr">
                     </div>
                     <h1><?= $groomData['nickname'] ?></h1>
                     <h5 class="bride_parent">PUTRA PERTAMA BAPAK <?= $groomData['father_name'] ?> DAN IBU <?= $groomData['mother_name'] ?></h5>
@@ -115,10 +115,10 @@ $dayTranslations = array(
                 <div id="second_bride">
                     <div class="second_frame">
                         <div class="second_frame_image_clipped two">
-                            <img src="<?= base_url('public/assets/images/album/' . $brideData['photo']); ?>" alt="Couples">
+                            <img src="<?= base_url('/assets/images/album/' . $brideData['photo']); ?>" alt="Couples">
                         </div>
-                        <img class="second_frame_frame" src="<?= base_url('public/AssetsGuest/image/template_b/second_frame_rectangle.png') ?>" alt="Frame">
-                        <img class="second_frame_flower" src="<?= base_url('public/AssetsGuest/image/template_b/flower_frame.png') ?>" alt="Flower">
+                        <img class="second_frame_frame" src="<?= base_url('/AssetsGuest/image/template_b/second_frame_rectangle.png') ?>" alt="Frame">
+                        <img class="second_frame_flower" src="<?= base_url('/AssetsGuest/image/template_b/flower_frame.png') ?>" alt="Flower">
                     </div>
                     <h1><?= $brideData['nickname'] ?></h1>
                     <h5 class="bride_parent">PUTRI PERTAMA BAPAK <?= $brideData['father_name'] ?> DAN IBU <?= $brideData['mother_name'] ?></h5>
@@ -128,7 +128,7 @@ $dayTranslations = array(
 
         <section id="weddingStory">
             <div id="weddingStory_content">
-                <img id="weddingStory_ring" src="<?= base_url('public/AssetsGuest/image/template_b/ring.png') ?>" height="45">
+                <img id="weddingStory_ring" src="<?= base_url('/AssetsGuest/image/template_b/ring.png') ?>" height="45">
                 <h3>OUR LOVE STORY</h3>
                 <div class="weddingStory_storyContainer">
                     <img id="weddingStory_couple" src="<?= $imageLoveStoryPath ?>" width="100%">
@@ -147,7 +147,7 @@ $dayTranslations = array(
         <section id="date">
             <div id="date_container">
                 <h3 class="date_title">AKAD NIKAH</h3>
-                <img class="date_divider" src="<?= base_url('public/AssetsGuest/image/template_b/divider.png') ?>" width="48">
+                <img class="date_divider" src="<?= base_url('/AssetsGuest/image/template_b/divider.png') ?>" width="48">
                 <?php
                 if (isset($primaryEventData)) {
                     echo '
@@ -169,7 +169,7 @@ $dayTranslations = array(
                 if (isset($eventData)) {
                     echo '
                     <h3 class="date_title">' . $eventData['title'] . '</h3>
-                    <img class="date_divider" src="' . base_url("public/AssetsGuest/image/template_b/divider.png") . '" width="48">
+                    <img class="date_divider" src="' . base_url("/AssetsGuest/image/template_b/divider.png") . '" width="48">
                     <div class="date_date_day">
                         <h3>' . $dayTranslations[date_format(date_create($eventData['date']), "l")] . '</h3>
                         |
@@ -185,7 +185,7 @@ $dayTranslations = array(
                     ';
                 }
                 ?>
-                <img id="date_pointer" src="<?= base_url('public/AssetsGuest/image/template_b/pointer.png') ?>" width="24">
+                <img id="date_pointer" src="<?= base_url('/AssetsGuest/image/template_b/pointer.png') ?>" width="24">
                 <h5 id="date_location"><?= $eventData['place_name'] ?></h5>
                 <p id="date_adress"><?= $eventData['address'] ?></p>
                 <button id="date_map" class="variant_2_button" type="button" onclick="window.open('<?= $eventData['link_address'] ?>', '_blank')">VIEW ON MAPS</button>
@@ -195,7 +195,7 @@ $dayTranslations = array(
         <section id="gift" class="docSlider-scroll">
             <div id="gift_content">
                 <h3 id="gift_title">WEDDING GIFT</h3>
-                <img class="gift_divider" src="<?= base_url('public/AssetsGuest/image/template_b/divider.png') ?>" width="48">
+                <img class="gift_divider" src="<?= base_url('/AssetsGuest/image/template_b/divider.png') ?>" width="48">
                 <p id="gift_information">Bagi bapak/ibu/saudara/i yang ingin mengirimkan hadiah pernikahan dapat melalui virtual account atau e-wallet di bawah ini:</p>
                 <div id="gift_card_container">
                     <?php
@@ -208,7 +208,7 @@ $dayTranslations = array(
                                         <h5>' . $gift['account_number'] . '</h5>
                                         <p class="gift_gift_card_info_an"><span>A/N</span>' . ' ' . $gift['receiver_name'] . '</p>
                                     </div>
-                                    <button id="copy_rekening" rek-number="12122211" class="variant_2_button" type="button"><img src="' . base_url('public/AssetsGuest/image/template_b/copy.png') . '" width="12">SALIN NO. REK</button>
+                                    <button id="copy_rekening" rek-number="12122211" class="variant_2_button" type="button"><img src="' . base_url('/AssetsGuest/image/template_b/copy.png') . '" width="12">SALIN NO. REK</button>
                                 </div>
                                 ';
                         } else if ($gift['type'] == "E-Wallet") {
@@ -219,7 +219,7 @@ $dayTranslations = array(
                                     <h5>' . $gift['account_number'] . '</h5>
                                     <p class="gift_gift_card_info_an"><span>A/N</span>' . ' ' . $gift['receiver_name'] . '</p>
                                 </div>
-                                <button id="copy_rekening" rek-number=' . $gift['account_number'] . ' class="variant_1_button" type="button"><img src="' . base_url('public/AssetsGuest/image/template_a/copy.svg') . '" width="12" />SALIN NO. REK</button>
+                                <button id="copy_rekening" rek-number=' . $gift['account_number'] . ' class="variant_1_button" type="button"><img src="' . base_url('/AssetsGuest/image/template_a/copy.svg') . '" width="12" />SALIN NO. REK</button>
                                 </div>
                                 ';
                         } else if ($gift['type'] == "Address") {
@@ -231,7 +231,7 @@ $dayTranslations = array(
                                     <h5>' . $gift['receiver_name'] . '</h5>
                                     <p id="address" class="gift_gift_card_info_an">' . $gift['receiver_address'] . '</p>
                                 </div>
-                                <button id="copy_adrress" class="variant_1_button" type="button"><img src="' . base_url('public/AssetsGuest/image/template_a/copy.svg') . '" width="12" /> SALIN ALAMAT</button>
+                                <button id="copy_adrress" class="variant_1_button" type="button"><img src="' . base_url('/AssetsGuest/image/template_a/copy.svg') . '" width="12" /> SALIN ALAMAT</button>
                                 </div>
                                 ';
                         }
@@ -246,7 +246,7 @@ $dayTranslations = array(
         <section id="rsvp" class="docSlider-scroll">
             <div id="rsvp_content">
                 <h3 id="rsvp_title">RSVP</h3>
-                <img id="rsvp_divider" src="<?= base_url('public/AssetsGuest/image/template_b/divider.png') ?>" width="48">
+                <img id="rsvp_divider" src="<?= base_url('/AssetsGuest/image/template_b/divider.png') ?>" width="48">
                 <p id="rsvp_information">Our wedding will be a small, intimate ceremony. and only those who are closest to us will be in attendance</p>
                 <form id="rsvp_form">
                     <input name="transaction_id" value="<?= $weddingData['id'] ?>" hidden>
@@ -293,17 +293,17 @@ $dayTranslations = array(
             <section id="filter">
                 <div id="filter_content">
                     <h3 id="filter_title">INSTAGRAM FILTER</h3>
-                    <img id="filter_divider" src="<?= base_url('public/AssetsGuest/image/template_b/divider.png') ?>" width="48">
+                    <img id="filter_divider" src="<?= base_url('/AssetsGuest/image/template_b/divider.png') ?>" width="48">
                     <p id="filter_information">gunakan filter instagram dan biarkan cinta kami memancar dengan mengabadikan setiap moment berharga dalam pernikahan kami.</p>
                     <a href="<?= $filter['link_url'] ?? "" ?>" target="_blank">
-                        <button id="filter_filter" type="button"><img src="<?= base_url('public/AssetsGuest/image/template_b/instagram_white.png') ?>" width="12"> FILTER INSTAGRAM</button>
+                        <button id="filter_filter" type="button"><img src="<?= base_url('/AssetsGuest/image/template_b/instagram_white.png') ?>" width="12"> FILTER INSTAGRAM</button>
                     </a>
                 </div>
             </section>
         <?php } ?>
         <section id="gallery">
             <h3 id="gallery_title">OUR GALLERY</h3>
-            <img id="gallery_divider" src="<?= base_url('public/AssetsGuest/image/template_b/divider.png') ?>" width="48">
+            <img id="gallery_divider" src="<?= base_url('/AssetsGuest/image/template_b/divider.png') ?>" width="48">
 
             <?php
             $selectedId = $weddingData['gallery_option_id'];
@@ -384,26 +384,26 @@ $dayTranslations = array(
         <section id="clossingMessage">
             <div id="clossingMessage_content">
                 <p id="clossingMessage_info">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan do'a restu kepada kedua mempelai.</p>
-                <img class="gallery_divider" src="<?= base_url('public/AssetsGuest/image/template_b/divider.png') ?>" width="48">
+                <img class="gallery_divider" src="<?= base_url('/AssetsGuest/image/template_b/divider.png') ?>" width="48">
                 <h4 id="clossingMessage_couples"><?= $groomData['nickname'] . ' & ' . $brideData['nickname'] ?></h4>
                 <div id="trademark">
-                    <p>crafted by <span><img src="<?= base_url('public/AssetsGuest/image/template_b/watermark.png') ?>" width="15"></span>digieplan © 2023</p>
+                    <p>crafted by <span><img src="<?= base_url('/AssetsGuest/image/template_b/watermark.png') ?>" width="15"></span>digieplan © 2023</p>
                 </div>
             </div>
         </section>
         <?php if (isset($music)) { ?>
             <div id="musicPlayer">
-                <img id="musicPlayer_paused" src="<?= base_url('public/AssetsGuest/image/template_a/music-disc.svg') ?>" height="48">
-                <img id="musicPlayer_played" src="<?= base_url('public/AssetsGuest/image/template_a/music-disc-played.svg') ?>" height="48">
+                <img id="musicPlayer_paused" src="<?= base_url('/AssetsGuest/image/template_a/music-disc.svg') ?>" height="48">
+                <img id="musicPlayer_played" src="<?= base_url('/AssetsGuest/image/template_a/music-disc-played.svg') ?>" height="48">
                 <audio autoplay loop>
-                    <source src="<?= base_url('public/assets/music/' . $music['music_path']) ?>" type="audio/mpeg">
+                    <source src="<?= base_url('/assets/music/' . $music['music_path']) ?>" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
             </div>
         <?php } ?>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="<?= base_url('public/AssetsGuest/js/template_b/index.js') ?>"></script>
+    <script src="<?= base_url('/AssetsGuest/js/template_b/index.js') ?>"></script>
     <!-- DB INTEGRATION -->
     <script>
         var size = <?= $size ?>;

@@ -1,7 +1,7 @@
 <section id="gallery">
     <div id="gallery_top">
-        <img id="gallery_top_left" src="<?= base_url('public/AssetsGuest/image/top_left.svg') ?>">
-        <img id="gallery_top_right" src="<?= base_url('public/AssetsGuest/image/top_right.svg') ?>">
+        <img id="gallery_top_left" src="<?= base_url('/AssetsGuest/image/top_left.svg') ?>">
+        <img id="gallery_top_right" src="<?= base_url('/AssetsGuest/image/top_right.svg') ?>">
         <div id="gallery_top_line"></div>
     </div>
 
@@ -85,8 +85,8 @@
     }
     ?>
     <div id="gallery_buttom">
-        <img id="gallery_buttom_left" src="<?= base_url('public/AssetsGuest/image/buttom_left.svg') ?>">
-        <img id="gallery_buttom_right" src="<?= base_url('public/AssetsGuest/image/buttom_right.svg') ?>">
+        <img id="gallery_buttom_left" src="<?= base_url('/AssetsGuest/image/buttom_left.svg') ?>">
+        <img id="gallery_buttom_right" src="<?= base_url('/AssetsGuest/image/buttom_right.svg') ?>">
         <div id="gallery_buttom_line"></div>
     </div>
 

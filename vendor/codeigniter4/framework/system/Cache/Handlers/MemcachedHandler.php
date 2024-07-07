@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is part of CodeIgniter 4 framework.
  *
@@ -12,6 +14,7 @@
 namespace CodeIgniter\Cache\Handlers;
 
 use CodeIgniter\Exceptions\CriticalError;
+use CodeIgniter\I18n\Time;
 use Config\Cache;
 use Exception;
 use Memcache;
@@ -19,6 +22,8 @@ use Memcached;
 
 /**
  * Mamcached cache handler
+ *
+ * @see \CodeIgniter\Cache\Handlers\MemcachedHandlerTest
  */
 class MemcachedHandler extends BaseHandler
 {
@@ -41,13 +46,14 @@ class MemcachedHandler extends BaseHandler
         'raw'    => false,
     ];
 
+    /**
+     * Note: Use `CacheFactory::getHandler()` to instantiate.
+     */
     public function __construct(Cache $config)
     {
         $this->prefix = $config->prefix;
 
-        if (! empty($config)) {
-            $this->config = array_merge($this->config, $config->memcached);
-        }
+        $this->config = array_merge($this->config, $config->memcached);
     }
 
     /**
@@ -115,8 +121,6 @@ class MemcachedHandler extends BaseHandler
             } else {
                 throw new CriticalError('Cache: Not support Memcache(d) extension.');
             }
-        } catch (CriticalError $e) {
-            throw $e;
         } catch (Exception $e) {
             throw new CriticalError('Cache: Memcache(d) connection refused (' . $e->getMessage() . ').');
         }
@@ -127,7 +131,8 @@ class MemcachedHandler extends BaseHandler
      */
     public function get(string $key)
     {
-        $key = static::validateKey($key, $this->prefix);
+        $data = [];
+        $key  = static::validateKey($key, $this->prefix);
 
         if ($this->memcached instanceof Memcached) {
             $data = $this->memcached->get($key);
@@ -159,7 +164,7 @@ class MemcachedHandler extends BaseHandler
         if (! $this->config['raw']) {
             $value = [
                 $value,
-                time(),
+                Time::now()->getTimestamp(),
                 $ttl,
             ];
         }
@@ -187,6 +192,8 @@ class MemcachedHandler extends BaseHandler
 
     /**
      * {@inheritDoc}
+     *
+     * @return never
      */
     public function deleteMatching(string $pattern)
     {

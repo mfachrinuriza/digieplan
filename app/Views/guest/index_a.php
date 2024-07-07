@@ -35,8 +35,8 @@ $primaryEventData['date'] = $primaryEventData['date'] ?? date('Y-m-d');
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link rel="stylesheet" href="<?= base_url('public/AssetsGuest/css/template_a/style.css'); ?>" />
-  <script src="<?= base_url('public/AssetsGuest/js/template_a/pristine.min.js') ?>" type="text/javascript"></script>
+  <link rel="stylesheet" href="<?= base_url('/AssetsGuest/css/template_a/style.css'); ?>" />
+  <script src="<?= base_url('/AssetsGuest/js/template_a/pristine.min.js') ?>" type="text/javascript"></script>
   <title class="text-capitalize"><?= $weddingData['title'] ?> - Digital Invitation by <?= env('TITLE_COMPANY') ?></title>
 </head>
 
@@ -59,7 +59,7 @@ $primaryEventData['date'] = $primaryEventData['date'] ?? date('Y-m-d');
     ?>
 
     <section id="countDown">
-      <div id="countDown_top_image"><img src="<?= base_url('public/AssetsGuest/image/template_a/countDown_top.svg') ?>" width="70%"></div>
+      <div id="countDown_top_image"><img src="<?= base_url('/AssetsGuest/image/template_a/countDown_top.svg') ?>" width="70%"></div>
       <div id="countDown_content">
         <h3 id="countDown_title">COUNTING TO THE BIG DAY</h3>
         <hr />
@@ -90,19 +90,19 @@ $primaryEventData['date'] = $primaryEventData['date'] ?? date('Y-m-d');
         <?php
         if (isset($prayData)) { ?>
           <h3 class="mb-3" id="surah_content"></h3>
-          <img class="mb-4" id="pray_divider" src="<?= base_url('public/AssetsGuest/image/template_a/divider.svg'); ?>" width="15%" />
+          <img class="mb-4" id="pray_divider" src="<?= base_url('/AssetsGuest/image/template_a/divider.svg'); ?>" width="15%" />
           <h4 class="mb-3" id="sub_content"></h4>
           <p class="mb-1" id="surah_name"></p>
         <?php } ?>
       </div>
     </section>
 
-    <img class="separator" src="<?= base_url('public/AssetsGuest/image/template_a/separator.svg'); ?>" width="80%" />
+    <img class="separator" src="<?= base_url('/AssetsGuest/image/template_a/separator.svg'); ?>" width="80%" />
     <section id="bride">
       <div id="first_bride">
         <div class="bride_image">
-          <img class="bride_image_frame" src="<?= base_url('public/AssetsGuest/image/template_a/frame_1.svg'); ?>" />
-          <img class="bride_image_bride" src="<?= base_url('public/assets/images/album/' . $groomData['photo']); ?>" />
+          <img class="bride_image_frame" src="<?= base_url('/AssetsGuest/image/template_a/frame_1.svg'); ?>" />
+          <img class="bride_image_bride" src="<?= base_url('/assets/images/album/' . $groomData['photo']); ?>" />
         </div>
 
         <h4><?= $groomData['nickname'] ?></h4>
@@ -110,15 +110,15 @@ $primaryEventData['date'] = $primaryEventData['date'] ?? date('Y-m-d');
         <hr />
         <p class="bride_parent">PUTRA PERTAMA BAPAK <?= $groomData['father_name'] ?> DAN IBU <?= $groomData['mother_name'] ?></p>
         <a href="https://www.instagram.com/<?= str_replace('@', '', $groomData['social_media']) ?>" target="_blank">
-          <div class="bride_instagram"><img class="bride_image_frame" src="<?= base_url('public/AssetsGuest/image/template_a/instagram.svg'); ?>" height="13" />
+          <div class="bride_instagram"><img class="bride_image_frame" src="<?= base_url('/AssetsGuest/image/template_a/instagram.svg'); ?>" height="13" />
             <p><?= $groomData['social_media'] ?></p>
           </div>
         </a>
       </div>
       <div id="second_bride">
         <div class="bride_image">
-          <img class="bride_image_frame" src="<?= base_url('public/AssetsGuest/image/template_a/frame_1.svg'); ?>" />
-          <img class="bride_image_bride" src="<?= base_url('public/assets/images/album/' . $brideData['photo']); ?>" />
+          <img class="bride_image_frame" src="<?= base_url('/AssetsGuest/image/template_a/frame_1.svg'); ?>" />
+          <img class="bride_image_bride" src="<?= base_url('/assets/images/album/' . $brideData['photo']); ?>" />
         </div>
         <h4><?= $brideData['nickname'] ?></h4>
         <h2><?= $brideData['fullname'] ?></h2>
@@ -126,7 +126,7 @@ $primaryEventData['date'] = $primaryEventData['date'] ?? date('Y-m-d');
         <p class="bride_parent">PUTRI PERTAMA BAPAK <?= $brideData['father_name'] ?> DAN IBU <?= $brideData['mother_name'] ?></p>
         <a href="https://www.instagram.com/<?= str_replace('@', '', $brideData['social_media']) ?>" target="_blank">
           <div class="bride_instagram">
-            <img class="bride_image_frame" src="<?= base_url('public/AssetsGuest/image/template_a/instagram.svg'); ?>" height="13" />
+            <img class="bride_image_frame" src="<?= base_url('/AssetsGuest/image/template_a/instagram.svg'); ?>" height="13" />
             <p><?= $brideData['social_media'] ?></p>
           </div>
         </a>
@@ -134,7 +134,7 @@ $primaryEventData['date'] = $primaryEventData['date'] ?? date('Y-m-d');
     </section>
 
     <section id="weddingStory">
-      <img id="weddingStory_ring" src="<?= base_url('public/AssetsGuest/image/template_a/ring.svg'); ?>" height="45" />
+      <img id="weddingStory_ring" src="<?= base_url('/AssetsGuest/image/template_a/ring.svg'); ?>" height="45" />
       <h3>OUR LOVE STORY</h3>
       <img id="weddingStory_couple" src="<?= $imageLoveStoryPath ?>" width="100%" />
       <?php
@@ -146,16 +146,16 @@ $primaryEventData['date'] = $primaryEventData['date'] ?? date('Y-m-d');
       }
       ?>
     </section>
-    <img class="separator" style="padding-bottom: 40px;" src="<?= base_url('public/AssetsGuest/image/template_a/separator.svg'); ?>" width="80%" />
+    <img class="separator" style="padding-bottom: 40px;" src="<?= base_url('/AssetsGuest/image/template_a/separator.svg'); ?>" width="80%" />
     <section id="date">
-      <img id="date_top_left" src="<?= base_url('public/AssetsGuest/image/template_a/top_left.svg'); ?>">
-      <img id="date_top_right" src="<?= base_url('public/AssetsGuest/image/template_a/top_right.svg'); ?>">
+      <img id="date_top_left" src="<?= base_url('/AssetsGuest/image/template_a/top_left.svg'); ?>">
+      <img id="date_top_right" src="<?= base_url('/AssetsGuest/image/template_a/top_right.svg'); ?>">
       <div id="date_container">
         <?php
         if (isset($primaryEventData)) {
           echo '
               <h3 class="date_title">' . $primaryEventData['title'] . '</h3>
-              <img class="date_divider" src="' . base_url('public/AssetsGuest/image/template_a/divider.svg') . '" width="48" />
+              <img class="date_divider" src="' . base_url('/AssetsGuest/image/template_a/divider.svg') . '" width="48" />
               <div class="date_date_day">
                 <h3>' . $dayTranslations[date_format(date_create($primaryEventData['date']), "l")] . '</h3>
                 |
@@ -174,7 +174,7 @@ $primaryEventData['date'] = $primaryEventData['date'] ?? date('Y-m-d');
         if (isset($eventData)) {
           echo '
               <h3 class="date_title">' . $eventData['title'] . '</h3>
-              <img class="date_divider" src="' . base_url('public/AssetsGuest/image/template_a/divider.svg') . '" width="48" />
+              <img class="date_divider" src="' . base_url('/AssetsGuest/image/template_a/divider.svg') . '" width="48" />
               <div class="date_date_day">
                 <h3>' . $dayTranslations[date_format(date_create($eventData['date']), "l")] . '</h3>
                 |
@@ -191,7 +191,7 @@ $primaryEventData['date'] = $primaryEventData['date'] ?? date('Y-m-d');
         }
         ?>
 
-        <img id="date_pointer" src="<?= base_url('public/AssetsGuest/image/template_a/pointer.svg'); ?>" width="24" />
+        <img id="date_pointer" src="<?= base_url('/AssetsGuest/image/template_a/pointer.svg'); ?>" width="24" />
         <h5 id="date_location"><?= $eventData['place_name'] ?></h5>
         <p id="date_adress"><?= $eventData['address'] ?></p>
         <a href="<?= $eventData['link_address'] ?>" target="_blank">
@@ -201,8 +201,8 @@ $primaryEventData['date'] = $primaryEventData['date'] ?? date('Y-m-d');
         <div id="date_right_line"></div>
         <div id="date_buttom_line"></div>
       </div>
-      <img id="date_buttom_left" src="<?= base_url('public/AssetsGuest/image/template_a/buttom_left.svg'); ?>">
-      <img id="date_buttom_right" src="<?= base_url('public/AssetsGuest/image/template_a/buttom_right.svg'); ?>">
+      <img id="date_buttom_left" src="<?= base_url('/AssetsGuest/image/template_a/buttom_left.svg'); ?>">
+      <img id="date_buttom_right" src="<?= base_url('/AssetsGuest/image/template_a/buttom_right.svg'); ?>">
     </section>
 
     <section id="gift">
@@ -219,7 +219,7 @@ $primaryEventData['date'] = $primaryEventData['date'] ?? date('Y-m-d');
                     <h5>' . $gift['account_number'] . '</h5>
                     <p class="gift_gift_card_info_an"><span>A/N</span>' . ' ' .  $gift['receiver_name'] . '</p>
                   </div>
-                  <button id="copy_rekening" rek-number=' . $gift['account_number'] . ' class="variant_1_button" type="button"><img src="' . base_url('public/AssetsGuest/image/template_a/copy.svg') . '" width="12" />SALIN NO. REK</button>
+                  <button id="copy_rekening" rek-number=' . $gift['account_number'] . ' class="variant_1_button" type="button"><img src="' . base_url('/AssetsGuest/image/template_a/copy.svg') . '" width="12" />SALIN NO. REK</button>
                 </div>
                 ';
           } else if ($gift['type'] == "E-Wallet") {
@@ -230,7 +230,7 @@ $primaryEventData['date'] = $primaryEventData['date'] ?? date('Y-m-d');
                     <h5>' . $gift['account_number'] . '</h5>
                     <p class="gift_gift_card_info_an"><span>A/N</span>' . ' ' . $gift['receiver_name'] . '</p>
                   </div>
-                  <button id="copy_rekening" rek-number=' . $gift['account_number'] . ' class="variant_1_button" type="button"><img src="' . base_url('public/AssetsGuest/image/template_a/copy.svg') . '" width="12" />SALIN NO. REK</button>
+                  <button id="copy_rekening" rek-number=' . $gift['account_number'] . ' class="variant_1_button" type="button"><img src="' . base_url('/AssetsGuest/image/template_a/copy.svg') . '" width="12" />SALIN NO. REK</button>
                 </div>
                 ';
           } else if ($gift['type'] == "Address") {
@@ -242,7 +242,7 @@ $primaryEventData['date'] = $primaryEventData['date'] ?? date('Y-m-d');
                     <h5>' . $gift['receiver_name'] . '</h5>
                     <p id="address" class="gift_gift_card_info_an">' . $gift['receiver_address'] . '</p>
                   </div>
-                  <button id="copy_adrress" class="variant_1_button" type="button"><img src="' . base_url('public/AssetsGuest/image/template_a/copy.svg') . '" width="12" /> SALIN ALAMAT</button>
+                  <button id="copy_adrress" class="variant_1_button" type="button"><img src="' . base_url('/AssetsGuest/image/template_a/copy.svg') . '" width="12" /> SALIN ALAMAT</button>
                 </div>
                 ';
           }
@@ -251,9 +251,9 @@ $primaryEventData['date'] = $primaryEventData['date'] ?? date('Y-m-d');
       </div>
     </section>
     <section id="rsvp">
-      <img id="rsvp_ornament" src="<?= base_url('public/AssetsGuest/image/template_a/Frame.svg'); ?>" width="243" />
+      <img id="rsvp_ornament" src="<?= base_url('/AssetsGuest/image/template_a/Frame.svg'); ?>" width="243" />
       <h3 id="rsvp_title">RSVP</h3>
-      <img class="rsvp_divider" src="<?= base_url('public/AssetsGuest/image/template_a/divider.svg'); ?>" width="48" />
+      <img class="rsvp_divider" src="<?= base_url('/AssetsGuest/image/template_a/divider.svg'); ?>" width="48" />
       <p id="rsvp_information">Our wedding will be a small, intimate ceremony. and only those who are closest to us will be in attendance</p>
       <form id="rsvp_form">
         <input name="transaction_id" value="<?= $weddingData['id'] ?>" hidden>
@@ -292,8 +292,8 @@ $primaryEventData['date'] = $primaryEventData['date'] ?? date('Y-m-d');
     <?php if (isset($imageGalleryFirst)) { ?>
       <section id="gallery">
         <div id="gallery_top">
-          <img id="gallery_top_left" src="<?= base_url('public/AssetsGuest/image/template_a/top_left.svg') ?>">
-          <img id="gallery_top_right" src="<?= base_url('public/AssetsGuest/image/template_a/top_right.svg') ?>">
+          <img id="gallery_top_left" src="<?= base_url('/AssetsGuest/image/template_a/top_left.svg') ?>">
+          <img id="gallery_top_right" src="<?= base_url('/AssetsGuest/image/template_a/top_right.svg') ?>">
           <div id="gallery_top_line"></div>
         </div>
 
@@ -377,8 +377,8 @@ $primaryEventData['date'] = $primaryEventData['date'] ?? date('Y-m-d');
         }
         ?>
         <div id="gallery_buttom">
-          <img id="gallery_buttom_left" src="<?= base_url('public/AssetsGuest/image/template_a/buttom_left.svg') ?>">
-          <img id="gallery_buttom_right" src="<?= base_url('public/AssetsGuest/image/template_a/buttom_right.svg') ?>">
+          <img id="gallery_buttom_left" src="<?= base_url('/AssetsGuest/image/template_a/buttom_left.svg') ?>">
+          <img id="gallery_buttom_right" src="<?= base_url('/AssetsGuest/image/template_a/buttom_right.svg') ?>">
           <div id="gallery_buttom_line"></div>
         </div>
 
@@ -386,25 +386,25 @@ $primaryEventData['date'] = $primaryEventData['date'] ?? date('Y-m-d');
     <?php } ?>
     <section id="clossingMessage">
       <div id="clossingMessage_content">
-        <img id="clossingMessage_ornament_top" src="<?= base_url('public/AssetsGuest/image/template_a/closing_ornament.svg'); ?>" width="124" />
+        <img id="clossingMessage_ornament_top" src="<?= base_url('/AssetsGuest/image/template_a/closing_ornament.svg'); ?>" width="124" />
         <p id="clossingMessage_info">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan do'a restu kepada kedua mempelai.</p>
-        <img class="date_divider" src="<?= base_url('public/AssetsGuest/image/template_a/divider.svg'); ?>" width="48" />
+        <img class="date_divider" src="<?= base_url('/AssetsGuest/image/template_a/divider.svg'); ?>" width="48" />
         <h4 id="clossingMessage_couples"><?= $groomData['nickname'] . ' & ' . $brideData['nickname'] ?></h4>
       </div>
-      <img id="clossingMessage_ornament_buttom" src="<?= base_url('public/AssetsGuest/image/template_a/bawah.svg'); ?>" width="193" />
+      <img id="clossingMessage_ornament_buttom" src="<?= base_url('/AssetsGuest/image/template_a/bawah.svg'); ?>" width="193" />
     </section>
   </main>
   <footer>
     <p>
-      crafted by <span><img src="<?= base_url('public/AssetsGuest/image/template_a/watermark.svg'); ?>" width="15" /></span>digieplan © 2023
+      crafted by <span><img src="<?= base_url('/AssetsGuest/image/template_a/watermark.svg'); ?>" width="15" /></span>digieplan © 2023
     </p>
   </footer>
   <?php if (isset($music)) { ?>
     <div id="musicPlayer">
-      <img id="musicPlayer_paused" src="<?= base_url('public/AssetsGuest/image/template_a/music-disc.svg') ?>" height="48">
-      <img id="musicPlayer_played" src="<?= base_url('public/AssetsGuest/image/template_a/music-disc-played.svg') ?>" height="48">
+      <img id="musicPlayer_paused" src="<?= base_url('/AssetsGuest/image/template_a/music-disc.svg') ?>" height="48">
+      <img id="musicPlayer_played" src="<?= base_url('/AssetsGuest/image/template_a/music-disc-played.svg') ?>" height="48">
       <audio autoplay loop>
-        <source src="<?= base_url('public/assets/music/' . $music['music_path']) ?>" type="audio/mpeg">
+        <source src="<?= base_url('/assets/music/' . $music['music_path']) ?>" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
     </div>
@@ -412,25 +412,25 @@ $primaryEventData['date'] = $primaryEventData['date'] ?? date('Y-m-d');
   <nav id="navbar">
     <ul>
       <li class="nav" id="bride_button">
-        <img src="<?= base_url('public/AssetsGuest/image/template_a/bride.svg'); ?>" height="24" />
+        <img src="<?= base_url('/AssetsGuest/image/template_a/bride.svg'); ?>" height="24" />
         <div>BRIDE</div>
       </li>
       <li class="nav" id="date_button">
-        <img src="<?= base_url('public/AssetsGuest/image/template_a/date.svg'); ?>" height="24" />
+        <img src="<?= base_url('/AssetsGuest/image/template_a/date.svg'); ?>" height="24" />
         <div>DATE</div>
       </li>
       <li class="nav" id="rsvp_button">
-        <img src="<?= base_url('public/AssetsGuest/image/template_a/rsvp.svg'); ?>" height="24" />
+        <img src="<?= base_url('/AssetsGuest/image/template_a/rsvp.svg'); ?>" height="24" />
         <div>RSVP</div>
       </li>
       <li class="nav" id="gift_button">
-        <img src="<?= base_url('public/AssetsGuest/image/template_a/gift.svg'); ?>" height="24" />
+        <img src="<?= base_url('/AssetsGuest/image/template_a/gift.svg'); ?>" height="24" />
         <div>GIFT</div>
       </li>
     </ul>
   </nav>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="<?= base_url('public/AssetsGuest/js/template_a/index.js') ?>"></script>
+  <script src="<?= base_url('/AssetsGuest/js/template_a/index.js') ?>"></script>
 
   <!-- DB INTEGRATION -->
   <script>

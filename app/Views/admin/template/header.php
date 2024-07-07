@@ -4,11 +4,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Dashboard - Tabler - Premium and Open Source dashboard template with responsive and high quality UI.</title>
     <!-- CSS files -->
-    <link href="<?= base_url('public') ?>/dist/css/tabler.min.css" rel="stylesheet" />
-    <link href="<?= base_url('public') ?>/dist/css/tabler-flags.min.css" rel="stylesheet" />
-    <link href="<?= base_url('public') ?>/dist/css/tabler-payments.min.css" rel="stylesheet" />
-    <link href="<?= base_url('public') ?>/dist/css/tabler-vendors.min.css" rel="stylesheet" />
-    <link href="<?= base_url('public') ?>/dist/css/demo.min.css" rel="stylesheet" />
+    <link href="<?= base_url('') ?>/dist/css/tabler.min.css" rel="stylesheet" />
+    <link href="<?= base_url('') ?>/dist/css/tabler-flags.min.css" rel="stylesheet" />
+    <link href="<?= base_url('') ?>/dist/css/tabler-payments.min.css" rel="stylesheet" />
+    <link href="<?= base_url('') ?>/dist/css/tabler-vendors.min.css" rel="stylesheet" />
+    <link href="<?= base_url('') ?>/dist/css/demo.min.css" rel="stylesheet" />
     <style>
         @import url('https://rsms.me/inter/inter.css');
 

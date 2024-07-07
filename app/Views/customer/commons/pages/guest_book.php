@@ -13,7 +13,7 @@
           </h2>
         </div>
         <div class="col-auto ms-auto d-print-none" style="padding-bottom: 20px">
-          <?php include './app/Views/customer/commons/components/dropdown/event_list_dropdown.php'; ?>
+          <?= view('customer/commons/components/dropdown/event_list_dropdown') ?>
         </div>
       </div>
     </div>

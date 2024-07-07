@@ -20,7 +20,7 @@ use function PHPUnit\Framework\isEmpty;
 class GuestHomeController extends BaseController
 {
 
-    public function present($weddingName)
+    function present($weddingName)
     {
         $transactionModel   = new TransactionModel();
         $profilesModel      = new ProfilesModel();
@@ -61,19 +61,19 @@ class GuestHomeController extends BaseController
         $imageLoveStoryData         = $imagesModel->where('transaction_id', $data['weddingData']['id'])->where('type', 'love_story')->get()->getRowArray();
 
         $images_gallery             = $imagesModel->where('transaction_id', $data['weddingData']['id'])->where('type', 'gallery')->get()->getResultArray();
-        $data['imageGalleryFirst']  = $images_gallery[0]['url_image'] ?? null != null ? base_url('public/assets/images/album/' . $images_gallery[0]['url_image']) : base_url('public/assets/images/icon/default-upload.png');
-        $data['imageGallerySecond'] = $images_gallery[1]['url_image'] ?? null != null ? base_url('public/assets/images/album/' . $images_gallery[1]['url_image']) : base_url('public/assets/images/icon/default-upload.png');
-        $data['imageGalleryThird']  = $images_gallery[2]['url_image'] ?? null != null ? base_url('public/assets/images/album/' . $images_gallery[2]['url_image']) : base_url('public/assets/images/icon/default-upload.png');
-        $data['imageGalleryFourth'] = $images_gallery[3]['url_image'] ?? null != null ? base_url('public/assets/images/album/' . $images_gallery[3]['url_image']) : base_url('public/assets/images/icon/default-upload.png');
-        $data['imageGalleryFifh']   = $images_gallery[4]['url_image'] ?? null != null ? base_url('public/assets/images/album/' . $images_gallery[4]['url_image']) : base_url('public/assets/images/icon/default-upload.png');
-        $data['imageGallerySixth']  = $images_gallery[5]['url_image'] ?? null != null ? base_url('public/assets/images/album/' . $images_gallery[5]['url_image']) : base_url('public/assets/images/icon/default-upload.png');
-        $data['imageGallerySeventh'] = $images_gallery[6]['url_image'] ?? null != null ? base_url('public/assets/images/album/' . $images_gallery[6]['url_image']) : base_url('public/assets/images/icon/default-upload.png');
-        $data['imageGalleryEighth'] = $images_gallery[7]['url_image'] ?? null != null ? base_url('public/assets/images/album/' . $images_gallery[7]['url_image']) : base_url('public/assets/images/icon/default-upload.png');
-        $data['imageGalleryNineth'] = $images_gallery[8]['url_image'] ?? null != null ? base_url('public/assets/images/album/' . $images_gallery[8]['url_image']) : base_url('public/assets/images/icon/default-upload.png');
-        $data['imageGalleryTenth']  = $images_gallery[9]['url_image'] ?? null != null ? base_url('public/assets/images/album/' . $images_gallery[9]['url_image']) : base_url('public/assets/images/icon/default-upload.png');
+        $data['imageGalleryFirst']  = $images_gallery[0]['url_image'] ?? null != null ? base_url('/assets/images/album/' . $images_gallery[0]['url_image']) : base_url('/assets/images/icon/default-upload.png');
+        $data['imageGallerySecond'] = $images_gallery[1]['url_image'] ?? null != null ? base_url('/assets/images/album/' . $images_gallery[1]['url_image']) : base_url('/assets/images/icon/default-upload.png');
+        $data['imageGalleryThird']  = $images_gallery[2]['url_image'] ?? null != null ? base_url('/assets/images/album/' . $images_gallery[2]['url_image']) : base_url('/assets/images/icon/default-upload.png');
+        $data['imageGalleryFourth'] = $images_gallery[3]['url_image'] ?? null != null ? base_url('/assets/images/album/' . $images_gallery[3]['url_image']) : base_url('/assets/images/icon/default-upload.png');
+        $data['imageGalleryFifh']   = $images_gallery[4]['url_image'] ?? null != null ? base_url('/assets/images/album/' . $images_gallery[4]['url_image']) : base_url('/assets/images/icon/default-upload.png');
+        $data['imageGallerySixth']  = $images_gallery[5]['url_image'] ?? null != null ? base_url('/assets/images/album/' . $images_gallery[5]['url_image']) : base_url('/assets/images/icon/default-upload.png');
+        $data['imageGallerySeventh'] = $images_gallery[6]['url_image'] ?? null != null ? base_url('/assets/images/album/' . $images_gallery[6]['url_image']) : base_url('/assets/images/icon/default-upload.png');
+        $data['imageGalleryEighth'] = $images_gallery[7]['url_image'] ?? null != null ? base_url('/assets/images/album/' . $images_gallery[7]['url_image']) : base_url('/assets/images/icon/default-upload.png');
+        $data['imageGalleryNineth'] = $images_gallery[8]['url_image'] ?? null != null ? base_url('/assets/images/album/' . $images_gallery[8]['url_image']) : base_url('/assets/images/icon/default-upload.png');
+        $data['imageGalleryTenth']  = $images_gallery[9]['url_image'] ?? null != null ? base_url('/assets/images/album/' . $images_gallery[9]['url_image']) : base_url('/assets/images/icon/default-upload.png');
 
-        $basedImageAssetsPath       = base_url('public/assets/images/album/');
-        $basedImageAssetsGuestPath  = base_url('public/AssetsGuest/image/template_a');
+        $basedImageAssetsPath       = base_url('/assets/images/album/');
+        $basedImageAssetsGuestPath  = base_url('/AssetsGuest/image/template_a');
 
         $data['imageCoverPath']     = $imageCoverData != null ? $basedImageAssetsPath . '/' . $imageCoverData['url_image'] : $basedImageAssetsGuestPath . "/wedding-1850074_1280.jpg";
         $data['imageLoveStoryPath'] = $imageLoveStoryData != null ? $basedImageAssetsPath . '/' . $imageLoveStoryData['url_image'] : $basedImageAssetsGuestPath . "/wedding-6173363_1280.jpg";
@@ -145,7 +145,7 @@ class GuestHomeController extends BaseController
         }
     }
 
-    public function presentPreview($weddingName)
+    function presentPreview($weddingName)
     {
         $transactionModel   = new TransactionModel();
         $profilesModel      = new ProfilesModel();
@@ -184,20 +184,20 @@ class GuestHomeController extends BaseController
         // image data
         $images_gallery     = $imagesModel->where('transaction_id', $data['weddingData']['id'])->where('type', 'gallery')->get()->getResultArray();
         if (count($images_gallery) > 0) {
-            $data['imageGalleryFirst']  = $images_gallery[0]['url_image'] ?? null != null ? base_url('public/assets/images/album/' . $images_gallery[0]['url_image']) : base_url('public/assets/images/icon/default-upload.png');
-            $data['imageGallerySecond'] = $images_gallery[1]['url_image'] ?? null != null ? base_url('public/assets/images/album/' . $images_gallery[1]['url_image']) : base_url('public/assets/images/icon/default-upload.png');
-            $data['imageGalleryThird']  = $images_gallery[2]['url_image'] ?? null != null ? base_url('public/assets/images/album/' . $images_gallery[2]['url_image']) : base_url('public/assets/images/icon/default-upload.png');
-            $data['imageGalleryFourth'] = $images_gallery[3]['url_image'] ?? null != null ? base_url('public/assets/images/album/' . $images_gallery[3]['url_image']) : base_url('public/assets/images/icon/default-upload.png');
-            $data['imageGalleryFifh']   = $images_gallery[4]['url_image'] ?? null != null ? base_url('public/assets/images/album/' . $images_gallery[4]['url_image']) : base_url('public/assets/images/icon/default-upload.png');
-            $data['imageGallerySixth']  = $images_gallery[5]['url_image'] ?? null != null ? base_url('public/assets/images/album/' . $images_gallery[5]['url_image']) : base_url('public/assets/images/icon/default-upload.png');
-            $data['imageGallerySeventh'] = $images_gallery[6]['url_image'] ?? null != null ? base_url('public/assets/images/album/' . $images_gallery[6]['url_image']) : base_url('public/assets/images/icon/default-upload.png');
-            $data['imageGalleryEighth'] = $images_gallery[7]['url_image'] ?? null != null ? base_url('public/assets/images/album/' . $images_gallery[7]['url_image']) : base_url('public/assets/images/icon/default-upload.png');
-            $data['imageGalleryNineth'] = $images_gallery[8]['url_image'] ?? null != null ? base_url('public/assets/images/album/' . $images_gallery[8]['url_image']) : base_url('public/assets/images/icon/default-upload.png');
-            $data['imageGalleryTenth']  = $images_gallery[9]['url_image'] ?? null != null ? base_url('public/assets/images/album/' . $images_gallery[9]['url_image']) : base_url('public/assets/images/icon/default-upload.png');
+            $data['imageGalleryFirst']  = $images_gallery[0]['url_image'] ?? null != null ? base_url('/assets/images/album/' . $images_gallery[0]['url_image']) : base_url('/assets/images/icon/default-upload.png');
+            $data['imageGallerySecond'] = $images_gallery[1]['url_image'] ?? null != null ? base_url('/assets/images/album/' . $images_gallery[1]['url_image']) : base_url('/assets/images/icon/default-upload.png');
+            $data['imageGalleryThird']  = $images_gallery[2]['url_image'] ?? null != null ? base_url('/assets/images/album/' . $images_gallery[2]['url_image']) : base_url('/assets/images/icon/default-upload.png');
+            $data['imageGalleryFourth'] = $images_gallery[3]['url_image'] ?? null != null ? base_url('/assets/images/album/' . $images_gallery[3]['url_image']) : base_url('/assets/images/icon/default-upload.png');
+            $data['imageGalleryFifh']   = $images_gallery[4]['url_image'] ?? null != null ? base_url('/assets/images/album/' . $images_gallery[4]['url_image']) : base_url('/assets/images/icon/default-upload.png');
+            $data['imageGallerySixth']  = $images_gallery[5]['url_image'] ?? null != null ? base_url('/assets/images/album/' . $images_gallery[5]['url_image']) : base_url('/assets/images/icon/default-upload.png');
+            $data['imageGallerySeventh'] = $images_gallery[6]['url_image'] ?? null != null ? base_url('/assets/images/album/' . $images_gallery[6]['url_image']) : base_url('/assets/images/icon/default-upload.png');
+            $data['imageGalleryEighth'] = $images_gallery[7]['url_image'] ?? null != null ? base_url('/assets/images/album/' . $images_gallery[7]['url_image']) : base_url('/assets/images/icon/default-upload.png');
+            $data['imageGalleryNineth'] = $images_gallery[8]['url_image'] ?? null != null ? base_url('/assets/images/album/' . $images_gallery[8]['url_image']) : base_url('/assets/images/icon/default-upload.png');
+            $data['imageGalleryTenth']  = $images_gallery[9]['url_image'] ?? null != null ? base_url('/assets/images/album/' . $images_gallery[9]['url_image']) : base_url('/assets/images/icon/default-upload.png');
         }
 
-        $basedImageAssetsPath       = base_url('public/assets/images/album/');
-        $basedImageAssetsGuestPath  = base_url('public/AssetsGuest/image/template_a');
+        $basedImageAssetsPath       = base_url('/assets/images/album/');
+        $basedImageAssetsGuestPath  = base_url('/AssetsGuest/image/template_a');
 
         $imageCoverData             = $imagesModel->where('transaction_id', $data['weddingData']['id'])->where('type', 'cover')->get()->getRowArray();
         $imageLoveStoryData         = $imagesModel->where('transaction_id', $data['weddingData']['id'])->where('type', 'love_story')->get()->getRowArray();
@@ -316,7 +316,7 @@ class GuestHomeController extends BaseController
         return $this->response->setJSON($wishesList);
     }
 
-    public function requestSubmitRSVP()
+    function requestSubmitRSVP()
     {
         $getPost = $this->request->getPost();
 

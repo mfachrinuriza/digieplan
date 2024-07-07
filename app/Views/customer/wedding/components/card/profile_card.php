@@ -2,7 +2,7 @@
     <div class="card">
         <div class="container-md d-flex flex-column justify-content-center">
             <div class="empty">
-                <span class="avatar avatar-xl mb-3 rounded-3" style="background-image: url(<?= base_url('public/assets/images/album/' . $profiles['photo'] ?? "default_profile.png"); ?>)"></span>
+                <span class="avatar avatar-xl mb-3 rounded-3" style="background-image: url(<?= base_url('/assets/images/album/' . $profiles['photo'] ?? "default_profile.png"); ?>)"></span>
                 <p class="empty-title"><?= $profiles['fullname'] ?><small class="empty-subtitle"> (<?= $profiles['nickname'] ?>)</small></p>
                 <p class="empty-subtitle">Anak <?= $profiles['gender'] ? "Laki-Laki" : "Perempuan" ?> dari Bapak <?= $profiles['father_name'] ?> dan Ibu <?= $profiles['mother_name'] ?></p>
 

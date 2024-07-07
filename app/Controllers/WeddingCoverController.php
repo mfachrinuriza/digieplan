@@ -42,16 +42,21 @@ class WeddingCoverController extends BaseController
             $type = $_FILES['image']['type'];
 
             // Specify the server path to the folder where you want to save the images
-            $folder = FCPATH . 'public/assets/images/album/';
+            $folder = FCPATH . 'assets/images/album/';
 
             $sizeInBytes = $_FILES['image']['size'];
             $sizeInMB = $sizeInBytes / (1024 * 1024); // Convert bytes to megabytes
             // Round the result to a desired number of decimal places
             $sizeInMB = round($sizeInMB, 2); // Adjust the number inside round() to change the precision
+            $maxSize = 2; // 2MB
+            if ($sizeInMB < $maxSize) {
+                // Check if the directory exists, if not, create it
+                if (!is_dir($folder)) {
+                    mkdir($folder, 0777, true);
+                }
 
-            if ($sizeInMB < 2) {
-                // Logging to the browser console
-                if ($this->uploadImage($temp, $folder, $image_name)) {
+                // Move the uploaded file to the destination directory
+                if (move_uploaded_file($temp, $folder . $image_name)) {
                     // PROSES FORMULIR 
                     $formField = array(
                         'transaction_id' => $getPost['transaction_id'],
@@ -76,7 +81,7 @@ class WeddingCoverController extends BaseController
                     session()->setFlashdata('error', 'Terjadi kesalahan saat memperbarui Foto Cover!');
                 }
             } else {
-                session()->setFlashdata('error', 'Foto Cover melebihi 5MB!');
+                session()->setFlashdata('error', 'Foto Cover melebihi ' . $maxSize . 'MB!');
             }
             return redirect()->to(base_url(getenv('URL_MAIN_PAGE')));
         }
