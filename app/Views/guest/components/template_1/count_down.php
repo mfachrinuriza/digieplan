@@ -1,5 +1,5 @@
 <section id="countDown">
-    <div id="countDown_top_image"><img src="<?= base_url('public/AssetsGuest/image/countDown_top.svg') ?>" width="70%"></div>
+    <div id="countDown_top_image"><img src="<?= base_url('/AssetsGuest/image/countDown_top.svg') ?>" width="70%"></div>
     <div id="countDown_content">
         <h3 id="countDown_title">COUNTING TO THE BIG DAY</h3>
         <hr />
@@ -28,7 +28,7 @@
         <button class="variant_1_button" type="button">SAVE THE DATE</button>
 
         <h3 class="mb-3" id="surah_content"></h3>
-        <img class="mb-4" id="pray_divider" src="<?= base_url('public/AssetsGuest/image/divider.svg'); ?>" width="15%" />
+        <img class="mb-4" id="pray_divider" src="<?= base_url('/AssetsGuest/image/divider.svg'); ?>" width="15%" />
         <h4 class="mb-3" id="sub_content"></h4>
         <p class="mb-1" id="surah_name"></p>
     </div>

@@ -6,7 +6,7 @@
         </button>
         <h1 class="navbar-brand navbar-brand-autodark">
             <a href="#">
-                <img src="<?= base_url('public') ?>/dist/img/weddingku-logo-text-white.png" width="180" height="40" alt="WeddingKu" class="navbar-brand-image">
+                <img src="<?= base_url('') ?>/dist/img/weddingku-logo-text-white.png" width="180" height="40" alt="WeddingKu" class="navbar-brand-image">
             </a>
         </h1>
         <div class="navbar-nav flex-row d-lg-none">
@@ -149,14 +149,14 @@
             </div>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
-                    <span class="avatar avatar-sm" style="background-image: url(<?= base_url('public') ?>/static/avatars/000m.jpg)"></span>
+                    <span class="avatar avatar-sm" style="background-image: url(<?= base_url('') ?>/static/avatars/000m.jpg)"></span>
                     <div class="d-none d-xl-block ps-2">
                         <div><?= session()->get('user_name') ?></div>
                         <div class="mt-1 small text-muted"><?= session()->get('user_level') ?></div>
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <a href="<?= base_url('public') ?>/sign-in.html" class="dropdown-item">Logout</a>
+                    <a href="<?= base_url('') ?>/sign-in.html" class="dropdown-item">Logout</a>
                 </div>
             </div>
         </div>
@@ -193,7 +193,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('public') ?>/">
+                    <a class="nav-link" href="<?= base_url('') ?>/">
                         <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -226,20 +226,20 @@
                     <div class="dropdown-menu">
                         <div class="dropdown-menu-columns">
                             <div class="dropdown-menu-column">
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/empty.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/empty.html">
                                     Empty page
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/accordion.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/accordion.html">
                                     Accordion
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/blank.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/blank.html">
                                     Blank page
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/badges.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/badges.html">
                                     Badges
                                     <span class="badge badge-sm bg-green-lt text-uppercase ms-auto">New</span>
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/buttons.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/buttons.html">
                                     Buttons
                                 </a>
                                 <div class="dropend">
@@ -248,99 +248,99 @@
                                         <span class="badge badge-sm bg-green-lt text-uppercase ms-auto">New</span>
                                     </a>
                                     <div class="dropdown-menu">
-                                        <a href="<?= base_url('public') ?>/cards.html" class="dropdown-item">
+                                        <a href="<?= base_url('') ?>/cards.html" class="dropdown-item">
                                             Sample cards
                                         </a>
-                                        <a href="<?= base_url('public') ?>/card-actions.html" class="dropdown-item">
+                                        <a href="<?= base_url('') ?>/card-actions.html" class="dropdown-item">
                                             Card actions
                                             <span class="badge badge-sm bg-green-lt text-uppercase ms-auto">New</span>
                                         </a>
-                                        <a href="<?= base_url('public') ?>/cards-masonry.html" class="dropdown-item">
+                                        <a href="<?= base_url('') ?>/cards-masonry.html" class="dropdown-item">
                                             Cards Masonry
                                         </a>
                                     </div>
                                 </div>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/colors.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/colors.html">
                                     Colors
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/datagrid.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/datagrid.html">
                                     Data grid
                                     <span class="badge badge-sm bg-green-lt text-uppercase ms-auto">New</span>
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/datatables.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/datatables.html">
                                     Datatables
                                     <span class="badge badge-sm bg-green-lt text-uppercase ms-auto">New</span>
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/dropdowns.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/dropdowns.html">
                                     Dropdowns
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/modals.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/modals.html">
                                     Modals
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/maps.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/maps.html">
                                     Maps
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/map-fullsize.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/map-fullsize.html">
                                     Map fullsize
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/maps-vector.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/maps-vector.html">
                                     Vector maps
                                     <span class="badge badge-sm bg-green-lt text-uppercase ms-auto">New</span>
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/navigation.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/navigation.html">
                                     Navigation
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/charts.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/charts.html">
                                     Charts
                                 </a>
                             </div>
                             <div class="dropdown-menu-column">
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/pagination.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/pagination.html">
                                     <!-- Download SVG icon from http://tabler-icons.io/i/pie-chart -->
                                     Pagination
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/placeholder.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/placeholder.html">
                                     Placeholder
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/steps.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/steps.html">
                                     Steps
                                     <span class="badge badge-sm bg-green-lt text-uppercase ms-auto">New</span>
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/tabs.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/tabs.html">
                                     Tabs
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/tables.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/tables.html">
                                     Tables
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/carousel.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/carousel.html">
                                     Carousel
                                     <span class="badge badge-sm bg-green-lt text-uppercase ms-auto">New</span>
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/lists.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/lists.html">
                                     Lists
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/typography.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/typography.html">
                                     Typography
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/offcanvas.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/offcanvas.html">
                                     Offcanvas
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/markdown.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/markdown.html">
                                     Markdown
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/dropzone.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/dropzone.html">
                                     Dropzone
                                     <span class="badge badge-sm bg-green-lt text-uppercase ms-auto">New</span>
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/lightbox.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/lightbox.html">
                                     Lightbox
                                     <span class="badge badge-sm bg-green-lt text-uppercase ms-auto">New</span>
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/tinymce.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/tinymce.html">
                                     TinyMCE
                                     <span class="badge badge-sm bg-green-lt text-uppercase ms-auto">New</span>
                                 </a>
-                                <a class="dropdown-item" href="<?= base_url('public') ?>/inline-player.html">
+                                <a class="dropdown-item" href="<?= base_url('') ?>/inline-player.html">
                                     Inline player
                                     <span class="badge badge-sm bg-green-lt text-uppercase ms-auto">New</span>
                                 </a>
@@ -349,28 +349,28 @@
                                         Authentication
                                     </a>
                                     <div class="dropdown-menu">
-                                        <a href="<?= base_url('public') ?>/sign-in.html" class="dropdown-item">
+                                        <a href="<?= base_url('') ?>/sign-in.html" class="dropdown-item">
                                             Sign in
                                         </a>
-                                        <a href="<?= base_url('public') ?>/sign-in-link.html" class="dropdown-item">
+                                        <a href="<?= base_url('') ?>/sign-in-link.html" class="dropdown-item">
                                             Sign in link
                                         </a>
-                                        <a href="<?= base_url('public') ?>/sign-in-illustration.html" class="dropdown-item">
+                                        <a href="<?= base_url('') ?>/sign-in-illustration.html" class="dropdown-item">
                                             Sign in with illustration
                                         </a>
-                                        <a href="<?= base_url('public') ?>/sign-in-cover.html" class="dropdown-item">
+                                        <a href="<?= base_url('') ?>/sign-in-cover.html" class="dropdown-item">
                                             Sign in with cover
                                         </a>
-                                        <a href="<?= base_url('public') ?>/sign-up.html" class="dropdown-item">
+                                        <a href="<?= base_url('') ?>/sign-up.html" class="dropdown-item">
                                             Sign up
                                         </a>
-                                        <a href="<?= base_url('public') ?>/forgot-password.html" class="dropdown-item">
+                                        <a href="<?= base_url('') ?>/forgot-password.html" class="dropdown-item">
                                             Forgot password
                                         </a>
-                                        <a href="<?= base_url('public') ?>/terms-of-service.html" class="dropdown-item">
+                                        <a href="<?= base_url('') ?>/terms-of-service.html" class="dropdown-item">
                                             Terms of service
                                         </a>
-                                        <a href="<?= base_url('public') ?>/auth-lock.html" class="dropdown-item">
+                                        <a href="<?= base_url('') ?>/auth-lock.html" class="dropdown-item">
                                             Lock screen
                                         </a>
                                     </div>
@@ -409,7 +409,7 @@
             </div>
             <div class="nav-item dropdown" style="margin-left: 15px;">
                 <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
-                    <span class="avatar avatar-sm" style="background-image: url(<?= base_url('public') ?>/static/avatars/000m.jpg)"></span>
+                    <span class="avatar avatar-sm" style="background-image: url(<?= base_url('') ?>/static/avatars/000m.jpg)"></span>
                     <div class="d-none d-xl-block ps-2">
                         <div><?= session()->get('user_name') ?></div>
                         <div class="mt-1 small text-muted"><?= session()->get('user_level') ?></div>
@@ -422,7 +422,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar-menu">
             <div>
-                <form action="<?= base_url('public') ?>/" method="get" autocomplete="off" novalidate>
+                <form action="<?= base_url('') ?>/" method="get" autocomplete="off" novalidate>
                     <div class="input-icon">
                         <span class="input-icon-addon">
                             <!-- Download SVG icon from http://tabler-icons.io/i/search -->

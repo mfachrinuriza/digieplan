@@ -1,6 +1,6 @@
 <div class="page-wrapper">
     <!-- Page header -->
-    <?php include_once './app/Views/customer/wedding/components/header_page.php' ?>
+    <?= view('customer/wedding/components/header_page') ?>
 
     <!-- Page body -->
     <div class="page-body">
@@ -39,8 +39,8 @@
                 <?php
                 if (count($receptionsData) > 0) {
                     foreach ($receptionsData as $row) {
-                        require "./app/Views/customer/wedding/components/card/reception_card.php";
-                        include "./app/Views/customer/wedding/components/modals/reception/update_reception_modal.php";
+                        echo view('customer/wedding/components/card/reception_card', ['row' => $row]);
+                        echo view('customer/wedding/components/modals/reception/update_reception_modal');
                     }
                 } else {
                     $empty_state_title = "Acara";
@@ -77,8 +77,6 @@
             </div>
         </div>
     </div>
-    <?php
-    include_once "./app/Views/customer/wedding/components/modals/reception/create_reception_modal.php";
-    include_once "./app/Views/customer/commons/layer/footer_page.php"
-    ?>
+    <?= $this->include('customer/wedding/components/modals/reception/create_reception_modal') ?>
+    <?= $this->include('customer/commons/layer/footer_page') ?>
 </div>

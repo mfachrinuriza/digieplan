@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Login | Panel Admin Weddingku</title>
-  <link href="<?= base_url('public') ?>/dist/css/tabler.min.css" rel="stylesheet" />
-  <link href="<?= base_url('public') ?>/dist/css/tabler-flags.min.css" rel="stylesheet" />
-  <link href="<?= base_url('public') ?>/dist/css/tabler-payments.min.css" rel="stylesheet" />
-  <link href="<?= base_url('public') ?>/dist/css/tabler-vendors.min.css" rel="stylesheet" />
-  <link href="<?= base_url('public') ?>/dist/css/demo.min.css" rel="stylesheet" />
+  <link href="<?= base_url('/dist/css/tabler.min.css') ?>" rel="stylesheet" />
+  <link href="<?= base_url('/dist/css/tabler-flags.min.css') ?>" rel="stylesheet" />
+  <link href="<?= base_url('/dist/css/tabler-payments.min.css') ?>" rel="stylesheet" />
+  <link href="<?= base_url('/dist/css/tabler-vendors.min.css') ?>" rel="stylesheet" />
+  <link href="<?= base_url('/dist/css/demo.min.css') ?>" rel="stylesheet" />
   <style>
     @import url('https://rsms.me/inter/inter.css');
 
@@ -25,13 +25,13 @@
 </head>
 
 <body class=" d-flex flex-column">
-  <script src="<?= base_url('public') ?>/dist/js/demo-theme.min.js"></script>
+  <script src="<?= base_url('/dist/js/demo-theme.min.js') ?>"></script>
   <div class="page page-center">
     <div class="container container-tight py-4">
       <div class="card card-md">
         <div class="card-body">
           <h1 class="h1 text-center mb-2">
-            <img class="rounded-4" src="<?= base_url('public/assets/images/logo.png') ?>" width="300">
+            <img class="rounded-4" src="<?= base_url('/assets/images/logo.png') ?>" width="300">
           </h1>
           <br />
           <h2 class="h2 text-center mb-4">Login</h2>
@@ -72,8 +72,8 @@
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="<?= base_url('public') ?>/dist/js/tabler.min.js" defer></script>
-  <script src="<?= base_url('public') ?>/dist/js/demo.min.js" defer></script>
+  <script src="<?= base_url('/dist/js/tabler.min.js') ?>" defer></script>
+  <script src="<?= base_url('/dist/js/demo.min.js') ?>" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 

@@ -15,27 +15,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title><?= $title ?></title>
     <!-- CSS files -->
-    <link href="<?= base_url('public'); ?>/dist/css/tabler.min.css" rel="stylesheet" />
-    <link href="<?= base_url('public'); ?>/dist/css/tabler-flags.min.css" rel="stylesheet" />
-    <link href="<?= base_url('public'); ?>/dist/css/tabler-payments.min.css" rel="stylesheet" />
-    <link href="<?= base_url('public'); ?>/dist/css/tabler-vendors.min.css" rel="stylesheet" />
-    <link href="<?= base_url('public'); ?>/dist/css/demo.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="<?= base_url('public/assets/css/gallery.css'); ?>" />
-    <link href="<?= base_url('public'); ?>/dist/libs/dropzone/dist/dropzone.css" rel="stylesheet" />
-    <!-- <link href="<?= base_url('public'); ?>/dist/css/style.css" rel="stylesheet"/> -->
+    <link href="<?= base_url(''); ?>/dist/css/tabler.min.css" rel="stylesheet" />
+    <link href="<?= base_url(''); ?>/dist/css/tabler-flags.min.css" rel="stylesheet" />
+    <link href="<?= base_url(''); ?>/dist/css/tabler-payments.min.css" rel="stylesheet" />
+    <link href="<?= base_url(''); ?>/dist/css/tabler-vendors.min.css" rel="stylesheet" />
+    <link href="<?= base_url(''); ?>/dist/css/demo.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="<?= base_url('/assets/css/gallery.css'); ?>" />
+    <link href="<?= base_url(''); ?>/dist/libs/dropzone/dist/dropzone.css" rel="stylesheet" />
+    <!-- <link href="<?= base_url(''); ?>/dist/css/style.css" rel="stylesheet"/> -->
 
-    <script src="<?= base_url('public'); ?>/dist/js/imagesloaded.pkgd.min.js"></script>
-    <script src="<?= base_url('public'); ?>/dist/js/masonry.pkgd.min.js"></script>
+    <script src="<?= base_url(''); ?>/dist/js/imagesloaded.pkgd.min.js"></script>
+    <script src="<?= base_url(''); ?>/dist/js/masonry.pkgd.min.js"></script>
 
     <!-- DataTables -->
     <?php
     if ($title == getenv('TITLE_GUEST_BOOK') || $title == getenv('TITLE_GUEST')) {
         echo '
-            <link href="' . base_url('public/dist/fontawesome-free/css/all.min.css') . '">
-            <link href="' . base_url('public/dist/css/adminlte.min.css') . '">
-            <link href="' . base_url('public/dist/datatables/datatables-bs4/css/dataTables.bootstrap4.min.css') . '">
-            <link href="' . base_url('public/dist/datatables/datatables-responsive/css/responsive.bootstrap4.min.css') . '">
-            <link href="' . base_url('public/dist/datatables-buttons/css/buttons.bootstrap4.min.css') . '">
+            <link href="' . base_url('/dist/fontawesome-free/css/all.min.css') . '">
+            <link href="' . base_url('/dist/css/adminlte.min.css') . '">
+            <link href="' . base_url('/dist/datatables/datatables-bs4/css/dataTables.bootstrap4.min.css') . '">
+            <link href="' . base_url('/dist/datatables/datatables-responsive/css/responsive.bootstrap4.min.css') . '">
+            <link href="' . base_url('/dist/datatables-buttons/css/buttons.bootstrap4.min.css') . '">
             ';
     }
     ?>

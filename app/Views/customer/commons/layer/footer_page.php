@@ -12,7 +12,7 @@
                         All rights reserved.
                     </li>
                     <li class="list-inline-item">
-                        <a href="<?= base_url('public'); ?>/changelog.html" class="link-secondary" rel="noopener">
+                        <a href="<?= base_url(''); ?>/changelog.html" class="link-secondary" rel="noopener">
                             v1.0.0-beta-1
                         </a>
                     </li>

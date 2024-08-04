@@ -1,6 +1,6 @@
 <div class="page-wrapper">
     <!-- Page header -->
-    <?php include_once './app/Views/customer/wedding/components/header_page.php' ?>
+    <?= view('customer/wedding/components/header_page') ?>
 
     <!-- Page body -->
     <div class="page-body">
@@ -18,7 +18,7 @@
                                                     <input type="text" name="transaction_id" id="transaction_id" value="<?= $transactionSelected['id'] ?>" hidden>
                                                     <input type="text" name="type" id="type" value="love_story" hidden>
                                                     <input type="file" name="image" id="input-image" onchange="requestSubmitImage()" accept="image/*" hidden>
-                                                    <img src="<?= $url_image != null ? base_url('public/assets/images/album/' . $url_image) : base_url('public/assets/images/icon/default-upload.png') ?>" style="width: 100%; height: 100%; object-fit: cover;">
+                                                    <img src="<?= $url_image != null ? base_url('/assets/images/album/' . $url_image) : base_url('/assets/images/icon/default-upload.png') ?>" style="width: 100%; height: 100%; object-fit: cover;">
                                                 </a>
                                                 <button id="button-submit" hidden></button>
                                             </form>
@@ -89,5 +89,5 @@
             </div>
         </div>
     </div>
-    <?php include_once "./app/Views/customer/commons/layer/footer_page.php" ?>
+    <?= view('customer/commons/layer/footer_page') ?>
 </div>

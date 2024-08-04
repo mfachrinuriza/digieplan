@@ -4,7 +4,7 @@
 <?php include 'template/header.php' ?>
 
 <body>
-    <script src="<?= base_url('public') ?>/dist/js/demo-theme.min.js"></script>
+    <script src="<?= base_url('') ?>/dist/js/demo-theme.min.js"></script>
     <div class="page">
         <?php include 'template/sidebar.php' ?>
         <div class="page-wrapper">
@@ -374,7 +374,7 @@
                                                 <div>
                                                     <div class="row">
                                                         <div class="col-auto">
-                                                            <span class="avatar" style="background-image: url(<?= base_url('public') ?>/static/avatars/002m.jpg)"></span>
+                                                            <span class="avatar" style="background-image: url(<?= base_url('') ?>/static/avatars/002m.jpg)"></span>
                                                         </div>
                                                         <div class="col">
                                                             <div class="text-truncate">
@@ -390,7 +390,7 @@
                                                 <div>
                                                     <div class="row">
                                                         <div class="col-auto">
-                                                            <span class="avatar" style="background-image: url(<?= base_url('public') ?>/static/avatars/003m.jpg)"></span>
+                                                            <span class="avatar" style="background-image: url(<?= base_url('') ?>/static/avatars/003m.jpg)"></span>
                                                         </div>
                                                         <div class="col">
                                                             <div class="text-truncate">
@@ -406,7 +406,7 @@
                                                 <div>
                                                     <div class="row">
                                                         <div class="col-auto">
-                                                            <span class="avatar" style="background-image: url(<?= base_url('public') ?>/static/avatars/000f.jpg)"></span>
+                                                            <span class="avatar" style="background-image: url(<?= base_url('') ?>/static/avatars/000f.jpg)"></span>
                                                         </div>
                                                         <div class="col">
                                                             <div class="text-truncate">
@@ -422,7 +422,7 @@
                                                 <div>
                                                     <div class="row">
                                                         <div class="col-auto">
-                                                            <span class="avatar" style="background-image: url(<?= base_url('public') ?>/static/avatars/001f.jpg)"></span>
+                                                            <span class="avatar" style="background-image: url(<?= base_url('') ?>/static/avatars/001f.jpg)"></span>
                                                         </div>
                                                         <div class="col">
                                                             <div class="text-truncate">
@@ -448,7 +448,7 @@
                                                 <div>
                                                     <div class="row">
                                                         <div class="col-auto">
-                                                            <span class="avatar" style="background-image: url(<?= base_url('public') ?>/static/avatars/002f.jpg)"></span>
+                                                            <span class="avatar" style="background-image: url(<?= base_url('') ?>/static/avatars/002f.jpg)"></span>
                                                         </div>
                                                         <div class="col">
                                                             <div class="text-truncate">
@@ -461,7 +461,7 @@
                                                 <div>
                                                     <div class="row">
                                                         <div class="col-auto">
-                                                            <span class="avatar" style="background-image: url(<?= base_url('public') ?>/static/avatars/003f.jpg)"></span>
+                                                            <span class="avatar" style="background-image: url(<?= base_url('') ?>/static/avatars/003f.jpg)"></span>
                                                         </div>
                                                         <div class="col">
                                                             <div class="text-truncate">
@@ -487,7 +487,7 @@
                                                 <div>
                                                     <div class="row">
                                                         <div class="col-auto">
-                                                            <span class="avatar" style="background-image: url(<?= base_url('public') ?>/static/avatars/006m.jpg)"></span>
+                                                            <span class="avatar" style="background-image: url(<?= base_url('') ?>/static/avatars/006m.jpg)"></span>
                                                         </div>
                                                         <div class="col">
                                                             <div class="text-truncate">
@@ -500,7 +500,7 @@
                                                 <div>
                                                     <div class="row">
                                                         <div class="col-auto">
-                                                            <span class="avatar" style="background-image: url(<?= base_url('public') ?>/static/avatars/004f.jpg)"></span>
+                                                            <span class="avatar" style="background-image: url(<?= base_url('') ?>/static/avatars/004f.jpg)"></span>
                                                         </div>
                                                         <div class="col">
                                                             <div class="text-truncate">
@@ -513,7 +513,7 @@
                                                 <div>
                                                     <div class="row">
                                                         <div class="col-auto">
-                                                            <span class="avatar" style="background-image: url(<?= base_url('public') ?>/static/avatars/007m.jpg)"></span>
+                                                            <span class="avatar" style="background-image: url(<?= base_url('') ?>/static/avatars/007m.jpg)"></span>
                                                         </div>
                                                         <div class="col">
                                                             <div class="text-truncate">
@@ -539,7 +539,7 @@
                                                 <div>
                                                     <div class="row">
                                                         <div class="col-auto">
-                                                            <span class="avatar" style="background-image: url(<?= base_url('public') ?>/static/avatars/009m.jpg)"></span>
+                                                            <span class="avatar" style="background-image: url(<?= base_url('') ?>/static/avatars/009m.jpg)"></span>
                                                         </div>
                                                         <div class="col">
                                                             <div class="text-truncate">
@@ -552,7 +552,7 @@
                                                 <div>
                                                     <div class="row">
                                                         <div class="col-auto">
-                                                            <span class="avatar" style="background-image: url(<?= base_url('public') ?>/static/avatars/010m.jpg)"></span>
+                                                            <span class="avatar" style="background-image: url(<?= base_url('') ?>/static/avatars/010m.jpg)"></span>
                                                         </div>
                                                         <div class="col">
                                                             <div class="text-truncate">
@@ -565,7 +565,7 @@
                                                 <div>
                                                     <div class="row">
                                                         <div class="col-auto">
-                                                            <span class="avatar" style="background-image: url(<?= base_url('public') ?>/static/avatars/005f.jpg)"></span>
+                                                            <span class="avatar" style="background-image: url(<?= base_url('') ?>/static/avatars/005f.jpg)"></span>
                                                         </div>
                                                         <div class="col">
                                                             <div class="text-truncate">
@@ -578,7 +578,7 @@
                                                 <div>
                                                     <div class="row">
                                                         <div class="col-auto">
-                                                            <span class="avatar" style="background-image: url(<?= base_url('public') ?>/static/avatars/006f.jpg)"></span>
+                                                            <span class="avatar" style="background-image: url(<?= base_url('') ?>/static/avatars/006f.jpg)"></span>
                                                         </div>
                                                         <div class="col">
                                                             <div class="text-truncate">
@@ -645,7 +645,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="w-1">
-                                                    <span class="avatar avatar-sm" style="background-image: url(<?= base_url('public') ?>/static/avatars/000m.jpg)"></span>
+                                                    <span class="avatar avatar-sm" style="background-image: url(<?= base_url('') ?>/static/avatars/000m.jpg)"></span>
                                                 </td>
                                                 <td class="td-truncate">
                                                     <div class="text-truncate">
@@ -667,7 +667,7 @@
                                             </tr>
                                             <tr>
                                                 <td class="w-1">
-                                                    <span class="avatar avatar-sm" style="background-image: url(<?= base_url('public') ?>/static/avatars/002m.jpg)"></span>
+                                                    <span class="avatar avatar-sm" style="background-image: url(<?= base_url('') ?>/static/avatars/002m.jpg)"></span>
                                                 </td>
                                                 <td class="td-truncate">
                                                     <div class="text-truncate">
@@ -678,7 +678,7 @@
                                             </tr>
                                             <tr>
                                                 <td class="w-1">
-                                                    <span class="avatar avatar-sm" style="background-image: url(<?= base_url('public') ?>/static/avatars/003m.jpg)"></span>
+                                                    <span class="avatar avatar-sm" style="background-image: url(<?= base_url('') ?>/static/avatars/003m.jpg)"></span>
                                                 </td>
                                                 <td class="td-truncate">
                                                     <div class="text-truncate">
@@ -689,7 +689,7 @@
                                             </tr>
                                             <tr>
                                                 <td class="w-1">
-                                                    <span class="avatar avatar-sm" style="background-image: url(<?= base_url('public') ?>/static/avatars/000f.jpg)"></span>
+                                                    <span class="avatar avatar-sm" style="background-image: url(<?= base_url('') ?>/static/avatars/000f.jpg)"></span>
                                                 </td>
                                                 <td class="td-truncate">
                                                     <div class="text-truncate">
@@ -862,7 +862,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <a href="https://github.com/sponsors/codecalm" class="card card-sponsor" target="_blank" rel="noopener" style="background-image: url(<?= base_url('public') ?>/static/sponsor-banner-homepage.svg)" aria-label="Sponsor Tabler!">
+                            <a href="https://github.com/sponsors/codecalm" class="card card-sponsor" target="_blank" rel="noopener" style="background-image: url(<?= base_url('') ?>/static/sponsor-banner-homepage.svg)" aria-label="Sponsor Tabler!">
                                 <div class="card-body"></div>
                             </a>
                         </div>
@@ -995,7 +995,7 @@
                                                     3</a>
                                             </td>
                                             <td>
-                                                <span class="avatar avatar-sm" style="background-image: url(<?= base_url('public') ?>/static/avatars/000m.jpg)"></span>
+                                                <span class="avatar avatar-sm" style="background-image: url(<?= base_url('') ?>/static/avatars/000m.jpg)"></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1085,7 +1085,7 @@
                                                     1</a>
                                             </td>
                                             <td>
-                                                <span class="avatar avatar-sm" style="background-image: url(<?= base_url('public') ?>/static/avatars/002m.jpg)"></span>
+                                                <span class="avatar avatar-sm" style="background-image: url(<?= base_url('') ?>/static/avatars/002m.jpg)"></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1130,7 +1130,7 @@
                                                     12</a>
                                             </td>
                                             <td>
-                                                <span class="avatar avatar-sm" style="background-image: url(<?= base_url('public') ?>/static/avatars/003m.jpg)"></span>
+                                                <span class="avatar avatar-sm" style="background-image: url(<?= base_url('') ?>/static/avatars/003m.jpg)"></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1175,7 +1175,7 @@
                                                     5</a>
                                             </td>
                                             <td>
-                                                <span class="avatar avatar-sm" style="background-image: url(<?= base_url('public') ?>/static/avatars/000f.jpg)"></span>
+                                                <span class="avatar avatar-sm" style="background-image: url(<?= base_url('') ?>/static/avatars/000f.jpg)"></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1220,7 +1220,7 @@
                                                     3</a>
                                             </td>
                                             <td>
-                                                <span class="avatar avatar-sm" style="background-image: url(<?= base_url('public') ?>/static/avatars/001f.jpg)"></span>
+                                                <span class="avatar avatar-sm" style="background-image: url(<?= base_url('') ?>/static/avatars/001f.jpg)"></span>
                                             </td>
                                         </tr>
                                     </table>
@@ -1568,8 +1568,8 @@
                     <div class="row text-center align-items-center flex-row-reverse">
                         <div class="col-lg-auto ms-lg-auto">
                             <ul class="list-inline list-inline-dots mb-0">
-                                <li class="list-inline-item"><a href="<?= base_url('public') ?>/docs/" class="link-secondary">Documentation</a></li>
-                                <li class="list-inline-item"><a href="<?= base_url('public') ?>/license.html" class="link-secondary">License</a></li>
+                                <li class="list-inline-item"><a href="<?= base_url('') ?>/docs/" class="link-secondary">Documentation</a></li>
+                                <li class="list-inline-item"><a href="<?= base_url('') ?>/license.html" class="link-secondary">License</a></li>
                                 <li class="list-inline-item"><a href="https://github.com/tabler/tabler" target="_blank" class="link-secondary" rel="noopener">Source code</a></li>
                                 <li class="list-inline-item">
                                     <a href="https://github.com/sponsors/codecalm" target="_blank" class="link-secondary" rel="noopener">
@@ -1591,7 +1591,7 @@
                                     All rights reserved.
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="<?= base_url('public') ?>/changelog.html" class="link-secondary" rel="noopener">
+                                    <a href="<?= base_url('') ?>/changelog.html" class="link-secondary" rel="noopener">
                                         v1.0.0-beta17
                                     </a>
                                 </li>
@@ -1709,13 +1709,13 @@
         </div>
     </div>
     <!-- Libs JS -->
-    <script src="<?= base_url('public') ?>/dist/libs/apexcharts/dist/apexcharts.min.js?1674944402" defer></script>
-    <script src="<?= base_url('public') ?>/dist/libs/jsvectormap/dist/js/jsvectormap.min.js?1674944402" defer></script>
-    <script src="<?= base_url('public') ?>/dist/libs/jsvectormap/dist/maps/world.js?1674944402" defer></script>
-    <script src="<?= base_url('public') ?>/dist/libs/jsvectormap/dist/maps/world-merc.js?1674944402" defer></script>
+    <script src="<?= base_url('') ?>/dist/libs/apexcharts/dist/apexcharts.min.js?1674944402" defer></script>
+    <script src="<?= base_url('') ?>/dist/libs/jsvectormap/dist/js/jsvectormap.min.js?1674944402" defer></script>
+    <script src="<?= base_url('') ?>/dist/libs/jsvectormap/dist/maps/world.js?1674944402" defer></script>
+    <script src="<?= base_url('') ?>/dist/libs/jsvectormap/dist/maps/world-merc.js?1674944402" defer></script>
     <!-- Tabler Core -->
-    <script src="<?= base_url('public') ?>/dist/js/tabler.min.js?1674944402" defer></script>
-    <script src="<?= base_url('public') ?>/dist/js/demo.min.js?1674944402" defer></script>
+    <script src="<?= base_url('') ?>/dist/js/tabler.min.js?1674944402" defer></script>
+    <script src="<?= base_url('') ?>/dist/js/demo.min.js?1674944402" defer></script>
     <script>
         // @formatter:off
         document.addEventListener("DOMContentLoaded", function() {

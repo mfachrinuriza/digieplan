@@ -13,7 +13,7 @@
           </h2>
         </div>
         <div class="col-auto ms-auto d-print-none" style="padding-bottom: 20px">
-          <?php include './app/Views/customer/commons/components/dropdown/event_list_dropdown.php'; ?>
+          <?= view('customer/commons/components/dropdown/event_list_dropdown') ?>
         </div>
       </div>
     </div>
@@ -173,7 +173,7 @@
                                   </tr>
                                   ';
 
-                        include "./app/Views/customer/commons/components/modals/guest/update_guest_modal.php";
+                        echo view('customer/commons/components/modals/guest/update_guest_modal', ['guest' => $guest]);
                       } ?>
 
                     </tbody>
@@ -187,7 +187,7 @@
     </div>
   </div>
   <?php
-  include "./app/Views/customer/commons/components/modals/guest/create_guest_modal.php";
-  include_once "./app/Views/customer/commons/layer/footer_page.php"
+  echo view('customer/commons/components/modals/guest/create_guest_modal');
+  echo view('customer/commons/layer/footer_page');
   ?>
 </div>

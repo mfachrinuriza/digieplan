@@ -61,62 +61,62 @@
                     <!-- Three Images -->
                     <div class="gallery_images_container" id="three-images" hidden>
                         <div class="gallery_images_container_two_collumn">
-                            <img class="gallery_images_var_1" id="first-image" onclick="buttonSelectImages('first-image', <?= $imagesList[0]['id'] ?? null ?>)" src="<?= $imagesList[0] ?? null != null ? base_url('public/assets/images/album/' . $imagesList[0]['url_image']) : base_url('public/assets/images/icon/default-upload.png') ?>" />
-                            <img class="gallery_images_var_1" id="second-image" onclick="buttonSelectImages('second-image', <?= $imagesList[1]['id'] ?? null ?>)" src="<?= $imagesList[1] ?? null != null ? base_url('public/assets/images/album/' . $imagesList[1]['url_image']) : base_url('public/assets/images/icon/default-upload.png') ?>" />
+                            <img class="gallery_images_var_1" id="first-image" onclick="buttonSelectImages('first-image', <?= $imagesList[0]['id'] ?? null ?>)" src="<?= $imagesList[0] ?? null != null ? base_url('/assets/images/album/' . $imagesList[0]['url_image']) : base_url('/assets/images/icon/default-upload.png') ?>" />
+                            <img class="gallery_images_var_1" id="second-image" onclick="buttonSelectImages('second-image', <?= $imagesList[1]['id'] ?? null ?>)" src="<?= $imagesList[1] ?? null != null ? base_url('/assets/images/album/' . $imagesList[1]['url_image']) : base_url('/assets/images/icon/default-upload.png') ?>" />
                         </div>
                         <div class="gallery_images_container_one_collumn">
-                            <img class="gallery_images_var_2" id="third-image" onclick="buttonSelectImages('third-image', <?= $imagesList[2]['id'] ?? null ?>)" src="<?= $imagesList[2] ?? null != null ? base_url('public/assets/images/album/' . $imagesList[2]['url_image']) : base_url('public/assets/images/icon/default-upload.png') ?>" />
+                            <img class="gallery_images_var_2" id="third-image" onclick="buttonSelectImages('third-image', <?= $imagesList[2]['id'] ?? null ?>)" src="<?= $imagesList[2] ?? null != null ? base_url('/assets/images/album/' . $imagesList[2]['url_image']) : base_url('/assets/images/icon/default-upload.png') ?>" />
                         </div>
                     </div>
 
                     <!-- Four Images -->
                     <div class="gallery_images_container" id="four-images" hidden>
                         <div class="gallery_images_container_two_collumn">
-                            <img class="gallery_images_var_1" id="first-image" onclick="buttonSelectImages('first-image', <?= $imagesList[0]['id'] ?? null ?>)" src="<?= $imagesList[0] ?? null != null ? base_url('public/assets/images/album/' . $imagesList[0]['url_image']) : base_url('public/assets/images/icon/default-upload.png') ?>" />
-                            <img class="gallery_images_var_1" id="second-image" onclick="buttonSelectImages('second-image', <?= $imagesList[1]['id'] ?? null ?>)" src="<?= $imagesList[1] ?? null != null ? base_url('public/assets/images/album/' . $imagesList[1]['url_image']) : base_url('public/assets/images/icon/default-upload.png') ?>" />
+                            <img class="gallery_images_var_1" id="first-image" onclick="buttonSelectImages('first-image', <?= $imagesList[0]['id'] ?? null ?>)" src="<?= $imagesList[0] ?? null != null ? base_url('/assets/images/album/' . $imagesList[0]['url_image']) : base_url('/assets/images/icon/default-upload.png') ?>" />
+                            <img class="gallery_images_var_1" id="second-image" onclick="buttonSelectImages('second-image', <?= $imagesList[1]['id'] ?? null ?>)" src="<?= $imagesList[1] ?? null != null ? base_url('/assets/images/album/' . $imagesList[1]['url_image']) : base_url('/assets/images/icon/default-upload.png') ?>" />
                         </div>
                         <div class="gallery_images_container_two_collumn">
-                            <img class="gallery_images_var_1" id="third-image" onclick="buttonSelectImages('third-image', <?= $imagesList[2]['id'] ?? null ?>)" src="<?= $imagesList[2] ?? null != null ? base_url('public/assets/images/album/' . $imagesList[2]['url_image']) : base_url('public/assets/images/icon/default-upload.png') ?>" />
-                            <img class="gallery_images_var_1" id="fourth-image" onclick="buttonSelectImages('fourth-image', <?= $imagesList[3]['id'] ?? null ?>)" src="<?= $imagesList[3] ?? null != null ? base_url('public/assets/images/album/' . $imagesList[3]['url_image']) : base_url('public/assets/images/icon/default-upload.png') ?>" />
+                            <img class="gallery_images_var_1" id="third-image" onclick="buttonSelectImages('third-image', <?= $imagesList[2]['id'] ?? null ?>)" src="<?= $imagesList[2] ?? null != null ? base_url('/assets/images/album/' . $imagesList[2]['url_image']) : base_url('/assets/images/icon/default-upload.png') ?>" />
+                            <img class="gallery_images_var_1" id="fourth-image" onclick="buttonSelectImages('fourth-image', <?= $imagesList[3]['id'] ?? null ?>)" src="<?= $imagesList[3] ?? null != null ? base_url('/assets/images/album/' . $imagesList[3]['url_image']) : base_url('/assets/images/icon/default-upload.png') ?>" />
                         </div>
                     </div>
 
                     <!-- Seven Images -->
                     <div class="gallery_images_container" id="seven-images" hidden>
                         <div class="gallery_images_container_four_collumn">
-                            <img class="gallery_images_var_1" id="first-image" onclick="buttonSelectImages('first-image', <?= $imagesList[0]['id'] ?? null ?>)" src="<?= $imagesList[0] ?? null != null ? base_url('public/assets/images/album/' . $imagesList[0]['url_image']) : base_url('public/assets/images/icon/default-upload.png') ?>" />
-                            <img class="gallery_images_var_3 mt-1" id="second-image" onclick="buttonSelectImages('second-image', <?= $imagesList[1]['id'] ?? null ?>)" src="<?= $imagesList[1] ?? null != null ? base_url('public/assets/images/album/' . $imagesList[1]['url_image']) : base_url('public/assets/images/icon/default-upload.png') ?>" />
-                            <img class="gallery_images_var_3" id="third-image" onclick="buttonSelectImages('third-image', <?= $imagesList[2]['id'] ?? null ?>)" src="<?= $imagesList[2] ?? null != null ? base_url('public/assets/images/album/' . $imagesList[2]['url_image']) : base_url('public/assets/images/icon/default-upload.png') ?>" />
-                            <img class="gallery_images_var_1 mt-1" id="fourth-image" onclick="buttonSelectImages('fourth-image', <?= $imagesList[3]['id'] ?? null ?>)" src="<?= $imagesList[3] ?? null != null ? base_url('public/assets/images/album/' . $imagesList[3]['url_image']) : base_url('public/assets/images/icon/default-upload.png') ?>" />
+                            <img class="gallery_images_var_1" id="first-image" onclick="buttonSelectImages('first-image', <?= $imagesList[0]['id'] ?? null ?>)" src="<?= $imagesList[0] ?? null != null ? base_url('/assets/images/album/' . $imagesList[0]['url_image']) : base_url('/assets/images/icon/default-upload.png') ?>" />
+                            <img class="gallery_images_var_3 mt-1" id="second-image" onclick="buttonSelectImages('second-image', <?= $imagesList[1]['id'] ?? null ?>)" src="<?= $imagesList[1] ?? null != null ? base_url('/assets/images/album/' . $imagesList[1]['url_image']) : base_url('/assets/images/icon/default-upload.png') ?>" />
+                            <img class="gallery_images_var_3" id="third-image" onclick="buttonSelectImages('third-image', <?= $imagesList[2]['id'] ?? null ?>)" src="<?= $imagesList[2] ?? null != null ? base_url('/assets/images/album/' . $imagesList[2]['url_image']) : base_url('/assets/images/icon/default-upload.png') ?>" />
+                            <img class="gallery_images_var_1 mt-1" id="fourth-image" onclick="buttonSelectImages('fourth-image', <?= $imagesList[3]['id'] ?? null ?>)" src="<?= $imagesList[3] ?? null != null ? base_url('/assets/images/album/' . $imagesList[3]['url_image']) : base_url('/assets/images/icon/default-upload.png') ?>" />
                         </div>
                         <div class="gallery_images_container_one_collumn">
-                            <img class="gallery_images_var_2" id="fifth-image" onclick="buttonSelectImages('fifth-image', <?= $imagesList[4]['id'] ?? null ?>)" src="<?= $imagesList[4] ?? null != null ? base_url('public/assets/images/album/' . $imagesList[4]['url_image']) : base_url('public/assets/images/icon/default-upload.png') ?>" />
+                            <img class="gallery_images_var_2" id="fifth-image" onclick="buttonSelectImages('fifth-image', <?= $imagesList[4]['id'] ?? null ?>)" src="<?= $imagesList[4] ?? null != null ? base_url('/assets/images/album/' . $imagesList[4]['url_image']) : base_url('/assets/images/icon/default-upload.png') ?>" />
                         </div>
                         <div class="gallery_images_container_two_collumn">
-                            <img class="gallery_images_var_3" id="sixth-image" onclick="buttonSelectImages('sixth-image', <?= $imagesList[5]['id'] ?? null ?>)" src="<?= $imagesList[5] ?? null != null ? base_url('public/assets/images/album/' . $imagesList[5]['url_image']) : base_url('public/assets/images/icon/default-upload.png') ?>" />
-                            <img class="gallery_images_var_3" id="seventh-image" onclick="buttonSelectImages('seventh-image', <?= $imagesList[6]['id'] ?? null ?>)" src="<?= $imagesList[6] ?? null != null ? base_url('public/assets/images/album/' . $imagesList[6]['url_image']) : base_url('public/assets/images/icon/default-upload.png') ?>" />
+                            <img class="gallery_images_var_3" id="sixth-image" onclick="buttonSelectImages('sixth-image', <?= $imagesList[5]['id'] ?? null ?>)" src="<?= $imagesList[5] ?? null != null ? base_url('/assets/images/album/' . $imagesList[5]['url_image']) : base_url('/assets/images/icon/default-upload.png') ?>" />
+                            <img class="gallery_images_var_3" id="seventh-image" onclick="buttonSelectImages('seventh-image', <?= $imagesList[6]['id'] ?? null ?>)" src="<?= $imagesList[6] ?? null != null ? base_url('/assets/images/album/' . $imagesList[6]['url_image']) : base_url('/assets/images/icon/default-upload.png') ?>" />
                         </div>
                     </div>
 
                     <!-- Ten Images -->
                     <div class="gallery_images_container" id="ten-images" hidden>
                         <div class="gallery_images_container_four_collumn">
-                            <img class="gallery_images_var_3" id="first-image" onclick="buttonSelectImages('first-image', <?= $imagesList[0]['id'] ?? null ?>)" src="<?= $imagesList[0] ?? null != null ? base_url('public/assets/images/album/' . $imagesList[0]['url_image']) : base_url('public/assets/images/icon/default-upload.png') ?>" />
-                            <img class="gallery_images_var_1 mt-1" id="second-image" onclick="buttonSelectImages('second-image', <?= $imagesList[1]['id'] ?? null ?>)" src="<?= $imagesList[1] ?? null != null ? base_url('public/assets/images/album/' . $imagesList[1]['url_image']) : base_url('public/assets/images/icon/default-upload.png') ?>" />
-                            <img class="gallery_images_var_3 mt-1" id="third-image" onclick="buttonSelectImages('third-image', <?= $imagesList[2]['id'] ?? null ?>)" src="<?= $imagesList[2] ?? null != null ? base_url('public/assets/images/album/' . $imagesList[2]['url_image']) : base_url('public/assets/images/icon/default-upload.png') ?>" />
-                            <img class="gallery_images_var_1" id="fourth-image" onclick="buttonSelectImages('fourth-image', <?= $imagesList[3]['id'] ?? null ?>)" src="<?= $imagesList[3] ?? null != null ? base_url('public/assets/images/album/' . $imagesList[3]['url_image']) : base_url('public/assets/images/icon/default-upload.png') ?>" />
-                            <img class="gallery_images_var_4 mt-1" id="fifth-image" onclick="buttonSelectImages('fifth-image', <?= $imagesList[4]['id'] ?? null ?>)" src="<?= $imagesList[4] ?? null != null ? base_url('public/assets/images/album/' . $imagesList[4]['url_image']) : base_url('public/assets/images/icon/default-upload.png') ?>" />
-                            <img class="gallery_images_var_5 mt-1" id="sixth-image" onclick="buttonSelectImages('sixth-image', <?= $imagesList[5]['id'] ?? null ?>)" src="<?= $imagesList[5] ?? null != null ? base_url('public/assets/images/album/' . $imagesList[5]['url_image']) : base_url('public/assets/images/icon/default-upload.png') ?>" />
+                            <img class="gallery_images_var_3" id="first-image" onclick="buttonSelectImages('first-image', <?= $imagesList[0]['id'] ?? null ?>)" src="<?= $imagesList[0] ?? null != null ? base_url('/assets/images/album/' . $imagesList[0]['url_image']) : base_url('/assets/images/icon/default-upload.png') ?>" />
+                            <img class="gallery_images_var_1 mt-1" id="second-image" onclick="buttonSelectImages('second-image', <?= $imagesList[1]['id'] ?? null ?>)" src="<?= $imagesList[1] ?? null != null ? base_url('/assets/images/album/' . $imagesList[1]['url_image']) : base_url('/assets/images/icon/default-upload.png') ?>" />
+                            <img class="gallery_images_var_3 mt-1" id="third-image" onclick="buttonSelectImages('third-image', <?= $imagesList[2]['id'] ?? null ?>)" src="<?= $imagesList[2] ?? null != null ? base_url('/assets/images/album/' . $imagesList[2]['url_image']) : base_url('/assets/images/icon/default-upload.png') ?>" />
+                            <img class="gallery_images_var_1" id="fourth-image" onclick="buttonSelectImages('fourth-image', <?= $imagesList[3]['id'] ?? null ?>)" src="<?= $imagesList[3] ?? null != null ? base_url('/assets/images/album/' . $imagesList[3]['url_image']) : base_url('/assets/images/icon/default-upload.png') ?>" />
+                            <img class="gallery_images_var_4 mt-1" id="fifth-image" onclick="buttonSelectImages('fifth-image', <?= $imagesList[4]['id'] ?? null ?>)" src="<?= $imagesList[4] ?? null != null ? base_url('/assets/images/album/' . $imagesList[4]['url_image']) : base_url('/assets/images/icon/default-upload.png') ?>" />
+                            <img class="gallery_images_var_5 mt-1" id="sixth-image" onclick="buttonSelectImages('sixth-image', <?= $imagesList[5]['id'] ?? null ?>)" src="<?= $imagesList[5] ?? null != null ? base_url('/assets/images/album/' . $imagesList[5]['url_image']) : base_url('/assets/images/icon/default-upload.png') ?>" />
                         </div>
                         <div class="gallery_images_container_one_collumn">
-                            <img class="gallery_images_var_2" id="seventh-image" onclick="buttonSelectImages('seventh-image', <?= $imagesList[6]['id'] ?? null ?>)" src="<?= $imagesList[6] ?? null != null ? base_url('public/assets/images/album/' . $imagesList[6]['url_image']) : base_url('public/assets/images/icon/default-upload.png') ?>" />
+                            <img class="gallery_images_var_2" id="seventh-image" onclick="buttonSelectImages('seventh-image', <?= $imagesList[6]['id'] ?? null ?>)" src="<?= $imagesList[6] ?? null != null ? base_url('/assets/images/album/' . $imagesList[6]['url_image']) : base_url('/assets/images/icon/default-upload.png') ?>" />
                         </div>
                         <div class="gallery_images_container_two_collumn">
-                            <img class="gallery_images_var_3" id="eighth-image" onclick="buttonSelectImages('eighth-image', <?= $imagesList[7]['id'] ?? null ?>)" src="<?= $imagesList[7] ?? null != null ? base_url('public/assets/images/album/' . $imagesList[7]['url_image']) : base_url('public/assets/images/icon/default-upload.png') ?>" />
-                            <img class="gallery_images_var_3" id="nienth-image" onclick="buttonSelectImages('nienth-image', <?= $imagesList[8]['id'] ?? null ?>)" src="<?= $imagesList[8] ?? null != null ? base_url('public/assets/images/album/' . $imagesList[8]['url_image']) : base_url('public/assets/images/icon/default-upload.png') ?>" />
+                            <img class="gallery_images_var_3" id="eighth-image" onclick="buttonSelectImages('eighth-image', <?= $imagesList[7]['id'] ?? null ?>)" src="<?= $imagesList[7] ?? null != null ? base_url('/assets/images/album/' . $imagesList[7]['url_image']) : base_url('/assets/images/icon/default-upload.png') ?>" />
+                            <img class="gallery_images_var_3" id="nienth-image" onclick="buttonSelectImages('nienth-image', <?= $imagesList[8]['id'] ?? null ?>)" src="<?= $imagesList[8] ?? null != null ? base_url('/assets/images/album/' . $imagesList[8]['url_image']) : base_url('/assets/images/icon/default-upload.png') ?>" />
                         </div>
                         <div class="gallery_images_container_one_collumn">
-                            <img class="gallery_images_var_2" id="tenth-image" onclick="buttonSelectImages('tenth-image', <?= $imagesList[9]['id'] ?? null ?>)" src="<?= $imagesList[9] ?? null != null ? base_url('public/assets/images/album/' . $imagesList[9]['url_image']) : base_url('public/assets/images/icon/default-upload.png') ?>" />
+                            <img class="gallery_images_var_2" id="tenth-image" onclick="buttonSelectImages('tenth-image', <?= $imagesList[9]['id'] ?? null ?>)" src="<?= $imagesList[9] ?? null != null ? base_url('/assets/images/album/' . $imagesList[9]['url_image']) : base_url('/assets/images/icon/default-upload.png') ?>" />
                         </div>
                     </div>
                 </section>
@@ -124,5 +124,5 @@
             </form>
         </div>
     </div>
-    <?php include_once "./app/Views/customer/commons/layer/footer_page.php" ?>
+    <?= view('customer/commons/layer/footer_page') ?>
 </div>

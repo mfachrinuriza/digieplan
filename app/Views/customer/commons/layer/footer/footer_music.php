@@ -1,8 +1,7 @@
 <script>
-
     var musicCheckbox = document.getElementById("music-checkbox");
     var musicContent = document.getElementById("music-content");
-    
+
     updateUIMusicContent();
     musicCheckbox.addEventListener('change', function() {
         updateUIMusicContent();
@@ -13,11 +12,11 @@
     }
 
     var musicPlay = document.getElementById('music-play');
-    
-    var audioList = []; // Array to store Audio objects
-    var base_url = <?= json_encode(base_url('public')); ?>;
 
-    function playMusicButton(audioFilePath, imageElementId) {    
+    var audioList = []; // Array to store Audio objects
+    var base_url = <?= json_encode(base_url('')); ?>;
+
+    function playMusicButton(audioFilePath, imageElementId) {
         var newAudioFilePath = base_url + '/assets/music/' + audioFilePath;
 
         // Pause all other playing audio files
@@ -59,7 +58,7 @@
 
         if (state === 'play') {
             // Change the image source for the playing state
-            imageElement.src =  base_url + '/assets/images/icon/pause-button.png';
+            imageElement.src = base_url + '/assets/images/icon/pause-button.png';
         } else {
             // Change the image source for the paused state
             imageElement.src = base_url + '/assets/images/icon/play-button.png';
@@ -73,6 +72,6 @@
 
     // Choose main music
     function chooseMainMusic() {
-        
+
     }
 </script>

@@ -7,19 +7,19 @@ $isThemeSelected = $theme['id'] == $transactionSelected['theme_id'] ? true : fal
 
             <div class="carousel-inner" style="aspect-ratio: 9 / 19.5;">
                 <div class="carousel-item active">
-                    <img src="<?= base_url('public/assets/images/themes/' . $theme['photo_1']) ?>" class="d-block w-100" alt="...">
+                    <img src="<?= base_url('/assets/images/themes/' . $theme['photo_1']) ?>" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="<?= base_url('public/assets/images/themes/' . $theme['photo_2']) ?>" class="d-block w-100" alt="...">
+                    <img src="<?= base_url('/assets/images/themes/' . $theme['photo_2']) ?>" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="<?= base_url('public/assets/images/themes/' . $theme['photo_3']) ?>" class="d-block w-100" alt="...">
+                    <img src="<?= base_url('/assets/images/themes/' . $theme['photo_3']) ?>" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="<?= base_url('public/assets/images/themes/' . $theme['photo_4']) ?>" class="d-block w-100" alt="...">
+                    <img src="<?= base_url('/assets/images/themes/' . $theme['photo_4']) ?>" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="<?= base_url('public/assets/images/themes/' . $theme['photo_5']) ?>" class="d-block w-100" alt="...">
+                    <img src="<?= base_url('/assets/images/themes/' . $theme['photo_5']) ?>" class="d-block w-100" alt="...">
                 </div>
                 <?= var_dump($theme['photo_1']) ?>
             </div>

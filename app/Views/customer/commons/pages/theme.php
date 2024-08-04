@@ -13,7 +13,7 @@
                     </h2>
                 </div>
                 <div class="col-auto ms-auto d-print-none" style="padding-bottom: 20px">
-                    <?php include './app/Views/customer/commons/components/dropdown/event_list_dropdown.php'; ?>
+                    <?= view('customer/commons/components/dropdown/event_list_dropdown') ?>
                 </div>
             </div>
         </div>
@@ -23,13 +23,12 @@
     <div class="page-body">
         <div class="container-xl">
             <div class="row row-cards">
-                <?php
-                foreach ($themeList as $theme) {
-                    include './app/Views/customer/commons/components/card/theme_card.php';
-                }
-                ?>
+                <?php foreach ($themeList as $theme) : ?>
+                    <?= view('customer/commons/components/card/theme_card', ['theme' => $theme]) ?>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
-    <?php include_once "./app/Views/customer/commons/layer/footer_page.php" ?>
+
+    <?= view('customer/commons/layer/footer_page') ?>
 </div>

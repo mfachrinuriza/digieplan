@@ -13,8 +13,7 @@ class AuthController extends BaseController
     public function login()
     {
         $data['title'] = 'Login Dashboard Panel | WeddingKu';
-        $data['url_path'] = getenv('PATH_LOGIN');
-        return view($data['url_path'], $data);
+        return view(getenv('PATH_LOGIN'), $data);
     }
 
     public function login_process()
@@ -30,9 +29,9 @@ class AuthController extends BaseController
         } else {
             $transactionModel = new TransactionModel();
             $transactionData = $transactionModel->where('user_id', $checkAccount['user_id'])
-                                                ->where('isPrimary', '1')
-                                                ->get()->getRowArray();
-    
+                ->where('isPrimary', '1')
+                ->get()->getRowArray();
+
 
             if (md5($getPost['user_password']) !== $checkAccount['user_password']) {
                 session()->setFlashdata('error', 'Password yang dimasukkan salah!');
@@ -54,7 +53,7 @@ class AuthController extends BaseController
                 'is_login'      => true,
                 'transaction_id' => $transactionData['id'] ?? null
             );
-            
+
             session()->set($sessionSet);
 
             if ($checkAccount['user_level'] === 'Customer') {
@@ -63,112 +62,112 @@ class AuthController extends BaseController
             } else if ($checkAccount['user_level'] === 'Admin') {
                 // DASHBOARD ADMIN
                 return redirect()->to(base_url('admin/'));
-            } 
+            }
         }
     }
 
-    public function register()
-    {
-        $packageModel = new PackageModel();
-        $data['packageList'] = $packageModel->get()->getResultArray();
+    // public function register()
+    // {
+    //     $packageModel = new PackageModel();
+    //     $data['packageList'] = $packageModel->get()->getResultArray();
 
-        $data['title'] = 'Register Dashboard Panel | WeddingKu';
-        return view(getenv('PATH_REGISTER'), $data);
-    }
+    //     $data['title'] = 'Register Dashboard Panel | WeddingKu';
+    //     return view(getenv('PATH_REGISTER'), $data);
+    // }
 
-    public function register_process()
-    {
-        $getPost = $this->request->getPost();
+    // public function register_process()
+    // {
+    //     $getPost = $this->request->getPost();
 
-        // VALIDASI FORMULIR
-        if ($getPost['user_password'] !== $getPost['user_password_confirm']) {
-            session()->setFlashdata('error', 'Password tidak sama dengan Password Konfirmasi!');
-            return redirect()->to(base_url(getenv('PATH_REGISTER')));
-        }
+    //     // VALIDASI FORMULIR
+    //     if ($getPost['user_password'] !== $getPost['user_password_confirm']) {
+    //         session()->setFlashdata('error', 'Password tidak sama dengan Password Konfirmasi!');
+    //         return redirect()->to(base_url(getenv('PATH_REGISTER')));
+    //     }
 
-        // VALIDASI AKUN
-        $usersModel = new UsersModel();
-        $is_already_registed = $usersModel->where('user_email', $getPost['user_email'])->get()->getRowArray();
-        if ($is_already_registed) {
-            session()->setFlashdata('error', 'Akun telah terdaftar, harap login atau hubungi administrator!');
-            return redirect()->to(base_url(getenv('PATH_LOGIN')));
-        }
+    //     // VALIDASI AKUN
+    //     $usersModel = new UsersModel();
+    //     $is_already_registed = $usersModel->where('user_email', $getPost['user_email'])->get()->getRowArray();
+    //     if ($is_already_registed) {
+    //         session()->setFlashdata('error', 'Akun telah terdaftar, harap login atau hubungi administrator!');
+    //         return redirect()->to(base_url(getenv('PATH_LOGIN')));
+    //     }
 
-        // PROSES FORMULIR UNTUK REGISTER
-        $formField = array(
-            'user_name'              => $getPost['user_name'],
-            'user_email'             => $getPost['user_email'],
-            'user_password'          => md5($getPost['user_password']),
-            'user_phone'             => $getPost['user_phone'],
-            'user_account_status'    => 1,
-            'user_level'             => 'Customer'
-        );
+    //     // PROSES FORMULIR UNTUK REGISTER
+    //     $formField = array(
+    //         'user_name'              => $getPost['user_name'],
+    //         'user_email'             => $getPost['user_email'],
+    //         'user_password'          => md5($getPost['user_password']),
+    //         'user_phone'             => $getPost['user_phone'],
+    //         'user_account_status'    => 1,
+    //         'user_level'             => 'Customer'
+    //     );
 
-        $register = $usersModel->insert($formField);
+    //     $register = $usersModel->insert($formField);
 
-        if (!$register) {
-            session()->setFlashdata('error', 'Pendaftaran tidak berhasil!');
-            return redirect()->to(base_url(getenv('PATH_REGISTER')));
-        } else {
-            session()->setFlashdata('success', 'Pendaftaran akun berhasil! silahkan login');
-            return redirect()->to(base_url(getenv('PATH_LOGIN')));
-        }
-    }
-
-
-    public function admin_register_process()
-    {
-        $getPost = $this->request->getPost();
-
-        $getPost['user_password'] = '12345678';
-        $getPost['user_password_confirm'] = '12345678';
-
-        // VALIDASI FORMULIR
-        if ($getPost['user_password'] !== $getPost['user_password_confirm']) {
-            session()->setFlashdata('error', 'Password tidak sama dengan Password Konfirmasi!');
-            return redirect()->to(base_url(getenv('PATH_LOGIN')));
-        }
-
-        // VALIDASI AKUN
-        $usersModel = new UsersModel();
-        $is_already_registed = $usersModel->where('user_email', $getPost['user_email'])->get()->getRowArray();
-        if ($is_already_registed) {
-            session()->setFlashdata('error', 'Akun telah terdaftar, harap login atau hubungi administrator!');
-            return redirect()->to(base_url(getenv('PATH_LOGIN')));
-        }
-
-        // PROSES FORMULIR UNTUK REGISTER
-        $formField = array(
-            'user_name'              => $getPost['user_name'],
-            'user_email'             => $getPost['user_email'],
-            'user_password'          => md5($getPost['user_password']),
-            'user_phone'             => $getPost['user_phone'],
-            'user_account_status'    => 1,
-            'user_level'             => $getPost['user_level']
-        );
-
-        $register = $usersModel->insert($formField);
-
-        if (!$register) {
-            session()->setFlashdata('error', 'Pendaftaran tidak berhasil!');
-            return redirect()->to(base_url('/admin/users'));
-        } else {
-            session()->setFlashdata('success', 'Pendaftaran akun berhasil! silahkan login');
-            return redirect()->to(base_url('/admin/users'));
-        }
-    }
+    //     if (!$register) {
+    //         session()->setFlashdata('error', 'Pendaftaran tidak berhasil!');
+    //         return redirect()->to(base_url(getenv('PATH_REGISTER')));
+    //     } else {
+    //         session()->setFlashdata('success', 'Pendaftaran akun berhasil! silahkan login');
+    //         return redirect()->to(base_url(getenv('PATH_LOGIN')));
+    //     }
+    // }
 
 
+    // public function admin_register_process()
+    // {
+    //     $getPost = $this->request->getPost();
 
-    public function forgot_password()
-    {
-        // 
-    }
+    //     $getPost['user_password'] = '12345678';
+    //     $getPost['user_password_confirm'] = '12345678';
 
-    public function logout()
-    {
-        session()->destroy();
-        session()->setFlashdata('success', 'Berhasil keluar dengan aman!');
-        return redirect()->to(base_url(getenv('PATH_LOGIN')));
-    }
+    //     // VALIDASI FORMULIR
+    //     if ($getPost['user_password'] !== $getPost['user_password_confirm']) {
+    //         session()->setFlashdata('error', 'Password tidak sama dengan Password Konfirmasi!');
+    //         return redirect()->to(base_url(getenv('PATH_LOGIN')));
+    //     }
+
+    //     // VALIDASI AKUN
+    //     $usersModel = new UsersModel();
+    //     $is_already_registed = $usersModel->where('user_email', $getPost['user_email'])->get()->getRowArray();
+    //     if ($is_already_registed) {
+    //         session()->setFlashdata('error', 'Akun telah terdaftar, harap login atau hubungi administrator!');
+    //         return redirect()->to(base_url(getenv('PATH_LOGIN')));
+    //     }
+
+    //     // PROSES FORMULIR UNTUK REGISTER
+    //     $formField = array(
+    //         'user_name'              => $getPost['user_name'],
+    //         'user_email'             => $getPost['user_email'],
+    //         'user_password'          => md5($getPost['user_password']),
+    //         'user_phone'             => $getPost['user_phone'],
+    //         'user_account_status'    => 1,
+    //         'user_level'             => $getPost['user_level']
+    //     );
+
+    //     $register = $usersModel->insert($formField);
+
+    //     if (!$register) {
+    //         session()->setFlashdata('error', 'Pendaftaran tidak berhasil!');
+    //         return redirect()->to(base_url('/admin/users'));
+    //     } else {
+    //         session()->setFlashdata('success', 'Pendaftaran akun berhasil! silahkan login');
+    //         return redirect()->to(base_url('/admin/users'));
+    //     }
+    // }
+
+
+
+    // public function forgot_password()
+    // {
+    //     // 
+    // }
+
+    // public function logout()
+    // {
+    //     session()->destroy();
+    //     session()->setFlashdata('success', 'Berhasil keluar dengan aman!');
+    //     return redirect()->to(base_url(getenv('PATH_LOGIN')));
+    // }
 }

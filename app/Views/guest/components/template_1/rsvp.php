@@ -1,7 +1,7 @@
 <section id="rsvp">
-    <img id="rsvp_ornament" src="<?= base_url('public/AssetsGuest/image/Frame.svg'); ?>" width="243" />
+    <img id="rsvp_ornament" src="<?= base_url('/AssetsGuest/image/Frame.svg'); ?>" width="243" />
     <h3 id="rsvp_title">RSVP</h3>
-    <img class="rsvp_divider" src="<?= base_url('public/AssetsGuest/image/divider.svg'); ?>" width="48" />
+    <img class="rsvp_divider" src="<?= base_url('/AssetsGuest/image/divider.svg'); ?>" width="48" />
     <p id="rsvp_information">Our wedding will be a small, intimate ceremony. and only those who are closest to us will be in attendance</p>
     <form id="rsvp_form">
         <input name="transaction_id" value="<?= $weddingData['id'] ?>" hidden>
