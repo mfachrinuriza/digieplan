@@ -121,8 +121,9 @@ class GuestHomeController extends BaseController
             Kami yang berbahagia
             *' . $data['brideData']['nickname'] . ' dan ' . $data['groomData']['nickname'] . '*';
 
+
             $data['saveTheDateUrl'] =
-                'https://www.google.com/calendar/render?action=TEMPLATE&text=' . $eventTitle . '&dates=' . $startDates . '/' . $endDates . '&details=' . $desc . '&location=' . $data['eventData']['place_name'] . '&sf=true&output=xml';
+                'https://www.google.com/calendar/render?action=TEMPLATE&text=' . $eventTitle . '&dates=' . $startDates . '/' . $endDates . '&details=' . $desc . '&location=' . $data['primaryEventData']['place_name'] . '&sf=true&output=xml';
         }
         if (
             isset($data['weddingData'])
@@ -249,7 +250,7 @@ class GuestHomeController extends BaseController
             *' . $data['brideData']['nickname'] . ' dan ' . $data['groomData']['nickname'] . '*';
 
             $data['saveTheDateUrl'] =
-                'https://www.google.com/calendar/render?action=TEMPLATE&text=' . $eventTitle . '&dates=' . $startDates . '/' . $endDates . '&details=' . $desc . '&location=' . $data['eventData']['place_name'] . '&sf=true&output=xml';
+                'https://www.google.com/calendar/render?action=TEMPLATE&text=' . $eventTitle . '&dates=' . $startDates . '/' . $endDates . '&details=' . $desc . '&location=' . $data['primaryEventData']['place_name'] . '&sf=true&output=xml';
         }
 
         if (

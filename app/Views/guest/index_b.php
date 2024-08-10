@@ -148,47 +148,45 @@ $dayTranslations = array(
             <div id="date_container">
                 <h3 class="date_title">AKAD NIKAH</h3>
                 <img class="date_divider" src="<?= base_url('/AssetsGuest/image/template_b/divider.png') ?>" width="48">
-                <?php
-                if (isset($primaryEventData)) {
-                    echo '
+                <?php if (isset($primaryEventData)): ?>
                     <div class="date_date_day">
-                        <h3>' . $dayTranslations[date_format(date_create($primaryEventData['date']), "l")] . '</h3>
+                        <h3><?= $dayTranslations[date_format(date_create($primaryEventData['date']), 'l')]; ?></h3>
                         |
                         <div class="date_date_day_date">
-                        <h3>' . date_format(date_create($primaryEventData['date']), "j") . '</h3>
-                        <div>
-                            <p>' . $monthNames[date_format(date_create($primaryEventData['date']), "F")] . '</p>
-                            <p>' . date_format(date_create($primaryEventData['date']), "Y") . '</p>
-                        </div>
+                            <h3><?= date_format(date_create($primaryEventData['date']), 'j'); ?></h3>
+                            <div>
+                                <p><?= $monthNames[date_format(date_create($primaryEventData['date']), 'F')]; ?></p>
+                                <p><?= date_format(date_create($primaryEventData['date']), 'Y'); ?></p>
+                            </div>
                         </div>
                     </div>
-                    <h5 class="date_time">' . $primaryEventData['start_time'] . ' wib - ' . $primaryEventData['end_time'] . '</h5>
-                    ';
-                }
+                    <h5 class="date_time"><?= $primaryEventData['start_time']; ?> WIB - <?= $primaryEventData['end_time']; ?></h5>
+                    <img id="date_pointer" src="<?= base_url('/AssetsGuest/image/template_b/pointer.png'); ?>" width="24">
+                    <h5 id="date_location"><?= $primaryEventData['place_name']; ?></h5>
+                    <p id="date_address"><?= $primaryEventData['address']; ?></p>
+                    <button id="date_map" class="variant_2_button" type="button" onclick="window.open('<?= $primaryEventData['link_address']; ?>', '_blank')">VIEW ON MAPS</button>
+                <?php endif; ?>
 
-                if (isset($eventData)) {
-                    echo '
-                    <h3 class="date_title">' . $eventData['title'] . '</h3>
-                    <img class="date_divider" src="' . base_url("/AssetsGuest/image/template_b/divider.png") . '" width="48">
+                <?php if (isset($eventData['title']) && $eventData['title'] != null): ?>
+                    <h3 class="date_title"><?= $eventData['title']; ?></h3>
+                    <img class="date_divider" src="<?= base_url('/AssetsGuest/image/template_b/divider.png'); ?>" width="48">
                     <div class="date_date_day">
-                        <h3>' . $dayTranslations[date_format(date_create($eventData['date']), "l")] . '</h3>
+                        <h3><?= $dayTranslations[date_format(date_create($eventData['date']), 'l')]; ?></h3>
                         |
                         <div class="date_date_day_date">
-                        <h3>' . date_format(date_create($eventData['date']), "j") . '</h3>
-                        <div>
-                            <p>' . $monthNames[date_format(date_create($eventData['date']), "F")] . '</p>
-                            <p>' . date_format(date_create($eventData['date']), "Y") . '</p>
-                        </div>
+                            <h3><?= date_format(date_create($eventData['date']), 'j'); ?></h3>
+                            <div>
+                                <p><?= $monthNames[date_format(date_create($eventData['date']), 'F')]; ?></p>
+                                <p><?= date_format(date_create($eventData['date']), 'Y'); ?></p>
+                            </div>
                         </div>
                     </div>
-                    <h5 class="date_time">' . $eventData['start_time'] . ' wib - ' . $eventData['end_time'] . '</h5>
-                    ';
-                }
-                ?>
-                <img id="date_pointer" src="<?= base_url('/AssetsGuest/image/template_b/pointer.png') ?>" width="24">
-                <h5 id="date_location"><?= $eventData['place_name'] ?></h5>
-                <p id="date_adress"><?= $eventData['address'] ?></p>
-                <button id="date_map" class="variant_2_button" type="button" onclick="window.open('<?= $eventData['link_address'] ?>', '_blank')">VIEW ON MAPS</button>
+                    <h5 class="date_time"><?= $eventData['start_time']; ?> WIB - <?= $eventData['end_time']; ?></h5>
+                    <img id="date_pointer" src="<?= base_url('/AssetsGuest/image/template_b/pointer.png'); ?>" width="24">
+                    <h5 id="date_location"><?= $eventData['place_name']; ?></h5>
+                    <p id="date_address"><?= $eventData['address']; ?></p>
+                    <button id="date_map" class="variant_2_button" type="button" onclick="window.open('<?= $eventData['link_address']; ?>', '_blank')">VIEW ON MAPS</button>
+                <?php endif; ?>
             </div>
         </section>
 

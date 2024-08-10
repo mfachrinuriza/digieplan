@@ -71,12 +71,16 @@ class WeddingGiftController extends BaseController
 
     function getBankName($getPost)
     {
-        $id = $getPost['gift_type'] == "Bank" ? $getPost['bank_id'] : $getPost['e_wallet_id'];
+        if ($getPost['bank_id'] == 999) {
+            return $getPost['bankName'];
+        } else {
+            $id = $getPost['gift_type'] == "Bank" ? $getPost['bank_id'] : $getPost['e_wallet_id'];
 
-        $banksModel = new BanksModel();
-        $bankData = $banksModel->where('id', $id)->get()->getRowArray();
-
-        return $bankData['id'] != 99 ? $bankData['name'] : $getPost['bank_name'];
+            $banksModel = new BanksModel();
+            $bankData = $banksModel->where('id', $id)->get()->getRowArray();
+            
+            return $bankData['name'];
+        }
     }
 
     function getReceiverName($getPost)

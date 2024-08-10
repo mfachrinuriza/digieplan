@@ -1,0 +1,15 @@
+/* ---- .grid-item ---- */
+
+.grid {
+  margin: 34px 24px !important;
+}
+
+.grid-item {
+  width: calc(50% - 4px);
+  margin-bottom: 4px;
+}
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
+}

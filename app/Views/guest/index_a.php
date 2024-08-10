@@ -43,20 +43,17 @@ $primaryEventData['date'] = $primaryEventData['date'] ?? date('Y-m-d');
 <body data-theme="<?= $themeData['theme_color'] ?? "" ?>" style="--background-base: url('<?= $imageCoverPath ?>'); --background-two-base: url('<?= $imageCoverPath ?>');">
   <main>
     <!-- Section Welcome Page -->
-    <?php
-    if ($themeData['theme_code'] == 'A0001') {
-      include_once "./app/Views/guest/components/template_1/welcome_page/welcome_page_1.php";
-    } else if ($themeData['theme_code'] == 'A0002') {
-      include_once "./app/Views/guest/components/template_1/welcome_page/welcome_page_2.php";
-    } else if ($themeData['theme_code'] == 'A0003') {
-      include_once "./app/Views/guest/components/template_1/welcome_page/welcome_page_3.php";
-    } else if ($themeData['theme_code'] == 'A0004') {
-      include_once "./app/Views/guest/components/template_1/welcome_page/welcome_page_4.php";
-    } else if ($themeData['theme_code'] == 'A0005') {
-      include_once "./app/Views/guest/components/template_1/welcome_page/welcome_page_5.php";
-    }
-
-    ?>
+    <?php if ($themeData['theme_code'] == 'A0001'): ?>
+      <?= view('guest/components/template_1/welcome_page/welcome_page_1') ?>
+    <?php elseif ($themeData['theme_code'] == 'A0002'): ?>
+      <?= view('guest/components/template_1/welcome_page/welcome_page_2') ?>
+    <?php elseif ($themeData['theme_code'] == 'A0003'): ?>
+      <?= view('guest/components/template_1/welcome_page/welcome_page_3') ?>
+    <?php elseif ($themeData['theme_code'] == 'A0004'): ?>
+      <?= view('guest/components/template_1/welcome_page/welcome_page_4') ?>
+    <?php elseif ($themeData['theme_code'] == 'A0005'): ?>
+      <?= view('guest/components/template_1/welcome_page/welcome_page_5') ?>
+    <?php endif; ?>
 
     <section id="countDown">
       <div id="countDown_top_image"><img src="<?= base_url('/AssetsGuest/image/template_a/countDown_top.svg') ?>" width="70%"></div>
@@ -168,10 +165,15 @@ $primaryEventData['date'] = $primaryEventData['date'] ?? date('Y-m-d');
                 </div>
               </div>
               <h5 class="date_time">' . $primaryEventData['start_time'] . ' wib - ' . $primaryEventData['end_time'] . '</h5>
+              <h5 id="date_location">' . $primaryEventData['place_name'] . '</h5>
+              <p id="date_adress">' . $primaryEventData['address'] . '</p>
+              <a href="' . $primaryEventData['link_address'] . '" target="_blank">
+                <button id="date_map" class="variant_1_button" type="button">VIEW ON MAPS</button>
+              </a>
               ';
         }
 
-        if (isset($eventData)) {
+        if (isset($eventData['title']) != null) {
           echo '
               <h3 class="date_title">' . $eventData['title'] . '</h3>
               <img class="date_divider" src="' . base_url('/AssetsGuest/image/template_a/divider.svg') . '" width="48" />
@@ -187,16 +189,16 @@ $primaryEventData['date'] = $primaryEventData['date'] ?? date('Y-m-d');
                 </div>
               </div>
               <h5 class="date_time">' . $eventData['start_time'] . ' wib - ' . $eventData['end_time'] . '</h5>
+              <img id="date_pointer" src="' . base_url('/AssetsGuest/image/template_a/pointer.svg') . '" width="24" />
+              <h5 id="date_location">' . $eventData['place_name'] . '</h5>
+              <p id="date_adress">' . $eventData['address'] . '</p>
+              <a href="' . $eventData['link_address'] . '" target="_blank">
+                <button id="date_map" class="variant_1_button" type="button">VIEW ON MAPS</button>
+              </a>
               ';
         }
         ?>
 
-        <img id="date_pointer" src="<?= base_url('/AssetsGuest/image/template_a/pointer.svg'); ?>" width="24" />
-        <h5 id="date_location"><?= $eventData['place_name'] ?></h5>
-        <p id="date_adress"><?= $eventData['address'] ?></p>
-        <a href="<?= $eventData['link_address'] ?>" target="_blank">
-          <button id="date_map" class="variant_1_button" type="button">VIEW ON MAPS</button>
-        </a>
         <div id="date_left_line"></div>
         <div id="date_right_line"></div>
         <div id="date_buttom_line"></div>

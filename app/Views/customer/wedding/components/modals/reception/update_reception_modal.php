@@ -103,9 +103,9 @@
                                 <label class="form-check form-check-single form-switch">
                                     <?php
                                     if ($row['isPrimary']) {
-                                        echo '<input class="form-check-input" type="checkbox" name="isPrimary" checked>';
+                                        echo '<input class="form-check-input" type="checkbox" name="isPrimary" checked onclick="return false;">';
                                     } else {
-                                        echo '<input class="form-check-input" type="checkbox" name="isPrimary">';
+                                        echo '<input class="form-check-input" type="checkbox" name="isPrimary" onclick="return false;">';
                                     }
                                     ?>
                                 </label>

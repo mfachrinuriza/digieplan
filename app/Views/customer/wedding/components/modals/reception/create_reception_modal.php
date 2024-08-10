@@ -28,9 +28,9 @@
                         </div>
                         <div class="col-lg-6">
                             <label class="form-label required" for="endTime">Jam Selesai</label>
-                            <input type="time" class="form-control" id="endTime" name="endTime" disabled>
+                            <input type="time" class="form-control" id="endTime" name="endTime">
                             <label class="form-check">
-                                <input class="form-check-input" type="checkbox" name="isUntilEnd">
+                                <input class="form-check-input" type="checkbox" name="isUntilEnd" id="isUntilEnd">
                                 <span class="form-check-label">Sampai Selesai</span>
                             </label>
                         </div>
@@ -106,3 +106,16 @@
     </div>
 </div>
 <!-- Close Create Event -->
+
+
+<script>
+    document.getElementById('isUntilEnd').addEventListener('change', function() {
+        var endTimeInput = document.getElementById('endTime');
+        if (this.checked) {
+            endTimeInput.disabled = true;
+            endTimeInput.value = ''; // Clear the value
+        } else {
+            endTimeInput.disabled = false;
+        }
+    });
+</script>

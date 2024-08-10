@@ -30,7 +30,8 @@
             <div class="col-auto ms-auto d-print-none" style="padding-bottom: 20px">
               <div class="btn-list">
                 <?php
-                $shareToAll = 'https://api.whatsapp.com/send/?text=Assalamu%27alaikum%20Wr.%20Wb%20%0ABismillahirahmanirrahim.%20Tanpa%20mengurangi%20rasa%20hormat%2C%20perkenankan%20kami%20mengundang%20Bapak%2FIbu%2FSaudara%2Fi%20-%20 %20untuk%20menghadiri%20acara%20kami.%20%0A%0A%20Berikut%20link%20undangan%20kami%2C%20untuk%20info%20lengkap%20dari%20acara%20bisa%20kunjungi%20%3A%20%0A%20%0A%0AMerupakan%20suatu%20kebahagiaan%20bagi%20kami%20apabila%20Bapak%2FIbu%2FSaudara%2Fi%20berkenan%20untuk%20hadir%20dan%20memberikan%20doa%20restu.%20%0A%0AMohon%20maaf%20perihal%20undangan%20hanya%20di%20bagikan%20melalui%20pesan%20ini.%20%0A%0ATerima%20kasih%20banyak%20atas%20perhatiannya.%20%0AWassalamu%27alaikum%20Wr.%20Wb.%20%0A%0ATerima%20Kasih.';
+                $invitedURL = urlencode(base_url('') . $transactionSelected['title_path'] . '?to=Bapak/Ibu/Saudara/Rekan/Sahabat/i');
+                $shareToAll = 'https://api.whatsapp.com/send/?text=Assalamu%27alaikum%20Wr.%20Wb%20%0ABismillahirahmanirrahim.%20Tanpa%20mengurangi%20rasa%20hormat%2C%20perkenankan%20kami%20mengundang%20Bapak%2FIbu%2FSaudara%2Fi%20-%20 %20untuk%20menghadiri%20acara%20kami.%20%0A%0A%20Berikut%20link%20undangan%20kami%2C%20untuk%20info%20lengkap%20dari%20acara%20bisa%20kunjungi%20%3A%20%0A'. $invitedURL.'%20%0A%0AMerupakan%20suatu%20kebahagiaan%20bagi%20kami%20apabila%20Bapak%2FIbu%2FSaudara%2Fi%20berkenan%20untuk%20hadir%20dan%20memberikan%20doa%20restu.%20%0A%0AMohon%20maaf%20perihal%20undangan%20hanya%20di%20bagikan%20melalui%20pesan%20ini.%20%0A%0ATerima%20kasih%20banyak%20atas%20perhatiannya.%20%0AWassalamu%27alaikum%20Wr.%20Wb.%20%0A%0ATerima%20Kasih.';
                 ?>
                 <a href="<?= $shareToAll ?>" class="btn btn-outline-success" target="_blank">
                   <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
@@ -113,7 +114,7 @@
 
                       foreach ($guestList as $guest) {
                         $invitedEncode = urlencode($guest['name'] . ($guest['invite_with'] != null ? (' dan ' . $guest['invite_with']) : ""));
-                        $invitedURLEncoded = urlencode(base_url('') . '/' . $transactionSelected['title_path'] . '?to=' . $guest['name'] . ($guest['invite_with'] != null ? ('+%26+' . $guest['invite_with']) : ""));
+                        $invitedURLEncoded = urlencode(base_url('') . $transactionSelected['title_path'] . '?to=' . $guest['name'] . ($guest['invite_with'] != null ? ('+%26+' . $guest['invite_with']) : ""));
 
                         $whatsappURL = 'https://api.whatsapp.com/send/?text=Assalamu%27alaikum%20Wr.%20Wb%20%0ABismillahirahmanirrahim.%20Tanpa%20mengurangi%20rasa%20hormat%2C%20perkenankan%20kami%20mengundang%20Bapak%2FIbu%2FSaudara%2Fi%20-%20' . $invitedEncode . '%20-%20untuk%20menghadiri%20acara%20kami.%20%0A%0A%20Berikut%20link%20undangan%20kami%2C%20untuk%20info%20lengkap%20dari%20acara%20bisa%20kunjungi%20%3A%20%0A' . $invitedURLEncoded . '%20%0A%0AMerupakan%20suatu%20kebahagiaan%20bagi%20kami%20apabila%20Bapak%2FIbu%2FSaudara%2Fi%20berkenan%20untuk%20hadir%20dan%20memberikan%20doa%20restu.%20%0A%0AMohon%20maaf%20perihal%20undangan%20hanya%20di%20bagikan%20melalui%20pesan%20ini.%20%0A%0ATerima%20kasih%20banyak%20atas%20perhatiannya.%20%0AWassalamu%27alaikum%20Wr.%20Wb.%20%0A%0ATerima%20Kasih.';
                         $guestName = $guest['name'] . ($guest['invite_with'] != null ? (' & ' . $guest['invite_with']) : "");

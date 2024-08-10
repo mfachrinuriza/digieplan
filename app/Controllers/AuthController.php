@@ -164,10 +164,10 @@ class AuthController extends BaseController
     //     // 
     // }
 
-    // public function logout()
-    // {
-    //     session()->destroy();
-    //     session()->setFlashdata('success', 'Berhasil keluar dengan aman!');
-    //     return redirect()->to(base_url(getenv('PATH_LOGIN')));
-    // }
+    public function logout()
+    {
+        session()->destroy();
+        session()->setFlashdata('success', 'Berhasil keluar dengan aman!');
+        return redirect()->to(base_url(getenv('PATH_LOGIN')));
+    }
 }

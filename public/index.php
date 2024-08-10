@@ -5,6 +5,8 @@
  * CHECK PHP VERSION
  *---------------------------------------------------------------
  */
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 $minPhpVersion = '8.1'; // If you update this, don't forget to update `spark`.
 if (version_compare(PHP_VERSION, $minPhpVersion, '<')) {
